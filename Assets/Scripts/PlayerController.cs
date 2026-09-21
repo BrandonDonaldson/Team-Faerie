@@ -1,11 +1,16 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerController : MonoBehaviour
 {
 
     // Fields
-    Vector2 moveDirection;
+    string direction;
+    Vector2 currentPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,19 +22,43 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Movement
-        Vector2 currentPosition = transform.position;
-        currentPosition += 5.0f* moveDirection * Time.deltaTime;
         transform.position = currentPosition;
     }
 
-    public void move(InputAction.CallbackContext context)
+    // Movement Callbacks
+    public void MoveUp(InputAction.CallbackContext context)
     {
-        moveDirection = context.ReadValue<Vector2>();
-
-        // Temporary solution to clamping cardinal directions
-        if (moveDirection.x != 0)
+        if (context.started)
         {
-            moveDirection.y = 0;
+            direction = "up";
+            currentPosition = (Vector2)transform.position + new Vector2(0f, 1.0f);
+        }
+    }
+
+    public void MoveDown(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            direction = "down";
+            currentPosition = (Vector2)transform.position + new Vector2(0f, -1.0f);
+        }
+    }
+
+    public void MoveLeft(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            direction = "left";
+            currentPosition = (Vector2)transform.position + new Vector2(-1.0f, 0f);
+        }
+    }
+
+    public void MoveRight(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            direction = "right";
+            currentPosition = (Vector2)transform.position + new Vector2(1.0f, 0f);
         }
     }
 }
