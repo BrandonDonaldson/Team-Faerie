@@ -16,13 +16,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Movement
         Vector2 currentPosition = transform.position;
-
         currentPosition += 5.0f* moveDirection * Time.deltaTime;
+        transform.position = currentPosition;
     }
 
     public void move(InputAction.CallbackContext context)
     {
         moveDirection = context.ReadValue<Vector2>();
+
+        // Temporary solution to clamping cardinal directions
+        if (moveDirection.x != 0)
+        {
+            moveDirection.y = 0;
+        }
     }
 }
