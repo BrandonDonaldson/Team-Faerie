@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 {
     // References
     [SerializeField] PlayerInteraction interactRef;
+    [SerializeField] BoxCollider2D collider;
+    [SerializeField] LayerMask mask;
 
     // Fields
     int HP; // Player Hit Points
@@ -66,13 +68,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private bool DetectObstacle(Vector2 direction)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1.0f, mask);
+
+        return !hit.collider;
+    }
+
     // Movement Callbacks
     public void MoveUp(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             direction = "up";
-            currentPosition = (Vector2)transform.position + new Vector2(0f, 1.0f);
+
+            if (DetectObstacle(new Vector2(0.0f, 1.0f)))
+            {
+                currentPosition = (Vector2)transform.position + new Vector2(0f, 1.0f);
+            }
         }
     }
 
@@ -81,7 +94,11 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             direction = "down";
-            currentPosition = (Vector2)transform.position + new Vector2(0f, -1.0f);
+
+            if (DetectObstacle(new Vector2(0.0f, -1.0f)))
+            {
+                currentPosition = (Vector2)transform.position + new Vector2(0f, -1.0f);
+            }
         }
     }
 
@@ -90,7 +107,11 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             direction = "left";
-            currentPosition = (Vector2)transform.position + new Vector2(-1.0f, 0f);
+
+            if (DetectObstacle(new Vector2(-1.0f, 0.0f)))
+            {
+                currentPosition = (Vector2)transform.position + new Vector2(-1.0f, 0f);
+            }
         }
     }
 
@@ -99,7 +120,11 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             direction = "right";
-            currentPosition = (Vector2)transform.position + new Vector2(1.0f, 0f);
+
+            if (DetectObstacle(new Vector2(1.0f, 0.0f)))
+            {
+                currentPosition = (Vector2)transform.position + new Vector2(1.0f, 0f);
+            }
         }
     }
 }
