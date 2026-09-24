@@ -2168,7 +2168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a060a139a3722458806f2e642b4415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 0}
+  InterfaceRef: {fileID: 1335813526}
+  collider: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &690787232
 GameObject:
   m_ObjectHideFlags: 0
