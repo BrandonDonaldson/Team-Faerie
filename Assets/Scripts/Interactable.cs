@@ -1,16 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    //references
+    [SerializeField] BoxCollider2D collider;
+    [SerializeField] LayerMask mask;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
