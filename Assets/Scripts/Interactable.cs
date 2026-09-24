@@ -1,9 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
     // References
     [SerializeField] UIController InterfaceRef;
+    [SerializeField] BoxCollider2D collider;
+    [SerializeField] LayerMask mask;
     
     // Fields
     string[] results;
@@ -42,4 +45,6 @@ public class Interactable : MonoBehaviour
     {
 
     }
+
+
 }
