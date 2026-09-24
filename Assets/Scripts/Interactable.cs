@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    // References
+    [SerializeField] UIController InterfaceRef;
+    
+    // Fields
+    string[] results;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +18,28 @@ public class Interactable : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ReturnResult(string action)
+    {
+        switch(action)
+        {
+            case "fight":
+                Debug.Log("InteractionSquare does not bother himself with needless fights");
+                break;
+
+            case "magic":
+                Debug.Log("All magic is ineffective against InteractionSquare");
+                break;
+
+            case "action":
+                Debug.Log("InteractionSquare is an InteractionSquare. 9000 HP, 9000 ATK");
+                break;
+        }
+    }
+
+    public void Offload()
+    {
+
     }
 }
