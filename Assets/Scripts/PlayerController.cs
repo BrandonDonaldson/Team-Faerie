@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     // Fields
     int HP; // Player Hit Points
     int MP; // Player Magic Points
-    public string direction; // Direction
+    string direction; // Direction
     Vector2 currentPosition; // Current Position (to be moved into)
     bool idle; // Is the player idle?
     PlayerState pSt; // Player state (for the state machine)
