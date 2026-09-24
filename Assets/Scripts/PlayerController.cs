@@ -28,10 +28,21 @@ public class PlayerController : MonoBehaviour
     bool idle; // Is the player idle?
     PlayerState pSt; // Player state (for the state machine)
 
+    // Keeps track of the key being held
+    bool movingUp;
+    bool movingDown;
+    bool movingLeft;
+    bool movingRight;
+
+    // Timers
+    float moveTimer;
+    [SerializeField] float moveDelay = 0.25f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         direction = "up";
+        currentPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -40,6 +51,32 @@ public class PlayerController : MonoBehaviour
         // Movement
         transform.position = currentPosition;
         CheckRotation(direction);
+
+        // Count Down movement timer
+        moveTimer -= Time.deltaTime;
+
+        // Move repeatedly while a key is held
+        if (moveTimer <= 0f)
+        {
+            if (movingUp)
+            {
+                MovePlayer(new Vector2(0.0f, 1.0f), "up");
+            }
+            else if (movingDown)
+            {
+                MovePlayer(new Vector2(0.0f, -1.0f), "down");
+            }
+            else if (movingLeft)
+            {
+                MovePlayer(new Vector2(-1.0f, 0.0f), "left");
+            }
+            else if (movingRight)
+            {
+                MovePlayer(new Vector2(1.0f, 0.0f), "right");
+            }
+
+            moveTimer = moveDelay;
+        }
     }
 
     /// <summary>
@@ -75,56 +112,95 @@ public class PlayerController : MonoBehaviour
         return !hit.collider;
     }
 
+    /// <summary>
+    /// Moves Player in the given direction
+    /// </summary>
+    /// <param name="moveDirection">Direction to move</param>
+    /// <param name="newDirection">Direction the player will Face</param>
+    public void MovePlayer(Vector2 moveDirection, string newDirection)
+    {
+        direction = newDirection;
+
+        if(DetectObstacle(moveDirection))
+        {
+            currentPosition = (Vector2)transform.position + moveDirection;
+        }
+    }
+
     // Movement Callbacks
     public void MoveUp(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
-            direction = "up";
+            movingUp = true;
+            movingDown = false;
+            movingLeft = false;
+            movingRight = false;
 
-            if (DetectObstacle(new Vector2(0.0f, 1.0f)))
-            {
-                currentPosition = (Vector2)transform.position + new Vector2(0f, 1.0f);
-            }
+            direction = "up";
+            moveTimer = 0f;
+        }
+
+        if (context.canceled)
+        {
+            movingUp = false;
         }
     }
 
     public void MoveDown(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
-            direction = "down";
+            movingUp = false;
+            movingDown = true;
+            movingLeft = false;
+            movingRight = false;
 
-            if (DetectObstacle(new Vector2(0.0f, -1.0f)))
-            {
-                currentPosition = (Vector2)transform.position + new Vector2(0f, -1.0f);
-            }
+            direction = "down";
+            moveTimer = 0f;
+        }
+
+        if (context.canceled)
+        {
+            movingDown = false;
         }
     }
 
     public void MoveLeft(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
-            direction = "left";
+            movingUp = false;
+            movingDown = false;
+            movingLeft = true;
+            movingRight = false;
 
-            if (DetectObstacle(new Vector2(-1.0f, 0.0f)))
-            {
-                currentPosition = (Vector2)transform.position + new Vector2(-1.0f, 0f);
-            }
+            direction = "left";
+            moveTimer = 0f;
+        }
+
+        if (context.canceled)
+        {
+            movingLeft = false;
         }
     }
 
     public void MoveRight(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
-            direction = "right";
+            movingUp = false;
+            movingDown = false;
+            movingLeft = false;
+            movingRight = true;
 
-            if (DetectObstacle(new Vector2(1.0f, 0.0f)))
-            {
-                currentPosition = (Vector2)transform.position + new Vector2(1.0f, 0f);
-            }
+            direction = "right";
+            moveTimer = 0f;
+        }
+
+        if (context.canceled)
+        {
+            movingRight = false;
         }
     }
 }
