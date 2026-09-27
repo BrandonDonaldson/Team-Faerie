@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if player is idle
+        // Check if player is idle (user is not pressing any keys)
         if (!movingUp && !movingDown && !movingLeft && !movingRight)
         {
             idle = true;
@@ -70,19 +70,19 @@ public class PlayerController : MonoBehaviour
         {
             if (movingUp)
             {
-                MovePlayer(new Vector2(0.0f, 1.0f), "up");
+                MovePlayer(new Vector2(0.0f, 1.0f));
             }
             else if (movingDown)
             {
-                MovePlayer(new Vector2(0.0f, -1.0f), "down");
+                MovePlayer(new Vector2(0.0f, -1.0f));
             }
             else if (movingLeft)
             {
-                MovePlayer(new Vector2(-1.0f, 0.0f), "left");
+                MovePlayer(new Vector2(-1.0f, 0.0f));
             }
             else if (movingRight)
             {
-                MovePlayer(new Vector2(1.0f, 0.0f), "right");
+                MovePlayer(new Vector2(1.0f, 0.0f));
             }
 
             moveTimer = moveDelay;
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
-        // If the player was idle, prevent player from moving in rotated direction immediately 
+        // When the user isnt pressing any keys, keep idle running
         if (idle)
         {
             moveTimer = moveDelay;
@@ -136,10 +136,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     /// <param name="moveDirection">Direction to move</param>
     /// <param name="newDirection">Direction the player will Face</param>
-    public void MovePlayer(Vector2 moveDirection, string newDirection)
+    public void MovePlayer(Vector2 moveDirection)
     {
-        direction = newDirection;
-
         if(DetectObstacle(moveDirection))
         {
             currentPosition = (Vector2)transform.position + moveDirection;
