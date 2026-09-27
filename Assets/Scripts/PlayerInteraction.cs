@@ -12,7 +12,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] LayerMask mask;
 
     // Fields
-    Vector2 orient;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,29 +25,11 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
 
-        switch (PlyrCtrl.direction)
-        {
-            case "up":
-                orient = new Vector2(0f, 1.0f);
-                break;
-
-            case "down":
-                orient = new Vector2(0f, -1.0f);
-                break;
-
-            case "left":
-                orient = new Vector2(-1.0f, 0f);
-                break;
-
-            case "right":
-                orient = new Vector2(-1.0f, 0f);
-                break;
-        }
     }
 
     private bool DetectInteractable()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, orient, 1.0f, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 1.0f, mask);
 
         if (hit)
         {
@@ -59,13 +41,13 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    private Interactable ReturnInteractable()
+    private GameObject ReturnInteractable()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, orient, 1.0f, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 1.0f, mask);
 
         if (hit)
         {
-            return hit.collider.gameObject.GetComponent<Interactable>();
+            return hit.collider.gameObject;
         }
         else
         {

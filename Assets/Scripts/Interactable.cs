@@ -23,20 +23,20 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public void ReturnResult(string action)
+    public virtual void ReturnResult(string action)
     {
         switch(action)
         {
             case "fight":
-                Debug.Log("InteractionSquare does not bother himself with needless fights");
+                Debug.Log("GenericInteractable does not bother himself with needless fights");
                 break;
 
             case "magic":
-                Debug.Log("All magic is ineffective against InteractionSquare");
+                Debug.Log("All magic is ineffective against GenericInteractable");
                 break;
 
             case "action":
-                Debug.Log("InteractionSquare is an InteractionSquare. 9000 HP, 9000 ATK");
+                Debug.Log("GenericInteractable is a GenericInteractable. 9000 HP, 9000 ATK");
                 break;
         }
     }

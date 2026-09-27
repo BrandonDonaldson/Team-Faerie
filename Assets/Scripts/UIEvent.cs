@@ -7,7 +7,7 @@ public class UIEvent : MonoBehaviour
 
 
     // Fields
-    public Interactable targetObject;
+    public GameObject targetObject;
     public string choice;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,21 +25,60 @@ public class UIEvent : MonoBehaviour
     public void OnFight()
     {
         choice = "fight";
-        targetObject.ReturnResult(choice);
+        switch (targetObject.tag)
+        {
+            case "Interactable":
+                targetObject.GetComponent<Interactable>().ReturnResult(choice);
+                break;
+
+            case "NPC":
+                targetObject.GetComponent<NPC>().ReturnResult(choice);
+                break;
+
+            case "Enemy":
+                targetObject.GetComponent<Enemy>().ReturnResult(choice);
+                break;
+        }
         // Bring to menu
     }
 
     public void OnMagic()
     {
         choice = "magic";
-        targetObject.ReturnResult(choice);
+        switch (targetObject.tag)
+        {
+            case "Interactable":
+                targetObject.GetComponent<Interactable>().ReturnResult(choice);
+                break;
+
+            case "NPC":
+                targetObject.GetComponent<NPC>().ReturnResult(choice);
+                break;
+
+            case "Enemy":
+                targetObject.GetComponent<Enemy>().ReturnResult(choice);
+                break;
+        }
         // Bring to menu
     }
 
     public void OnAction()
     {
         choice = "action";
-        targetObject.ReturnResult(choice);
+        switch (targetObject.tag)
+        {
+            case "Interactable":
+                targetObject.GetComponent<Interactable>().ReturnResult(choice);
+                break;
+
+            case "NPC":
+                targetObject.GetComponent<NPC>().ReturnResult(choice);
+                break;
+
+            case "Enemy":
+                targetObject.GetComponent<Enemy>().ReturnResult(choice);
+                break;
+        }
         // Bring to menu
     }
 
