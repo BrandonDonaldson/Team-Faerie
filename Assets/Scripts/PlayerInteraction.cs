@@ -49,14 +49,28 @@ public class PlayerInteraction : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, orient, 1.0f, mask);
 
-        return hit.collider.gameObject.tag != "Untagged";
+        if (hit)
+        {
+            return hit.collider.gameObject.tag != "Untagged";
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private Interactable ReturnInteractable()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, orient, 1.0f, mask);
 
-        return hit.collider.gameObject.GetComponent<Interactable>();
+        if (hit)
+        {
+            return hit.collider.gameObject.GetComponent<Interactable>();
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public void OnInteract(InputAction.CallbackContext context)
