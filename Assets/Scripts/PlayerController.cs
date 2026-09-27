@@ -104,6 +104,12 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                 break;
         }
+
+        // If the player was not currently moving, prevent player from moving in said direction immidetly
+        if(!movingUp && !movingDown && !movingLeft && !movingRight)
+        {
+            moveTimer = moveDelay;
+        }
     }
 
     private bool DetectObstacle(Vector2 direction)
