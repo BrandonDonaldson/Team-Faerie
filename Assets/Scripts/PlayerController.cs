@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         direction = "up";
         currentPosition = transform.position;
+        moveTimer = moveDelay;
     }
 
     // Update is called once per frame
@@ -138,7 +139,6 @@ public class PlayerController : MonoBehaviour
             movingRight = false;
 
             direction = "up";
-            moveTimer = 0f;
         }
 
         if (context.canceled)
@@ -157,7 +157,6 @@ public class PlayerController : MonoBehaviour
             movingRight = false;
 
             direction = "down";
-            moveTimer = 0f;
         }
 
         if (context.canceled)
@@ -176,7 +175,6 @@ public class PlayerController : MonoBehaviour
             movingRight = false;
 
             direction = "left";
-            moveTimer = 0f;
         }
 
         if (context.canceled)
@@ -195,7 +193,6 @@ public class PlayerController : MonoBehaviour
             movingRight = true;
 
             direction = "right";
-            moveTimer = 0f;
         }
 
         if (context.canceled)
