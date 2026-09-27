@@ -49,8 +49,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check if player is idle
+        if (!movingUp && !movingDown && !movingLeft && !movingRight)
+        {
+            idle = true;
+        }
+        else
+        {
+            idle = false;
+        }
+
         // Movement
-        transform.position = currentPosition;
         CheckRotation(direction);
 
         // Count Down movement timer
@@ -78,6 +87,9 @@ public class PlayerController : MonoBehaviour
 
             moveTimer = moveDelay;
         }
+
+        // Move the player
+        transform.position = currentPosition;
     }
 
     /// <summary>
@@ -105,8 +117,8 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
-        // If the player was not currently moving, prevent player from moving in said direction immidetly
-        if(!movingUp && !movingDown && !movingLeft && !movingRight)
+        // If the player was idle, prevent player from moving in rotated direction immediately 
+        if (idle)
         {
             moveTimer = moveDelay;
         }
@@ -134,6 +146,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    #region Movement Callbacks
     // Movement Callbacks
     public void MoveUp(InputAction.CallbackContext context)
     {
@@ -206,4 +219,5 @@ public class PlayerController : MonoBehaviour
             movingRight = false;
         }
     }
+    #endregion
 }
