@@ -23,21 +23,60 @@ public class Interactable : MonoBehaviour
         
     }
 
-    public virtual void ReturnResult(string action)
+    public virtual void ReturnResult(MenuState category, int action)
     {
-        switch(action)
+        if (category == MenuState.Fight)
+        {   
+            switch (action)
+            {
+                case 1:
+                    InterfaceRef.UpdateText("GenericInteractable does not bother himself with needless fights");
+                    break;
+
+                case 2:
+                    InterfaceRef.UpdateText("GenericInteractable does not bother himself with needless fights");
+                    break;
+
+                case 3:
+                    InterfaceRef.UpdateText("GenericInteractable does not bother himself with needless fights");
+                    break;
+            }
+        }
+
+        if (category == MenuState.Fight)
         {
-            case "fight":
-                Debug.Log("GenericInteractable does not bother himself with needless fights");
-                break;
+            switch (action)
+            {
+                case 1:
+                    InterfaceRef.UpdateText("All magic is ineffective against GenericInteractable");
+                    break;
 
-            case "magic":
-                Debug.Log("All magic is ineffective against GenericInteractable");
-                break;
+                case 2:
+                    InterfaceRef.UpdateText("All magic is ineffective against GenericInteractable");
+                    break;
 
-            case "action":
-                Debug.Log("GenericInteractable is a GenericInteractable. 9000 HP, 9000 ATK");
-                break;
+                case 3:
+                    InterfaceRef.UpdateText("All magic is ineffective against GenericInteractable");
+                    break;
+            }
+        }
+
+        if (category == MenuState.Fight)
+        {
+            switch (action)
+            {
+                case 1:
+                    InterfaceRef.UpdateText("GenericInteractable is a GenericInteractable. 9000 HP, 9000 ATK");
+                    break;
+
+                case 2:
+                    InterfaceRef.UpdateText("GenericInteractable is a GenericInteractable. 9000 HP, 9000 ATK");
+                    break;
+
+                case 3:
+                    InterfaceRef.UpdateText("GenericInteractable is a GenericInteractable. 9000 HP, 9000 ATK");
+                    break;
+            }
         }
     }
 
