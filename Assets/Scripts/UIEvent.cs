@@ -1,90 +1,159 @@
 using System;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+
+public enum MenuState
+{
+    Top,
+    Fight,
+    Magic,
+    Action
+}
 
 public class UIEvent : MonoBehaviour
 {
     // References
     [SerializeField] TextMeshProUGUI textBox;
+    [SerializeField] GameObject topMenu;
+    [SerializeField] GameObject fightMenu;
+    [SerializeField] GameObject magicMenu;
+    [SerializeField] GameObject actionMenu;
 
     // Fields
     public GameObject targetObject;
-    public string choice;
+    public Transform[] buttonTransforms;
+    public MenuState category;
+    public int choice;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        category = MenuState.Top;
+        choice = 4;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        SetMenu();
     }
 
-    public void OnFight()
+    // Code for Button 1 (top left)
+    public void Button1()
     {
-        choice = "fight";
+        if (category != MenuState.Top)
+        {
+            choice = 1;
+        }
+        else
+        {
+            category = MenuState.Fight;
+        }
+
+        CallForResult();
+    }
+
+    // Code for Button 2 (top right)
+    public void Button2()
+    {
+        if (category != MenuState.Top)
+        {
+            choice = 2;
+        }
+        else
+        {
+            category = MenuState.Magic;
+        }
+
+        CallForResult();
+    }
+
+    // Code for Button 3 (bottom left)
+    public void Button3()
+    {
+        if (category != MenuState.Top)
+        {
+            choice = 3;
+        }
+        else
+        {
+            category = MenuState.Action;
+        }
+
+        CallForResult();
+    }
+
+    // Calls for the results depending on object tab
+    public void CallForResult()
+    {
         switch (targetObject.tag)
         {
             case "Interactable":
-                targetObject.GetComponent<Interactable>().ReturnResult(choice);
+                targetObject.GetComponent<Interactable>().ReturnResult(category, choice);
                 break;
 
             case "NPC":
-                targetObject.GetComponent<NPC>().ReturnResult(choice);
+                targetObject.GetComponent<NPC>().ReturnResult(category, choice);
                 break;
 
             case "Enemy":
-                targetObject.GetComponent<Enemy>().ReturnResult(choice);
+                targetObject.GetComponent<Enemy>().ReturnResult(category, choice);
                 break;
         }
-        // Bring to menu
     }
 
-    public void OnMagic()
+    // Code for back/run (bottom right)
+    public void BackButton()
     {
-        choice = "magic";
-        switch (targetObject.tag)
+        if (category != MenuState.Top)
         {
-            case "Interactable":
-                targetObject.GetComponent<Interactable>().ReturnResult(choice);
-                break;
-
-            case "NPC":
-                targetObject.GetComponent<NPC>().ReturnResult(choice);
-                break;
-
-            case "Enemy":
-                targetObject.GetComponent<Enemy>().ReturnResult(choice);
-                break;
+            category = MenuState.Top;
         }
-        // Bring to menu
-    }
-
-    public void OnAction()
-    {
-        choice = "action";
-        switch (targetObject.tag)
+        else
         {
-            case "Interactable":
-                targetObject.GetComponent<Interactable>().ReturnResult(choice);
-                break;
-
-            case "NPC":
-                targetObject.GetComponent<NPC>().ReturnResult(choice);
-                break;
-
-            case "Enemy":
-                targetObject.GetComponent<Enemy>().ReturnResult(choice);
-                break;
+            this.gameObject.SetActive(false);
         }
-        // Bring to menu
     }
 
-    public void OnRun()
+    // Sets the menu
+    public void SetMenu()
     {
-        this.gameObject.SetActive(false);
+        switch (category)
+        {
+            case MenuState.Top:
+                topMenu.SetActive(true);
+                fightMenu.SetActive(false);
+                magicMenu.SetActive(false);
+                actionMenu.SetActive(false);
+                break;
+
+            case MenuState.Fight:
+                topMenu.SetActive(false);
+                fightMenu.SetActive(true);
+                magicMenu.SetActive(false);
+                actionMenu.SetActive(false);
+                break;
+
+            case MenuState.Magic:
+                topMenu.SetActive(false);
+                fightMenu.SetActive(false);
+                magicMenu.SetActive(true);
+                actionMenu.SetActive(false);
+                break;
+
+            case MenuState.Action:
+                topMenu.SetActive(false);
+                fightMenu.SetActive(false);
+                magicMenu.SetActive(false);
+                actionMenu.SetActive(true);
+                break;
+        }
+    }
+
+    // Update text
+    public void UpdateText(string newText)
+    {
+        textBox.text = newText;
     }
 }
