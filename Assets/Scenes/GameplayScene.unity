@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 74860343}
   - component: {fileID: 74860342}
   m_Layer: 5
-  m_Name: Action 1
+  m_Name: Information
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2132,7 +2132,7 @@ GameObject:
   - component: {fileID: 298992041}
   - component: {fileID: 298992040}
   m_Layer: 5
-  m_Name: Action 3
+  m_Name: Act
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3049,6 +3049,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1924212242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &575361231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8571410994878007176, guid: f21a4dc256eeb6b4ebd91ead3fc5bffd, type: 3}
+  m_PrefabInstance: {fileID: 986783295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4748,10 +4753,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree (temp) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8571410994878007176, guid: f21a4dc256eeb6b4ebd91ead3fc5bffd, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8571410994878007176, guid: f21a4dc256eeb6b4ebd91ead3fc5bffd, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1618031634}
   m_SourcePrefab: {fileID: 100100000, guid: f21a4dc256eeb6b4ebd91ead3fc5bffd, type: 3}
 --- !u!1 &991993408
 GameObject:
@@ -5260,7 +5272,7 @@ GameObject:
   - component: {fileID: 1070620825}
   - component: {fileID: 1070620824}
   m_Layer: 5
-  m_Name: Action 2
+  m_Name: Chat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8037,6 +8049,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4608259136516538565, guid: f21a4dc256eeb6b4ebd91ead3fc5bffd, type: 3}
   m_PrefabInstance: {fileID: 986783295}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1618031634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575361231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc695360e3e34b4b9afc29620fa6f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InterfaceRef: {fileID: 1335813527}
+  collider: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1641409300
 GameObject:
   m_ObjectHideFlags: 0
