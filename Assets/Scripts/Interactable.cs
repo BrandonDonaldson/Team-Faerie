@@ -4,7 +4,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     // References
-    [SerializeField] UIController InterfaceRef;
+    [SerializeField] UIEvent InterfaceRef;
     [SerializeField] BoxCollider2D collider;
     [SerializeField] LayerMask mask;
     

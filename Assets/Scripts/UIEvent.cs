@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
+using TMPro;
 
 public class UIEvent : MonoBehaviour
 {
     // References
-
+    [SerializeField] TextMeshProUGUI textBox;
 
     // Fields
     public GameObject targetObject;
