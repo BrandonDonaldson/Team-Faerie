@@ -16,19 +16,32 @@ public class NPC : Interactable
 
     public override void ReturnResult(MenuState category, int action)
     {
-        switch (action)
+        if (category == MenuState.Fight)
         {
-            case 1:
-                Debug.Log("Do you really want to fight them?");
-                break;
+            InterfaceRef.UpdateText("What are you doing? Violence isn't the answer!");
+        }
 
-            case 2:
-                Debug.Log("Seems a little excessive, don't you think?");
-                break;
+        if (category == MenuState.Magic)
+        {
+            InterfaceRef.UpdateText("What are you doing? Violence isn't the answer!");
+        }
 
-            case 3:
-                Debug.Log("This is GenericNPC. Be nice to them. 10 HP, 10 ATK");
-                break;
+        if (category == MenuState.Action)
+        {
+            switch (action)
+            {
+                case 1:
+                    InterfaceRef.UpdateText("This is ClassicNPC. HP: 10, ATK: 1");
+                    break;
+
+                case 2:
+                    InterfaceRef.UpdateText("\"Hello! I'm ClassicNPC!\"");
+                    break;
+
+                case 3:
+                    InterfaceRef.UpdateText("I don't know what you're trying to do, but it clearly didn't work.");
+                    break;
+            }
         }
     }
 }

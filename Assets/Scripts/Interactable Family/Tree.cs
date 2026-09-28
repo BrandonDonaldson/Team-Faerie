@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : Interactable
+public class Tree : Interactable
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,12 +18,13 @@ public class Enemy : Interactable
     {
         if (category == MenuState.Fight)
         {
-            InterfaceRef.UpdateText("You gotta buy the Combat DLC to use this option.");
+            InterfaceRef.UpdateText("You cut the tree!");
+            Offload();
         }
 
         if (category == MenuState.Magic)
         {
-            InterfaceRef.UpdateText("You gotta buy the Magic DLC to use this option.");
+            InterfaceRef.UpdateText("Seems a bit excessive, don't you think?");
         }
 
         if (category == MenuState.Action)
@@ -31,17 +32,22 @@ public class Enemy : Interactable
             switch (action)
             {
                 case 1:
-                    InterfaceRef.UpdateText("It's literally just a rat.");
+                    InterfaceRef.UpdateText("This is a tree.");
                     break;
 
                 case 2:
-                    InterfaceRef.UpdateText("*squeak squeak*");
+                    InterfaceRef.UpdateText("\"...\"");
                     break;
-
+                    
                 case 3:
-                    InterfaceRef.UpdateText("I don't know what you're trying to do, but it clearly didn't work.");
+                    InterfaceRef.UpdateText("You push against the tree, but nothing happens. Feels like you'll need more force to get rid of it.");
                     break;
             }
         }
+    }
+
+    public void Offload()
+    {
+        Destroy(this.gameObject);
     }
 }

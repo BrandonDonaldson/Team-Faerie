@@ -4,7 +4,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     // References
-    [SerializeField] UIEvent InterfaceRef;
+    [SerializeField] public UIEvent InterfaceRef;
     [SerializeField] BoxCollider2D collider;
     [SerializeField] LayerMask mask;
     
@@ -43,7 +43,7 @@ public class Interactable : MonoBehaviour
             }
         }
 
-        if (category == MenuState.Fight)
+        if (category == MenuState.Magic)
         {
             switch (action)
             {
@@ -61,7 +61,7 @@ public class Interactable : MonoBehaviour
             }
         }
 
-        if (category == MenuState.Fight)
+        if (category == MenuState.Action)
         {
             switch (action)
             {
@@ -70,11 +70,11 @@ public class Interactable : MonoBehaviour
                     break;
 
                 case 2:
-                    InterfaceRef.UpdateText("GenericInteractable is a GenericInteractable. 9000 HP, 9000 ATK");
+                    InterfaceRef.UpdateText("\"I am the InteractionSquare. That's InteractionSquare your highness to you.\"");
                     break;
 
                 case 3:
-                    InterfaceRef.UpdateText("GenericInteractable is a GenericInteractable. 9000 HP, 9000 ATK");
+                    InterfaceRef.UpdateText("I don't know what you're trying to do, but it clearly didn't work.");
                     break;
             }
         }
@@ -82,8 +82,6 @@ public class Interactable : MonoBehaviour
 
     public void Offload()
     {
-
+        Destroy(this.gameObject);
     }
-
-
 }

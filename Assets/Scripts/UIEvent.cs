@@ -45,13 +45,12 @@ public class UIEvent : MonoBehaviour
         if (category != MenuState.Top)
         {
             choice = 1;
+            CallForResult();
         }
         else
         {
             category = MenuState.Fight;
         }
-
-        CallForResult();
     }
 
     // Code for Button 2 (top right)
@@ -60,13 +59,12 @@ public class UIEvent : MonoBehaviour
         if (category != MenuState.Top)
         {
             choice = 2;
+            CallForResult();
         }
         else
         {
             category = MenuState.Magic;
         }
-
-        CallForResult();
     }
 
     // Code for Button 3 (bottom left)
@@ -75,31 +73,41 @@ public class UIEvent : MonoBehaviour
         if (category != MenuState.Top)
         {
             choice = 3;
+            CallForResult();
         }
         else
         {
             category = MenuState.Action;
         }
-
-        CallForResult();
     }
 
     // Calls for the results depending on object tab
     public void CallForResult()
     {
-        switch (targetObject.tag)
+        if (targetObject)
         {
-            case "Interactable":
-                targetObject.GetComponent<Interactable>().ReturnResult(category, choice);
-                break;
+            switch (targetObject.tag)
+            {
+                case "Interactable":
+                    targetObject.GetComponent<Interactable>().ReturnResult(category, choice);
+                    break;
 
-            case "NPC":
-                targetObject.GetComponent<NPC>().ReturnResult(category, choice);
-                break;
+                case "NPC":
+                    targetObject.GetComponent<NPC>().ReturnResult(category, choice);
+                    break;
 
-            case "Enemy":
-                targetObject.GetComponent<Enemy>().ReturnResult(category, choice);
-                break;
+                case "Enemy":
+                    targetObject.GetComponent<Enemy>().ReturnResult(category, choice);
+                    break;
+
+                case "Tree":
+                    targetObject.GetComponent<Tree>().ReturnResult(category, choice);
+                    break;
+            }
+        }
+        else
+        {
+            UpdateText("There's nothing there?");
         }
     }
 
@@ -109,10 +117,13 @@ public class UIEvent : MonoBehaviour
         if (category != MenuState.Top)
         {
             category = MenuState.Top;
+            choice = 4;
         }
         else
         {
             this.gameObject.SetActive(false);
+            UpdateText("");
+            choice = 4;
         }
     }
 
