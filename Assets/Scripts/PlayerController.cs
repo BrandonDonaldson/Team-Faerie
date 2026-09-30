@@ -60,8 +60,6 @@ public class PlayerController : MonoBehaviour
             idle = false;
         }
 
-        if (pSt == PlayerState.Moving)
-        {
             // Movement
             CheckRotation(direction);
 
@@ -93,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
             // Move the player
             transform.position = currentPosition;
-        }
+        
     }
 
     /// <summary>
@@ -152,73 +150,85 @@ public class PlayerController : MonoBehaviour
     // Movement Callbacks
     public void MoveUp(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (pSt == PlayerState.Moving)
         {
-            movingUp = true;
-            movingDown = false;
-            movingLeft = false;
-            movingRight = false;
+            if (context.started)
+            {
+                movingUp = true;
+                movingDown = false;
+                movingLeft = false;
+                movingRight = false;
 
-            direction = "up";
-        }
+                direction = "up";
+            }
 
-        if (context.canceled)
-        {
-            movingUp = false;
+            if (context.canceled)
+            {
+                movingUp = false;
+            }
         }
     }
 
     public void MoveDown(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (pSt == PlayerState.Moving)
         {
-            movingUp = false;
-            movingDown = true;
-            movingLeft = false;
-            movingRight = false;
+            if (context.started)
+            {
+                movingUp = false;
+                movingDown = true;
+                movingLeft = false;
+                movingRight = false;
 
-            direction = "down";
-        }
+                direction = "down";
+            }
 
-        if (context.canceled)
-        {
-            movingDown = false;
+            if (context.canceled)
+            {
+                movingDown = false;
+            }
         }
     }
 
     public void MoveLeft(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (pSt == PlayerState.Moving)
         {
-            movingUp = false;
-            movingDown = false;
-            movingLeft = true;
-            movingRight = false;
+            if (context.started)
+            {
+                movingUp = false;
+                movingDown = false;
+                movingLeft = true;
+                movingRight = false;
 
-            direction = "left";
-        }
+                direction = "left";
+            }
 
-        if (context.canceled)
-        {
-            movingLeft = false;
+            if (context.canceled)
+            {
+                movingLeft = false;
+            }
         }
     }
 
     public void MoveRight(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (pSt == PlayerState.Moving)
         {
-            movingUp = false;
-            movingDown = false;
-            movingLeft = false;
-            movingRight = true;
+            if (context.started)
+            {
+                movingUp = false;
+                movingDown = false;
+                movingLeft = false;
+                movingRight = true;
 
-            direction = "right";
-        }
+                direction = "right";
+            }
 
-        if (context.canceled)
-        {
-            movingRight = false;
+            if (context.canceled)
+            {
+                movingRight = false;
+            }
         }
     }
     #endregion
