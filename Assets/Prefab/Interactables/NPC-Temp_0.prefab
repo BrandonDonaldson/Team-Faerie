@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7192612328541626651}
   - component: {fileID: 5441994830255314593}
   - component: {fileID: 9155793346170078730}
+  - component: {fileID: 3001233605025705556}
   m_Layer: 6
   m_Name: NPC-Temp_0
   m_TagString: Untagged
@@ -126,7 +127,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.43272728, y: 0.97818184}
+    oldSize: {x: 0.85365856, y: 1}
     newSize: {x: 2.38, y: 5.38}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -134,3 +135,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3001233605025705556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273224229898512265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2eb3a10431ee04988663151981f060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InterfaceRef: {fileID: 0}
+  collider: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
