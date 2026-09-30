@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.Controls;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-enum PlayerState
+public enum PlayerState
 {
     Moving,
     Interacting,
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public string direction; // Direction
     Vector2 currentPosition; // Current Position (to be moved into)
     bool idle; // Is the player idle?
-    PlayerState pSt; // Player state (for the state machine)
+    public PlayerState pSt; // Player state (for the state machine)
 
     // Keeps track of the key being held
     bool movingUp;
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         direction = "up";
         currentPosition = transform.position;
         moveTimer = moveDelay;
+        pSt = PlayerState.Moving;
     }
 
     // Update is called once per frame
@@ -59,37 +60,40 @@ public class PlayerController : MonoBehaviour
             idle = false;
         }
 
-        // Movement
-        CheckRotation(direction);
-
-        // Count Down movement timer
-        moveTimer -= Time.deltaTime;
-
-        // Move repeatedly while a key is held
-        if (moveTimer <= 0f)
+        if (pSt == PlayerState.Moving)
         {
-            if (movingUp)
+            // Movement
+            CheckRotation(direction);
+
+            // Count Down movement timer
+            moveTimer -= Time.deltaTime;
+
+            // Move repeatedly while a key is held
+            if (moveTimer <= 0f)
             {
-                MovePlayer(new Vector2(0.0f, 1.0f));
-            }
-            else if (movingDown)
-            {
-                MovePlayer(new Vector2(0.0f, -1.0f));
-            }
-            else if (movingLeft)
-            {
-                MovePlayer(new Vector2(-1.0f, 0.0f));
-            }
-            else if (movingRight)
-            {
-                MovePlayer(new Vector2(1.0f, 0.0f));
+                if (movingUp)
+                {
+                    MovePlayer(new Vector2(0.0f, 1.0f));
+                }
+                else if (movingDown)
+                {
+                    MovePlayer(new Vector2(0.0f, -1.0f));
+                }
+                else if (movingLeft)
+                {
+                    MovePlayer(new Vector2(-1.0f, 0.0f));
+                }
+                else if (movingRight)
+                {
+                    MovePlayer(new Vector2(1.0f, 0.0f));
+                }
+
+                moveTimer = moveDelay;
             }
 
-            moveTimer = moveDelay;
+            // Move the player
+            transform.position = currentPosition;
         }
-
-        // Move the player
-        transform.position = currentPosition;
     }
 
     /// <summary>

@@ -14,6 +14,7 @@ public enum MenuState
 public class UIEvent : MonoBehaviour
 {
     // References
+    [SerializeField] PlayerController PlyrCtrl;
     [SerializeField] TextMeshProUGUI textBox;
     [SerializeField] GameObject topMenu;
     [SerializeField] GameObject fightMenu;
@@ -122,6 +123,7 @@ public class UIEvent : MonoBehaviour
         else
         {
             this.gameObject.SetActive(false);
+            PlyrCtrl.pSt = PlayerState.Moving;
             UpdateText("");
             choice = 4;
         }
