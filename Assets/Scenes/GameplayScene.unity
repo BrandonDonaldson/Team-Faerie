@@ -10566,6 +10566,26 @@ PrefabInstance:
       propertyPath: InterfaceRef
       value: 
       objectReference: {fileID: 1335813527}
+    - target: {fileID: 6096465514104172407, guid: 544a3c86de509da4b9598ab0f0fc1ae3, type: 3}
+      propertyPath: fightDialogue
+      value: GenericInteractable refuses to fight because it's built better.|You
+        know you'll lose a fight to it so don't even try.|It's not fighting, it's
+        just mogging.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096465514104172407, guid: 544a3c86de509da4b9598ab0f0fc1ae3, type: 3}
+      propertyPath: magicDialogue
+      value: All forms of magic cannot touch GenericInteractable.|GenericInteractable
+        brushes off you incompetence.|Your magic is not very effective...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096465514104172407, guid: 544a3c86de509da4b9598ab0f0fc1ae3, type: 3}
+      propertyPath: actionDialogue
+      value: GenericInteractable is GenericInteractable|"I have nothing to say to
+        you and I never will."|What are you even gonna do?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096465514104172407, guid: 544a3c86de509da4b9598ab0f0fc1ae3, type: 3}
+      propertyPath: initialDialogue
+      value: '"I am the almighty GenericInteractable!"'
+      objectReference: {fileID: 0}
     - target: {fileID: 7410662967164770048, guid: 544a3c86de509da4b9598ab0f0fc1ae3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
