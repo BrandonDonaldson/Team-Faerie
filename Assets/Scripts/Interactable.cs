@@ -22,53 +22,7 @@ public class Interactable : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       if (fightDialogue != null)
-       {
-            parsedDialogue = fightDialogue.Split('|');
-            for (int i = 0; i < parsedDialogue.Length; i++)
-            {
-                results.Add(parsedDialogue[i]);
-            }
-       }
-       else
-       {
-            for (int i = 0; i < 3; i++)
-            {
-                results.Add("Fight text here");
-            }
-       }
-
-        if (magicDialogue != null)
-        {
-            parsedDialogue = magicDialogue.Split('|');
-            for (int i = 0; i < parsedDialogue.Length; i++)
-            {
-                results.Add(parsedDialogue[i]);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                results.Add("Magic text here");
-            }
-        }
-
-        if (actionDialogue != null)
-        {
-            parsedDialogue = actionDialogue.Split('|');
-            for (int i = 0; i < parsedDialogue.Length; i++)
-            {
-                results.Add(parsedDialogue[i]);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                results.Add("Other text here");
-            }
-        }
+        OnStartUp();
     }
 
     // Update is called once per frame
@@ -142,5 +96,56 @@ public class Interactable : MonoBehaviour
     public void Offload()
     {
         Destroy(this.gameObject);
+    }
+
+    public void OnStartUp()
+    {
+        if (fightDialogue != null)
+        {
+            parsedDialogue = fightDialogue.Split('|');
+            for (int i = 0; i < parsedDialogue.Length; i++)
+            {
+                results.Add(parsedDialogue[i]);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                results.Add("Fight text here");
+            }
+        }
+
+        if (magicDialogue != null)
+        {
+            parsedDialogue = magicDialogue.Split('|');
+            for (int i = 0; i < parsedDialogue.Length; i++)
+            {
+                results.Add(parsedDialogue[i]);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                results.Add("Magic text here");
+            }
+        }
+
+        if (actionDialogue != null)
+        {
+            parsedDialogue = actionDialogue.Split('|');
+            for (int i = 0; i < parsedDialogue.Length; i++)
+            {
+                results.Add(parsedDialogue[i]);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                results.Add("Other text here");
+            }
+        }
     }
 }

@@ -5,7 +5,7 @@ public class Tree : Interactable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        OnStartUp();
     }
 
     // Update is called once per frame
@@ -20,7 +20,6 @@ public class Tree : Interactable
         
         if (category == MenuState.Fight)
         {
-            InterfaceRef.UpdateText("You cut the tree!");
             Offload();
         }
     }

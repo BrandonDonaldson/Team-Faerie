@@ -1,11 +1,23 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class NPC : Interactable
 {
+    // References
+    [SerializeField] string randomizedDialogue;
+
+    // Fields
+    string[] parsedRandom;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        OnStartUp();
         
+        if (randomizedDialogue != null)
+        {
+            parsedRandom = randomizedDialogue.Split('|');
+        }
     }
 
     // Update is called once per frame
@@ -14,34 +26,13 @@ public class NPC : Interactable
         
     }
 
-    //public override void ReturnResult(MenuState category, int action)
-    //{
-    //    if (category == MenuState.Fight)
-    //    {
-    //        InterfaceRef.UpdateText("What are you doing? Violence isn't the answer!");
-    //    }
+    public override void ReturnResult(MenuState category, int action)
+    {
+        base.ReturnResult(category, action);
 
-    //    if (category == MenuState.Magic)
-    //    {
-    //        InterfaceRef.UpdateText("What are you doing? Violence isn't the answer!");
-    //    }
-
-    //    if (category == MenuState.Action)
-    //    {
-    //        switch (action)
-    //        {
-    //            case 1:
-    //                InterfaceRef.UpdateText("This is ClassicNPC. HP: 10, ATK: 1");
-    //                break;
-
-    //            case 2:
-    //                InterfaceRef.UpdateText("\"Hello! I'm ClassicNPC!\"");
-    //                break;
-
-    //            case 3:
-    //                InterfaceRef.UpdateText("I don't know what you're trying to do, but it clearly didn't work.");
-    //                break;
-    //        }
-    //    }
-    //}
+        if (parsedRandom != null && category == MenuState.Action && action == 2)
+        {
+            InterfaceRef.UpdateText(parsedRandom[Random.Range(0, parsedRandom.Length)]);
+        }
+    }
 }

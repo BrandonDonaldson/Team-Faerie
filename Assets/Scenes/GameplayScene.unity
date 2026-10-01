@@ -8094,7 +8094,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -20, y: 20, z: -20, w: 20}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -10651,6 +10651,24 @@ PrefabInstance:
       propertyPath: InterfaceRef
       value: 
       objectReference: {fileID: 1335813527}
+    - target: {fileID: 3342623247757116552, guid: e4b0a00a198437348919edfb181fc39d, type: 3}
+      propertyPath: fightDialogue
+      value: You cut the tree!|You cut the tree!|You cut the tree!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342623247757116552, guid: e4b0a00a198437348919edfb181fc39d, type: 3}
+      propertyPath: magicDialogue
+      value: Seems a little excessive, don't you think?|Seems a little excessive,
+        don't you think?|Seems a little excessive, don't you think?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342623247757116552, guid: e4b0a00a198437348919edfb181fc39d, type: 3}
+      propertyPath: actionDialogue
+      value: This is a tree. Just a normal, ordinary tree.|"..."|The tree is a bit
+        too sturdy to just push over. Maybe a more violent course of action is needed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342623247757116552, guid: e4b0a00a198437348919edfb181fc39d, type: 3}
+      propertyPath: initialDialogue
+      value: The tree stands there, mocking you.
+      objectReference: {fileID: 0}
     - target: {fileID: 8159745440983497738, guid: e4b0a00a198437348919edfb181fc39d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.99
@@ -10732,6 +10750,32 @@ PrefabInstance:
       propertyPath: InterfaceRef
       value: 
       objectReference: {fileID: 1335813527}
+    - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
+      propertyPath: fightDialogue
+      value: What are you doing? Violence isn't the answer!|What are you doing? Violence
+        isn't the answer!|What are you doing? Violence isn't the answer!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
+      propertyPath: magicDialogue
+      value: What are you doing? Violence isn't the answer!|What are you doing? Violence
+        isn't the answer!|What are you doing? Violence isn't the answer!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
+      propertyPath: actionDialogue
+      value: This is GenericNPC.|.|I don't know what you're trying to do, but it
+        clearly didn't work.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
+      propertyPath: initialDialogue
+      value: Hello there, Player!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
+      propertyPath: randomizedDialogue
+      value: That tree looks like it can be cut down with some force.|That rat likes
+        to bite people! Someone should teach it a lesson.|The weird totem over there
+        seems to make use feel better.|This weird square thing is here. I don't know
+        what it wants though.|Different problems call for different solutions.
+      objectReference: {fileID: 0}
     - target: {fileID: 7192612328541626651, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -10972,6 +11016,18 @@ PrefabInstance:
     - target: {fileID: 1656671497037354275, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: m_TagString
       value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+      propertyPath: HP
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+      propertyPath: MP
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+      propertyPath: damage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: InterfaceRef
