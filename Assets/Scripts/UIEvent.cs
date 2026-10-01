@@ -119,6 +119,7 @@ public class UIEvent : MonoBehaviour
         {
             category = MenuState.Top;
             choice = 4;
+            CallForResult();
         }
         else
         {

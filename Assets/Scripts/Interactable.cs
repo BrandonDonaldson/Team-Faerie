@@ -25,6 +25,11 @@ public class Interactable : MonoBehaviour
 
     public virtual void ReturnResult(MenuState category, int action)
     {
+        if(category == MenuState.Top)
+        {
+            InterfaceRef.UpdateText("This is the almighty GenericInteractable");
+        }
+
         if (category == MenuState.Fight)
         {   
             switch (action)

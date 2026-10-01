@@ -61,6 +61,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             InterfaceRef.SetActive(true);
             InterfaceScript.targetObject = ReturnInteractable();
+            InterfaceScript.CallForResult();
             PlyrCtrl.pSt = PlayerState.Interacting;
         }
     }
