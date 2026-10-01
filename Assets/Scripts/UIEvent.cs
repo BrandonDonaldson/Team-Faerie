@@ -116,6 +116,10 @@ public class UIEvent : MonoBehaviour
                     targetObject.GetComponent<Rat>().HPSlider = HPSliderRef;
                     targetObject.GetComponent<Rat>().MPSlider = MPSliderRef;
                     break;
+
+                case "Totem":
+                    targetObject.GetComponent<Totem>().ReturnResult(category, choice);
+                    break;
             }
         }
         else
@@ -200,6 +204,21 @@ public class UIEvent : MonoBehaviour
         PlyrCtrl.MP -= mana;
     }
 
+    public void Restore(int health, int mana)
+    {
+        PlyrCtrl.HP += health;
+        if (PlyrCtrl.HP > PlyrCtrl.MaxHP)
+        {
+            PlyrCtrl.HP = PlyrCtrl.MaxHP;
+        }
+
+        PlyrCtrl.MP += mana;
+        if (PlyrCtrl.MP > PlyrCtrl.MaxMP)
+        {
+            PlyrCtrl.MP = PlyrCtrl.MaxMP;
+        }
+    }
+
     // Update text
     public void UpdateText(string newText)
     {
@@ -209,6 +228,6 @@ public class UIEvent : MonoBehaviour
     // Extend text
     public void ExtendText(string moreText)
     {
-        textBox.text = moreText;
+        textBox.text += moreText;
     }
 }
