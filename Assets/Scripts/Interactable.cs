@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -7,14 +8,63 @@ public class Interactable : MonoBehaviour
     [SerializeField] public UIEvent InterfaceRef;
     [SerializeField] BoxCollider2D collider;
     [SerializeField] LayerMask mask;
-    
+    [SerializeField] string fightDialogue;
+    [SerializeField] string magicDialogue;
+    [SerializeField] string actionDialogue;
+
     // Fields
-    string[] results;
-    
+    List<string> results;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+       if (fightDialogue != null)
+       {
+            string[] parsedDialogue = fightDialogue.Split('|');
+            for (int i = 0; i < parsedDialogue.Length; i++)
+            {
+                results.Add(parsedDialogue[i]);
+            }
+       }
+       else
+       {
+            for (int i = 0; i < 3; i++)
+            {
+                results.Add("Fight text here");
+            }
+       }
+
+        if (magicDialogue != null)
+        {
+            string[] parsedDialogue = magicDialogue.Split('|');
+            for (int i = 0; i < parsedDialogue.Length; i++)
+            {
+                results.Add(parsedDialogue[i]);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                results.Add("Magic text here");
+            }
+        }
+
+        if (actionDialogue != null)
+        {
+            string[] parsedDialogue = actionDialogue.Split('|');
+            for (int i = 0; i < parsedDialogue.Length; i++)
+            {
+                results.Add(parsedDialogue[i]);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                results.Add("Other text here");
+            }
+        }
     }
 
     // Update is called once per frame
@@ -30,15 +80,15 @@ public class Interactable : MonoBehaviour
             switch (action)
             {
                 case 1:
-                    InterfaceRef.UpdateText("GenericInteractable does not bother himself with needless fights");
+                    InterfaceRef.UpdateText(results[0]);
                     break;
 
                 case 2:
-                    InterfaceRef.UpdateText("GenericInteractable does not bother himself with needless fights");
+                    InterfaceRef.UpdateText(results[1]);
                     break;
 
                 case 3:
-                    InterfaceRef.UpdateText("GenericInteractable does not bother himself with needless fights");
+                    InterfaceRef.UpdateText(results[2]);
                     break;
             }
         }
@@ -48,15 +98,15 @@ public class Interactable : MonoBehaviour
             switch (action)
             {
                 case 1:
-                    InterfaceRef.UpdateText("All magic is ineffective against GenericInteractable");
+                    InterfaceRef.UpdateText(results[3]);
                     break;
 
                 case 2:
-                    InterfaceRef.UpdateText("All magic is ineffective against GenericInteractable");
+                    InterfaceRef.UpdateText(results[4]);
                     break;
 
                 case 3:
-                    InterfaceRef.UpdateText("All magic is ineffective against GenericInteractable");
+                    InterfaceRef.UpdateText(results[5]);
                     break;
             }
         }
@@ -66,15 +116,15 @@ public class Interactable : MonoBehaviour
             switch (action)
             {
                 case 1:
-                    InterfaceRef.UpdateText("GenericInteractable is a GenericInteractable. 9000 HP, 9000 ATK");
+                    InterfaceRef.UpdateText(results[6]);
                     break;
 
                 case 2:
-                    InterfaceRef.UpdateText("\"I am the InteractionSquare. That's InteractionSquare your highness to you.\"");
+                    InterfaceRef.UpdateText(results[7]);
                     break;
 
                 case 3:
-                    InterfaceRef.UpdateText("I don't know what you're trying to do, but it clearly didn't work.");
+                    InterfaceRef.UpdateText(results[8]);
                     break;
             }
         }
