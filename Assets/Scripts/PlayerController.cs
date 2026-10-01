@@ -149,6 +149,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Stops the player from moving
+    /// </summary>
+    public void StopMovement()
+    {
+        movingUp = false;
+        movingDown = false;
+        movingLeft = false;
+        movingRight = false;
+    }
+
     #region Movement Callbacks
     // Movement Callbacks
     public void MoveUp(InputAction.CallbackContext context)
