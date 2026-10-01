@@ -19,10 +19,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerInteraction interactRef;
     [SerializeField] BoxCollider2D collider;
     [SerializeField] LayerMask mask;
+    [SerializeField] public int HP; // Player Hit Points
+    [SerializeField] public int MP; // Player Magic Points
 
     // Fields
-    int HP; // Player Hit Points
-    int MP; // Player Magic Points
     public string direction; // Direction
     Vector2 currentPosition; // Current Position (to be moved into)
     bool idle; // Is the player idle?

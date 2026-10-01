@@ -104,6 +104,10 @@ public class UIEvent : MonoBehaviour
                 case "Tree":
                     targetObject.GetComponent<Tree>().ReturnResult(category, choice);
                     break;
+
+                case "Rat":
+                    targetObject.GetComponent<Tree>().ReturnResult(category, choice);
+                    break;
             }
         }
         else
@@ -163,6 +167,11 @@ public class UIEvent : MonoBehaviour
                 actionMenu.SetActive(true);
                 break;
         }
+    }
+
+    public void DealDamage(int damage)
+    {
+        
     }
 
     // Update text

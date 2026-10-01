@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Collections;
 
 public class Interactable : MonoBehaviour
 {
@@ -8,19 +9,22 @@ public class Interactable : MonoBehaviour
     [SerializeField] public UIEvent InterfaceRef;
     [SerializeField] BoxCollider2D collider;
     [SerializeField] LayerMask mask;
+    [SerializeField] string initialDialogue;
     [SerializeField] string fightDialogue;
     [SerializeField] string magicDialogue;
     [SerializeField] string actionDialogue;
 
     // Fields
-    List<string> results;
+    List<string> results = new List<string>();
+    string[] parsedDialogue;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        if (fightDialogue != null)
        {
-            string[] parsedDialogue = fightDialogue.Split('|');
+            parsedDialogue = fightDialogue.Split('|');
             for (int i = 0; i < parsedDialogue.Length; i++)
             {
                 results.Add(parsedDialogue[i]);
@@ -36,7 +40,7 @@ public class Interactable : MonoBehaviour
 
         if (magicDialogue != null)
         {
-            string[] parsedDialogue = magicDialogue.Split('|');
+            parsedDialogue = magicDialogue.Split('|');
             for (int i = 0; i < parsedDialogue.Length; i++)
             {
                 results.Add(parsedDialogue[i]);
@@ -52,7 +56,7 @@ public class Interactable : MonoBehaviour
 
         if (actionDialogue != null)
         {
-            string[] parsedDialogue = actionDialogue.Split('|');
+            parsedDialogue = actionDialogue.Split('|');
             for (int i = 0; i < parsedDialogue.Length; i++)
             {
                 results.Add(parsedDialogue[i]);
@@ -77,7 +81,7 @@ public class Interactable : MonoBehaviour
     {
         if(category == MenuState.Top)
         {
-            InterfaceRef.UpdateText("This is the almighty GenericInteractable");
+            InterfaceRef.UpdateText(initialDialogue);
         }
 
         if (category == MenuState.Fight)

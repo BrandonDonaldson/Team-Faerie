@@ -1,11 +1,8 @@
 using UnityEngine;
 
-public class Enemy : Interactable
+public class Rat : Enemy
 {
-    [SerializeField] public int HP; // Hit Points
-    [SerializeField] public int MP; // Magic Points
-    [SerializeField] public int damage;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +14,4 @@ public class Enemy : Interactable
     {
         
     }
-
-
 }
