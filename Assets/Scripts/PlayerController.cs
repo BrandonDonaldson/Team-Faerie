@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
             idle = false;
         }
 
+        if(pSt == PlayerState.Moving)
+        {
             // Movement
             CheckRotation(direction);
 
@@ -88,10 +90,9 @@ public class PlayerController : MonoBehaviour
 
                 moveTimer = moveDelay;
             }
-
             // Move the player
             transform.position = currentPosition;
-        
+        }
     }
 
     /// <summary>
