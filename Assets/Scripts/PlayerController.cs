@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -17,10 +18,14 @@ public class PlayerController : MonoBehaviour
 {
     // References
     [SerializeField] PlayerInteraction interactRef;
+    [SerializeField] public UnityEngine.UI.Slider HPSlider;
+    [SerializeField] public UnityEngine.UI.Slider MPSlider;
     [SerializeField] BoxCollider2D collider;
     [SerializeField] LayerMask mask;
     [SerializeField] public int HP; // Player Hit Points
     [SerializeField] public int MP; // Player Magic Points
+    [SerializeField] public int MaxHP; // Hit Points
+    [SerializeField] public int MaxMP; // Magic Points
     [SerializeField] public int DMG;
     [SerializeField] public int DMGVar;
 
@@ -52,6 +57,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateBars();
+        
         // Check if player is idle (user is not pressing any keys)
         if (!movingUp && !movingDown && !movingLeft && !movingRight)
         {
@@ -134,6 +141,23 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1.0f, mask);
 
         return !hit.collider;
+    }
+
+    // Updates HP and MP Sliders
+    public void UpdateBars()
+    {
+        if (HP < 0)
+        {
+            HP = 0;
+        }
+
+        if (MP < 0)
+        {
+            MP = 0;
+        }
+
+        HPSlider.value = (float)HP / (float)MaxHP;
+        MPSlider.value = (float)MP / (float)MaxMP;
     }
 
     /// <summary>

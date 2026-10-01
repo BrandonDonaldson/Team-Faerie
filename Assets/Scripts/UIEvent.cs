@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 using Unity.Collections;
+using UnityEngine.UI;
 
 public enum MenuState
 {
@@ -21,6 +22,8 @@ public class UIEvent : MonoBehaviour
     [SerializeField] GameObject fightMenu;
     [SerializeField] GameObject magicMenu;
     [SerializeField] GameObject actionMenu;
+    [SerializeField] Slider HPSliderRef;
+    [SerializeField] Slider MPSliderRef;
 
     // Fields
     public GameObject targetObject;
@@ -100,6 +103,8 @@ public class UIEvent : MonoBehaviour
 
                 case "Enemy":
                     targetObject.GetComponent<Enemy>().ReturnResult(category, choice);
+                    targetObject.GetComponent<Enemy>().HPSlider = HPSliderRef;
+                    targetObject.GetComponent<Enemy>().MPSlider = MPSliderRef;
                     break;
 
                 case "Tree":
@@ -107,7 +112,9 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "Rat":
-                    targetObject.GetComponent<Tree>().ReturnResult(category, choice);
+                    targetObject.GetComponent<Rat>().ReturnResult(category, choice);
+                    targetObject.GetComponent<Rat>().HPSlider = HPSliderRef;
+                    targetObject.GetComponent<Rat>().MPSlider = MPSliderRef;
                     break;
             }
         }
@@ -172,11 +179,12 @@ public class UIEvent : MonoBehaviour
 
     public int DealDamage(MenuState category)
     {    
-        int rolledDamage = UnityEngine.Random.Range(PlyrCtrl.DMG - PlyrCtrl.DMGVar, PlyrCtrl.DMG + PlyrCtrl.DMGVar);
+        int rolledDamage = UnityEngine.Random.Range(PlyrCtrl.DMG - PlyrCtrl.DMGVar, PlyrCtrl.DMG + PlyrCtrl.DMGVar + 1);
 
         if (category == MenuState.Magic)
         {
             rolledDamage *= 2;
+            SpendMana(2);
         }
 
         return rolledDamage;
@@ -201,6 +209,6 @@ public class UIEvent : MonoBehaviour
     // Extend text
     public void ExtendText(string moreText)
     {
-        textBox.text += "\n" + moreText;
+        textBox.text = moreText;
     }
 }

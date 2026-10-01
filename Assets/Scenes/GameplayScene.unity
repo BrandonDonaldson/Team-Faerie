@@ -3295,7 +3295,7 @@ GameObject:
   - component: {fileID: 638530662}
   - component: {fileID: 638530663}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Player Mana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3344,11 +3344,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 0, g: 0.8528714, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.85098046, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.85098046, b: 1, a: 1}
+    m_SelectedColor: {r: 0, g: 0.85098046, b: 1, a: 1}
+    m_DisabledColor: {r: 0, g: 0.85098046, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3370,7 +3370,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.634
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3472,7 +3472,7 @@ GameObject:
   - component: {fileID: 646464866}
   - component: {fileID: 646464867}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Player HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3521,11 +3521,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3547,7 +3547,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4096,7 +4096,7 @@ GameObject:
   - component: {fileID: 738794833}
   - component: {fileID: 738794834}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Enemy Mana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4145,11 +4145,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 0, g: 0.8509804, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.85098046, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.85098046, b: 1, a: 1}
+    m_SelectedColor: {r: 0, g: 0.85098046, b: 1, a: 1}
+    m_DisabledColor: {r: 0, g: 0.85098046, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -6230,7 +6230,7 @@ GameObject:
   - component: {fileID: 1189649887}
   - component: {fileID: 1189649888}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Enemy HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6279,11 +6279,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -7522,14 +7522,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRef: {fileID: 1418070422}
+  HPSlider: {fileID: 646464867}
+  MPSlider: {fileID: 638530663}
   collider: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 64
-  HP: 0
-  MP: 0
-  DMG: 0
-  DMGVar: 0
+  HP: 15
+  MP: 10
+  MaxHP: 15
+  MaxMP: 10
+  DMG: 2
+  DMGVar: 1
   direction: 
   pSt: 0
   moveDelay: 0.25
@@ -8845,8 +8849,12 @@ MonoBehaviour:
   fightDialogue: 
   magicDialogue: 
   actionDialogue: 
+  HPSlider: {fileID: 0}
+  MPSlider: {fileID: 0}
   HP: 0
   MP: 0
+  MaxHP: 0
+  MaxMP: 0
   damage: 0
 --- !u!1 &1643121562
 GameObject:
@@ -10746,7 +10754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1273224229898512265, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: m_TagString
-      value: Interactable
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: InterfaceRef
@@ -11019,7 +11027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656671497037354275, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: m_TagString
-      value: Interactable
+      value: Rat
       objectReference: {fileID: 0}
     - target: {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: HP
@@ -11037,6 +11045,24 @@ PrefabInstance:
       propertyPath: InterfaceRef
       value: 
       objectReference: {fileID: 1335813527}
+    - target: {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+      propertyPath: fightDialogue
+      value: You strike the rat for|You strike the rat for|You strike the rat for
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+      propertyPath: magicDialogue
+      value: You blast the rat with [GENERIC MAGIC] for|You blast the rat with [GENERIC
+        MAGIC] for|You blast the rat with [GENERIC MAGIC] for
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+      propertyPath: actionDialogue
+      value: This is a rat (that may or may not be infected with the bubonic plague).|*squeak
+        squeak*|I don't know what you're trying to do, but it clearly didn't work.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+      propertyPath: initialDialogue
+      value: '*squeak squeak*'
+      objectReference: {fileID: 0}
     - target: {fileID: 8494686661686833352, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -11077,11 +11103,52 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6588026182225333482, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1656671497037354275, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 8313517189232229358}
   m_SourcePrefab: {fileID: 100100000, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+--- !u!1 &8313517189232229357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1656671497037354275, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
+  m_PrefabInstance: {fileID: 8313517189232229356}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8313517189232229358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313517189232229357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c2b64ec621a9c4799cd377df4b9128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InterfaceRef: {fileID: 1335813527}
+  collider: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  initialDialogue: '*squeak squeak*'
+  fightDialogue: You strike the rat for|You strike the rat for|You strike the rat
+    for
+  magicDialogue: You blast the rat with [GENERIC MAGIC] for|You blast the rat with
+    [GENERIC MAGIC] for|You blast the rat with [GENERIC MAGIC] for
+  actionDialogue: This is a rat (that may or may not be infected with the bubonic
+    plague).|*squeak squeak*|I don't know what you're trying to do, but it clearly
+    didn't work.
+  HPSlider: {fileID: 1189649888}
+  MPSlider: {fileID: 738794834}
+  HP: 10
+  MP: 0
+  MaxHP: 10
+  MaxMP: 1
+  damage: 2
 --- !u!1001 &8455489992071036242
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,9 +23,4 @@ public class Tree : Interactable
             Offload();
         }
     }
-
-    public void Offload()
-    {
-        Destroy(this.gameObject);
-    }
 }
