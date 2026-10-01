@@ -17,11 +17,4 @@ public class Enemy : Interactable
     {
         
     }
-
-    public override void ReturnResult(MenuState category, int action)
-    {
-        base.ReturnResult(category, action);
-
-        InterfaceRef.DealDamage(HP);
-    }
 }

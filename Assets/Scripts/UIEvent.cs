@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using Unity.Collections;
 
 public enum MenuState
 {
@@ -169,14 +170,37 @@ public class UIEvent : MonoBehaviour
         }
     }
 
-    public void DealDamage(int damage)
+    public int DealDamage(MenuState category)
+    {    
+        int rolledDamage = UnityEngine.Random.Range(PlyrCtrl.DMG - PlyrCtrl.DMGVar, PlyrCtrl.DMG + PlyrCtrl.DMGVar);
+
+        if (category == MenuState.Magic)
+        {
+            rolledDamage *= 2;
+        }
+
+        return rolledDamage;
+    }
+
+    public void TakeDamage(int damage)
     {
-        
+        PlyrCtrl.HP -= damage;
+    }
+
+    public void SpendMana(int mana)
+    {
+        PlyrCtrl.MP -= mana;
     }
 
     // Update text
     public void UpdateText(string newText)
     {
         textBox.text = newText;
+    }
+
+    // Extend text
+    public void ExtendText(string moreText)
+    {
+        textBox.text += "\n" + moreText;
     }
 }

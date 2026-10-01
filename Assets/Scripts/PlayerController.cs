@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask mask;
     [SerializeField] public int HP; // Player Hit Points
     [SerializeField] public int MP; // Player Magic Points
+    [SerializeField] public int DMG;
+    [SerializeField] public int DMGVar;
 
     // Fields
     public string direction; // Direction
