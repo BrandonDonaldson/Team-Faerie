@@ -63,6 +63,7 @@ public class PlayerInteraction : MonoBehaviour
             InterfaceScript.targetObject = ReturnInteractable();
             InterfaceScript.CallForResult();
             PlyrCtrl.pSt = PlayerState.Interacting;
+            PlyrCtrl.StopMovement();
         }
     }
 }
