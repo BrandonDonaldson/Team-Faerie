@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     // Fields
     public string direction; // Direction
     Vector2 currentPosition; // Current Position (to be moved into)
-    bool idle; // Is the player idle?
+    private bool idle; // Is the player idle?
     public PlayerState pSt; // Player state (for the state machine)
 
     // Keeps track of the key being held
@@ -44,6 +44,14 @@ public class PlayerController : MonoBehaviour
     // Timers
     float moveTimer;
     [SerializeField] float moveDelay = 0.25f;
+
+    public bool Idle
+    {
+        get
+        {
+            return idle;
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -100,7 +108,7 @@ public class PlayerController : MonoBehaviour
                 moveTimer = moveDelay;
             }
             // Move the player
-            transform.position = currentPosition;
+            //transform.position = currentPosition;
         }
     }
 
