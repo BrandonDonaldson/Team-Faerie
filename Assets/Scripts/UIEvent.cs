@@ -89,36 +89,64 @@ public class UIEvent : MonoBehaviour
     // Calls for the results depending on object tab
     public void CallForResult()
     {
+        Button[] buttonList = topMenu.GetComponentsInChildren<Button>();
+        buttonList[3].interactable = true;
+        
         if (targetObject)
         {
             switch (targetObject.tag)
             {
                 case "Interactable":
                     targetObject.GetComponent<Interactable>().ReturnResult(category, choice);
+                    buttonList[0].interactable = true;
+                    buttonList[1].interactable = true;
+                    buttonList[2].interactable = true;
                     break;
 
                 case "NPC":
                     targetObject.GetComponent<NPC>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = true;
                     break;
 
                 case "Enemy":
                     targetObject.GetComponent<Enemy>().ReturnResult(category, choice);
                     targetObject.GetComponent<Enemy>().HPSlider = HPSliderRef;
                     targetObject.GetComponent<Enemy>().MPSlider = MPSliderRef;
+                    buttonList[0].interactable = true;
+                    buttonList[1].interactable = true;
+                    buttonList[2].interactable = true;
                     break;
 
                 case "Tree":
                     targetObject.GetComponent<Tree>().ReturnResult(category, choice);
+                    buttonList[0].interactable = true;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = true;
                     break;
 
                 case "Rat":
                     targetObject.GetComponent<Rat>().ReturnResult(category, choice);
                     targetObject.GetComponent<Rat>().HPSlider = HPSliderRef;
                     targetObject.GetComponent<Rat>().MPSlider = MPSliderRef;
+                    buttonList[0].interactable = true;
+                    buttonList[1].interactable = true;
+                    buttonList[2].interactable = true;
                     break;
 
                 case "Totem":
                     targetObject.GetComponent<Totem>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = true;
+                    break;
+
+                case "Pillar":
+                    targetObject.GetComponent<Pillar>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = true;
+                    buttonList[2].interactable = true;
                     break;
             }
         }
