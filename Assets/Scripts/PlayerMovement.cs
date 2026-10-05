@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
                 // Check if multiple keys are being pressed
                 if (Mathf.Abs(inputDirection.x) == 1f && Mathf.Abs(inputDirection.y) == 1f)
                 {
+                    Debug.Log("Multiple keys are being pressed!" + inputDirection);
                     // Limit movement to newest keypress based on previous InputDirection
                     if (Mathf.Abs(previousInputDirection.y) == 1f)
                     {
