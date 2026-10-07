@@ -10,6 +10,7 @@ TagManager:
   - NPC
   - Rat
   - Totem
+  - Pillar
   layers:
   - Default
   - TransparentFX

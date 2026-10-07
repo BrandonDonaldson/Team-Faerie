@@ -106,6 +106,13 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 0
+  initialDialogue: The tree stands there, mocking you.
+  fightDialogue: You cut the tree!|You cut the tree!|You cut the tree!
+  magicDialogue: Seems a little excessive, don't you think?|Seems a little excessive,
+    don't you think?|Seems a little excessive, don't you think?
+  actionDialogue: This is a tree. Just a normal, ordinary tree.|"..."|The tree is
+    a bit too sturdy to just push over. Maybe a more violent course of action is
+    needed.
 --- !u!61 &8745002881718351986
 BoxCollider2D:
   m_ObjectHideFlags: 0

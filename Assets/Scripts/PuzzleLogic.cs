@@ -14,13 +14,16 @@ public class PuzzleLogic : MonoBehaviour
     [SerializeField] GameObject obstacleRef;
     [SerializeField] bool solved;
 
+    [SerializeField] int objectsInList;
+    [SerializeField] bool exists;
+
     List<GameObject> objectContainers;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         solved = false;
-        List<GameObject> objectContainers = new List<GameObject>();
+        objectContainers = new List<GameObject>();
         switch (type)
         {
             case PuzzleType.Pillars:
@@ -35,16 +38,22 @@ public class PuzzleLogic : MonoBehaviour
             default:
                 break;
         }
+
+        objectsInList = objectContainers.Count;
+        if (objectContainers != null)
+        {
+            exists = true;
+        }
+        else
+        {
+            exists = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (solved)
-        {
-            obstacleRef.SetActive(false);
-            InterfaceRef.ExtendText("\n\nYou hear something open up nearby...");
-        }
+
     }
 
     public void CheckSolution()
@@ -56,10 +65,12 @@ public class PuzzleLogic : MonoBehaviour
                 {
                     if (!objectContainers[i].GetComponent<Pillar>().isSolved)
                     {
-                        break;
+                        return;
                     }
                 }
                 solved = true;
+                obstacleRef.SetActive(false);
+                InterfaceRef.ExtendText("\n\nYou hear something open up nearby...");
                 break;
 
             default:

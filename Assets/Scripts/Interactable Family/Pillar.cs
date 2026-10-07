@@ -3,6 +3,7 @@ using UnityEngine;
 public class Pillar : Interactable
 {
     [SerializeField] PuzzleLogic puzzleRef;
+    [SerializeField] SpriteRenderer centerRef;
     [SerializeField] int magicType;
     [SerializeField] Color32 solvedColor;
     
@@ -27,8 +28,7 @@ public class Pillar : Interactable
 
         if (category == MenuState.Magic && action == magicType)
         {
-            InterfaceRef.UpdateText("The magic lights up the pillar.");
-            GetComponent<SpriteRenderer>().color = solvedColor;
+            centerRef.color = solvedColor;
             isSolved = true;
             puzzleRef.CheckSolution();
         }
