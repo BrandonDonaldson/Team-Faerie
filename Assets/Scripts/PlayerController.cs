@@ -6,6 +6,7 @@ using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -66,7 +67,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         UpdateBars();
-        
+        CheckHP();
+
         // Check if player is idle (user is not pressing any keys)
         if (!movingUp && !movingDown && !movingLeft && !movingRight)
         {
@@ -278,4 +280,12 @@ public class PlayerController : MonoBehaviour
         }
     }
     #endregion
+
+    void CheckHP()
+    {
+        if (HP <= 0)
+        {
+            SceneManager.LoadScene("GameplayScene");
+        }
+    }
 }
