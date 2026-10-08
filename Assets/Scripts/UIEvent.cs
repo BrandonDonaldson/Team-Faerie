@@ -18,6 +18,7 @@ public class UIEvent : MonoBehaviour
     // References
     [SerializeField] PlayerController PlyrCtrl;
     [SerializeField] TextMeshProUGUI textBox;
+    [SerializeField] GameObject lockUI;
     [SerializeField] GameObject topMenu;
     [SerializeField] GameObject fightMenu;
     [SerializeField] GameObject magicMenu;
@@ -35,6 +36,7 @@ public class UIEvent : MonoBehaviour
     void Start()
     {
         category = MenuState.Top;
+        lockUI.SetActive(false);
         choice = 4;
     }
 
@@ -44,6 +46,7 @@ public class UIEvent : MonoBehaviour
         SetMenu();
     }
 
+    #region MenuButtons
     // Code for Button 1 (top left)
     public void Button1()
     {
@@ -208,7 +211,9 @@ public class UIEvent : MonoBehaviour
                 break;
         }
     }
+#endregion
 
+    #region StatMethods
     // Stat-related Methods
     public int DealDamage(MenuState category)
     {    
@@ -260,4 +265,19 @@ public class UIEvent : MonoBehaviour
     {
         textBox.text += moreText;
     }
+    #endregion
+
+    #region LockUI
+    public void ToggleLock()
+    {
+        if (!lockUI.active)
+        {
+            lockUI.SetActive(true);
+        }
+        else
+        {
+            lockUI.SetActive(false);
+        }
+    }
+    #endregion
 }

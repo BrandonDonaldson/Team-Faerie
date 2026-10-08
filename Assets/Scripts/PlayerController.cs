@@ -1,11 +1,5 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 using UnityEngine.SceneManagement;
 
 public enum PlayerState
@@ -15,13 +9,15 @@ public enum PlayerState
     Paused
 }
 
+/// <summary>
+/// Hub class for player, houses player state and stats
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     // References
     [SerializeField] PlayerInteraction interactRef;
     [SerializeField] public UnityEngine.UI.Slider HPSlider;
     [SerializeField] public UnityEngine.UI.Slider MPSlider;
-    [SerializeField] BoxCollider2D collider;
     [SerializeField] LayerMask mask;
     [SerializeField] public int HP; // Player Hit Points
     [SerializeField] public int MP; // Player Magic Points
@@ -32,34 +28,12 @@ public class PlayerController : MonoBehaviour
 
     // Fields
     public string direction; // Direction
-    Vector2 currentPosition; // Current Position (to be moved into)
-    private bool idle; // Is the player idle?
     public PlayerState pSt; // Player state (for the state machine)
-
-    // Keeps track of the key being held
-    bool movingUp;
-    bool movingDown;
-    bool movingLeft;
-    bool movingRight;
-
-    // Timers
-    float moveTimer;
-    [SerializeField] float moveDelay = 0.25f;
-
-    public bool Idle
-    {
-        get
-        {
-            return idle;
-        }
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         direction = "up";
-        currentPosition = transform.position;
-        moveTimer = moveDelay;
         pSt = PlayerState.Moving;
     }
 
@@ -69,48 +43,10 @@ public class PlayerController : MonoBehaviour
         UpdateBars();
         CheckHP();
 
-        // Check if player is idle (user is not pressing any keys)
-        if (!movingUp && !movingDown && !movingLeft && !movingRight)
-        {
-            idle = true;
-        }
-        else
-        {
-            idle = false;
-        }
-
         if(pSt == PlayerState.Moving)
         {
             // Movement
             CheckRotation(direction);
-
-            // Count Down movement timer
-            moveTimer -= Time.deltaTime;
-
-            // Move repeatedly while a key is held
-            if (moveTimer <= 0f)
-            {
-                if (movingUp)
-                {
-                    MovePlayer(new Vector2(0.0f, 1.0f));
-                }
-                else if (movingDown)
-                {
-                    MovePlayer(new Vector2(0.0f, -1.0f));
-                }
-                else if (movingLeft)
-                {
-                    MovePlayer(new Vector2(-1.0f, 0.0f));
-                }
-                else if (movingRight)
-                {
-                    MovePlayer(new Vector2(1.0f, 0.0f));
-                }
-
-                moveTimer = moveDelay;
-            }
-            // Move the player
-            //transform.position = currentPosition;
         }
     }
 
@@ -138,19 +74,6 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                 break;
         }
-
-        // When the user isnt pressing any keys, keep idle running
-        if (idle)
-        {
-            moveTimer = moveDelay;
-        }
-    }
-
-    private bool DetectObstacle(Vector2 direction)
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1.0f, mask);
-
-        return !hit.collider;
     }
 
     // Updates HP and MP Sliders
@@ -169,29 +92,12 @@ public class PlayerController : MonoBehaviour
         HPSlider.value = (float)HP / (float)MaxHP;
         MPSlider.value = (float)MP / (float)MaxMP;
     }
-
-    /// <summary>
-    /// Moves Player in the given direction
-    /// </summary>
-    /// <param name="moveDirection">Direction to move</param>
-    /// <param name="newDirection">Direction the player will Face</param>
-    public void MovePlayer(Vector2 moveDirection)
+    private void CheckHP()
     {
-        if(DetectObstacle(moveDirection))
+        if (HP <= 0)
         {
-            currentPosition = (Vector2)transform.position + moveDirection;
+            SceneManager.LoadScene("GameplayScene");
         }
-    }
-
-    /// <summary>
-    /// Stops the player from moving
-    /// </summary>
-    public void StopMovement()
-    {
-        movingUp = false;
-        movingDown = false;
-        movingLeft = false;
-        movingRight = false;
     }
 
     #region Movement Callbacks
@@ -202,17 +108,7 @@ public class PlayerController : MonoBehaviour
         {
             if (context.started)
             {
-                movingUp = true;
-                movingDown = false;
-                movingLeft = false;
-                movingRight = false;
-
                 direction = "up";
-            }
-
-            if (context.canceled)
-            {
-                movingUp = false;
             }
         }
     }
@@ -223,17 +119,7 @@ public class PlayerController : MonoBehaviour
         {
             if (context.started)
             {
-                movingUp = false;
-                movingDown = true;
-                movingLeft = false;
-                movingRight = false;
-
                 direction = "down";
-            }
-
-            if (context.canceled)
-            {
-                movingDown = false;
             }
         }
     }
@@ -244,17 +130,7 @@ public class PlayerController : MonoBehaviour
         {
             if (context.started)
             {
-                movingUp = false;
-                movingDown = false;
-                movingLeft = true;
-                movingRight = false;
-
                 direction = "left";
-            }
-
-            if (context.canceled)
-            {
-                movingLeft = false;
             }
         }
     }
@@ -265,27 +141,9 @@ public class PlayerController : MonoBehaviour
         {
             if (context.started)
             {
-                movingUp = false;
-                movingDown = false;
-                movingLeft = false;
-                movingRight = true;
-
                 direction = "right";
-            }
-
-            if (context.canceled)
-            {
-                movingRight = false;
             }
         }
     }
     #endregion
-
-    void CheckHP()
-    {
-        if (HP <= 0)
-        {
-            SceneManager.LoadScene("GameplayScene");
-        }
-    }
 }
