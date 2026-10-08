@@ -4,19 +4,20 @@ using UnityEngine;
 public class NPC : Interactable
 {
     // References
-    [SerializeField] string randomizedDialogue;
+    [SerializeField] string loopedDialogue;
 
     // Fields
-    string[] parsedRandom;
+    string[] parsedLoop;
+    [SerializeField] int dialogueIndex = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         OnStartUp();
         
-        if (randomizedDialogue != null)
+        if (loopedDialogue != null)
         {
-            parsedRandom = randomizedDialogue.Split('|');
+            parsedLoop = loopedDialogue.Split('|');
         }
     }
 
@@ -28,11 +29,27 @@ public class NPC : Interactable
 
     public override void ReturnResult(MenuState category, int action)
     {
+        // Resets back to the First Dialogue option if you leave
+        if (category == MenuState.Top)
+        {
+            dialogueIndex = 0;
+        }
+
         base.ReturnResult(category, action);
 
-        if (parsedRandom != null && category == MenuState.Action && action == 2)
+        if (parsedLoop != null && category == MenuState.Action && action == 2)
         {
-            InterfaceRef.UpdateText(parsedRandom[Random.Range(0, parsedRandom.Length)]);
+            // Updates the text to the index of the dialogue
+            InterfaceRef.UpdateText(parsedLoop[dialogueIndex]);
+            
+            // Concat
+            dialogueIndex++;
+
+            // if it reaches the end of the string array, to back to the first Dialogue
+            if (dialogueIndex == parsedLoop.Length)
+            {
+                dialogueIndex = 0;
+            }
         }
     }
 }
