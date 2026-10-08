@@ -31,6 +31,7 @@ public class Interactable : MonoBehaviour
         
     }
 
+    // Return result is used to update the text with the default text set in the object
     public virtual void ReturnResult(MenuState category, int action)
     {
         if(category == MenuState.Top)
@@ -98,6 +99,7 @@ public class Interactable : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    // String parser. Used for default dialogue.
     public void OnStartUp()
     {
         if (fightDialogue != null)

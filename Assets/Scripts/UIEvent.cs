@@ -209,6 +209,7 @@ public class UIEvent : MonoBehaviour
         }
     }
 
+    // Stat-related Methods
     public int DealDamage(MenuState category)
     {    
         int rolledDamage = UnityEngine.Random.Range(PlyrCtrl.DMG - PlyrCtrl.DMGVar, PlyrCtrl.DMG + PlyrCtrl.DMGVar + 1);
@@ -222,6 +223,7 @@ public class UIEvent : MonoBehaviour
         return rolledDamage;
     }
 
+    
     public void TakeDamage(int damage)
     {
         PlyrCtrl.HP -= damage;
