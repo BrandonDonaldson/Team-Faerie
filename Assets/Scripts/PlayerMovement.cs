@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
         // Move the player to the move point
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, playerMoveSpeed * Time.deltaTime);
 
-
         // Determine player movement direction
         if(playerController.pSt == PlayerState.Moving)
         {
@@ -35,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
                 // Check if multiple keys are being pressed
                 if (Mathf.Abs(inputDirection.x) == 1f && Mathf.Abs(inputDirection.y) == 1f)
                 {
-                    Debug.Log("Multiple keys are being pressed!" + inputDirection);
                     // Limit movement to newest keypress based on previous InputDirection
                     if (Mathf.Abs(previousInputDirection.y) == 1f)
                     {
