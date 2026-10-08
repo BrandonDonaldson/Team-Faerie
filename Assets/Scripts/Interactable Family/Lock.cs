@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Lock : Interactable
 {
     [SerializeField] PuzzleLogic puzzleManager;
-    [SerializeField] int solutionCode;
+    [SerializeField] string solutionCode;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +22,7 @@ public class Lock : Interactable
     public override void ReturnResult(MenuState category, int action)
     {
         base.ReturnResult(category, action);
-        if (category == MenuState.Fight && action == 3)
+        if (category == MenuState.Action && action == 3)
         {
             InterfaceRef.ToggleLock();
         }

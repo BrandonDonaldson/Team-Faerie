@@ -151,6 +151,13 @@ public class UIEvent : MonoBehaviour
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
                     break;
+
+                case "Lock":
+                    targetObject.GetComponent<Lock>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = true;
+                    break;
             }
         }
         else

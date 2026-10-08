@@ -12,7 +12,7 @@ enum PuzzleType
 }
 
 public class PuzzleLogic : MonoBehaviour
-{
+{    
     [SerializeField] UIEvent InterfaceRef;
     [SerializeField] GameObject ElementRef;
     [SerializeField] PuzzleType type;
@@ -24,7 +24,8 @@ public class PuzzleLogic : MonoBehaviour
     [SerializeField] bool exists;
 
     List<GameObject> objectContainers;
-    public int code = 0;
+    public string code = "000";
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,7 +44,8 @@ public class PuzzleLogic : MonoBehaviour
                 break;
 
             case PuzzleType.Lock:
-                TextMeshPro[] lockSlots = ElementRef.GetComponentsInChildren<TextMeshPro>();
+                
+                TextMeshProUGUI[] lockSlots = ElementRef.GetComponentsInChildren<TextMeshProUGUI>();
                 for (int i = 0; i < lockSlots.Length; i++)
                 {
                     objectContainers.Add(lockSlots[i].gameObject);
@@ -90,9 +92,13 @@ public class PuzzleLogic : MonoBehaviour
                 break;
 
             case PuzzleType.Lock:
-                for (int i = 0; i < objectContainers.Count; i++)
+                for (int i = 0; i < 3; i++)
                 {
-                    if (int.Parse(objectContainers[i].GetComponent<TextMeshPro>().text) != code / Mathf.Pow(10,2-i))
+                    string expectedDigit = code[i].ToString();
+
+                    string enteredDigit = objectContainers[3*i].GetComponent<TextMeshProUGUI>().text;
+
+                    if (expectedDigit != enteredDigit)
                     {
                         InterfaceRef.ExtendText("\n\nYou hear an empty click, but nothing happens.");
                         InterfaceRef.ToggleLock();
@@ -104,8 +110,6 @@ public class PuzzleLogic : MonoBehaviour
                 InterfaceRef.ExtendText("\n\nAn unseen mechanisms whirrs to life and a giant slab slides out of the way.");
                 InterfaceRef.ToggleLock();
                 break;
-
-                // assume 123
 
             default:
                 break;
