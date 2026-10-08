@@ -14820,6 +14820,15 @@ PrefabInstance:
         clearly didn't work.
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
+      propertyPath: loopedDialogue
+      value: That weird looking tree over there looks like it can be cut down with
+        some force.|That rat likes to bite people! Someone should teach it a lesson.|The
+        weird totem over there seems to make use feel better.|This weird square thing
+        is here. I don't know what it wants though.|Different problems call for different
+        solutions.|Crazy? I was Crazy once. They locked me in a room, a rubber room,
+        a rubber room filled with rats. Rats. Rats made me Crazy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: initialDialogue
       value: Hello there, Player!
       objectReference: {fileID: 0}
