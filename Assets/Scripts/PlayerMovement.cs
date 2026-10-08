@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
+/// <summary>
+/// Player Movement class, handles movement and animation calls
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float playerMoveSpeed = 4f;
