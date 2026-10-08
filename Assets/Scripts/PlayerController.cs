@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         UpdateBars();
+        CheckHP();
 
         if(pSt == PlayerState.Moving)
         {
@@ -137,4 +138,12 @@ public class PlayerController : MonoBehaviour
         }
     }
     #endregion
+
+    void CheckHP()
+    {
+        if (HP <= 0)
+        {
+            SceneManager.LoadScene("GameplayScene");
+        }
+    }
 }
