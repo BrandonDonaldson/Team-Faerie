@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// Puzzle Types are all here. Uses this to determine puzzle logic used
 enum PuzzleType
 {
     Pillars
@@ -22,6 +23,7 @@ public class PuzzleLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Gets objects. This case exists because there exists the possibility of puzzles requiring certain order of solutions or otherwise
         solved = false;
         objectContainers = new List<GameObject>();
         switch (type)
@@ -49,13 +51,14 @@ public class PuzzleLogic : MonoBehaviour
             exists = false;
         }
     }
-
+    
     // Update is called once per frame
     void Update()
     {
 
     }
 
+    // Puzzle logic is located here. Uses aforementioned puzzle type to determine logic
     public void CheckSolution()
     {
         switch (type)
