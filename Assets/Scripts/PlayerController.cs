@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -91,6 +92,13 @@ public class PlayerController : MonoBehaviour
         HPSlider.value = (float)HP / (float)MaxHP;
         MPSlider.value = (float)MP / (float)MaxMP;
     }
+    private void CheckHP()
+    {
+        if (HP <= 0)
+        {
+            SceneManager.LoadScene("GameplayScene");
+        }
+    }
 
     #region Movement Callbacks
     // Movement Callbacks
@@ -138,12 +146,4 @@ public class PlayerController : MonoBehaviour
         }
     }
     #endregion
-
-    void CheckHP()
-    {
-        if (HP <= 0)
-        {
-            SceneManager.LoadScene("GameplayScene");
-        }
-    }
 }
