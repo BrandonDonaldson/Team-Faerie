@@ -236,16 +236,19 @@ public class UIEvent : MonoBehaviour
     {    
         int rolledDamage = UnityEngine.Random.Range(PlyrCtrl.DMG - PlyrCtrl.DMGVar, PlyrCtrl.DMG + PlyrCtrl.DMGVar + 1);
 
-        if (category == MenuState.Magic && PlyrCtrl.MP > 0)
+        if (category == MenuState.Magic)
         {
-            rolledDamage *= 2;
-            SpendMana(2);
-        }
-        else
-        {
-            if (PlyrCtrl.MP == 0)
+            if (PlyrCtrl.MP > 0)
             {
-                return 0;
+                rolledDamage *= 2;
+                SpendMana(2);
+            }
+            else
+            {
+                if (PlyrCtrl.MP == 0)
+                {
+                    return 0;
+                }
             }
         }
 
