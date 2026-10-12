@@ -18,6 +18,7 @@ public class UIEvent : MonoBehaviour
     // References
     [SerializeField] PlayerController PlyrCtrl;
     [SerializeField] TextMeshProUGUI textBox;
+    [SerializeField] GameObject menuControl;
     [SerializeField] GameObject lockUI;
     [SerializeField] GameObject topMenu;
     [SerializeField] GameObject fightMenu;
@@ -280,10 +281,12 @@ public class UIEvent : MonoBehaviour
         if (!lockUI.active)
         {
             lockUI.SetActive(true);
+            menuControl.SetActive(false);
         }
         else
         {
             lockUI.SetActive(false);
+            menuControl.SetActive(true);
         }
     }
     #endregion
