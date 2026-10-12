@@ -24,6 +24,7 @@ public class UIEvent : MonoBehaviour
     [SerializeField] GameObject fightMenu;
     [SerializeField] GameObject magicMenu;
     [SerializeField] GameObject actionMenu;
+    [SerializeField] GameObject sliderBox;
     [SerializeField] Slider HPSliderRef;
     [SerializeField] Slider MPSliderRef;
 
@@ -105,6 +106,7 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "NPC":
@@ -112,6 +114,7 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
                     buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "Enemy":
@@ -121,6 +124,7 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
+                    sliderBox.SetActive(true);
                     break;
 
                 case "Tree":
@@ -128,6 +132,7 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = false;
                     buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "Rat":
@@ -137,6 +142,7 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
+                    sliderBox.SetActive(true);
                     break;
 
                 case "Totem":
@@ -144,6 +150,7 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
                     buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "Pillar":
@@ -151,6 +158,7 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "Lock":
@@ -158,6 +166,7 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
                     buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
             }
         }
@@ -227,13 +236,20 @@ public class UIEvent : MonoBehaviour
     {    
         int rolledDamage = UnityEngine.Random.Range(PlyrCtrl.DMG - PlyrCtrl.DMGVar, PlyrCtrl.DMG + PlyrCtrl.DMGVar + 1);
 
-        if (category == MenuState.Magic)
+        if (category == MenuState.Magic && PlyrCtrl.MP > 0)
         {
             rolledDamage *= 2;
             SpendMana(2);
         }
+        else
+        {
+            if (PlyrCtrl.MP == 0)
+            {
+                return 0;
+            }
+        }
 
-        return rolledDamage;
+            return rolledDamage;
     }
 
     
