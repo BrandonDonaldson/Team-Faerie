@@ -309,6 +309,7 @@ public class UIEvent : MonoBehaviour
         {
             lockUI.SetActive(false);
             menuControl.SetActive(true);
+            category = MenuState.Top;
         }
     }
     #endregion
