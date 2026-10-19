@@ -8,7 +8,8 @@ using UnityEngine.UI;
 enum PuzzleType
 {
     Pillars,
-    Lock
+    Lock,
+    MovingBox
 }
 
 public class PuzzleLogic : MonoBehaviour
@@ -108,6 +109,12 @@ public class PuzzleLogic : MonoBehaviour
                 obstacleRef.SetActive(false);
                 InterfaceRef.ExtendText("\n\nAn unseen mechanisms whirrs to life and a giant slab slides out of the way.");
                 InterfaceRef.ToggleLock();
+                break;
+
+            case PuzzleType.MovingBox:
+                solved = true;
+                obstacleRef.SetActive(false);
+                InterfaceRef.ExtendText("\n\nA pressure plate sinks into the ground under the weight of the box. The locked gate slides open.");
                 break;
 
             default:

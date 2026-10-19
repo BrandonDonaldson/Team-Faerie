@@ -168,6 +168,22 @@ public class UIEvent : MonoBehaviour
                     buttonList[2].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
                     sliderBox.SetActive(false);
                     break;
+
+                case "MovingBox":
+                    targetObject.GetComponent<MovingBox>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = !targetObject.GetComponent<MovingBox>().puzzleManager.solved;
+                    buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
+                    break;
+
+                case "BoxResetter":
+                    targetObject.GetComponent<BoxResetter>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = !targetObject.GetComponent<BoxResetter>().puzzleManager.solved;
+                    sliderBox.SetActive(false);
+                    break;
             }
         }
         else

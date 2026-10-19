@@ -12,6 +12,8 @@ TagManager:
   - Totem
   - Pillar
   - Lock
+  - MovingBox
+  - BoxResetter
   layers:
   - Default
   - TransparentFX
