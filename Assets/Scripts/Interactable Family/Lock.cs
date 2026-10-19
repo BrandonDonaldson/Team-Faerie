@@ -24,6 +24,7 @@ public class Lock : Interactable
         base.ReturnResult(category, action);
         if (category == MenuState.Action && action == 3)
         {
+            // Sets UI on Action -> Act
             InterfaceRef.ToggleLock();
         }
     }

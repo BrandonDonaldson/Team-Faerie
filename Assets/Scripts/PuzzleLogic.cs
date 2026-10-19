@@ -44,7 +44,6 @@ public class PuzzleLogic : MonoBehaviour
                 break;
 
             case PuzzleType.Lock:
-                
                 TextMeshProUGUI[] lockSlots = ElementRef.GetComponentsInChildren<TextMeshProUGUI>();
                 for (int i = 0; i < lockSlots.Length; i++)
                 {
