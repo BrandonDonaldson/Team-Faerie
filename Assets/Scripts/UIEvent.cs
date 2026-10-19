@@ -295,6 +295,9 @@ public class UIEvent : MonoBehaviour
     #endregion
 
     #region LockUI
+    /// <summary>
+    /// Switches between showing lock and showing menu
+    /// </summary>
     public void ToggleLock()
     {
         if (!lockUI.active)
