@@ -165,7 +165,7 @@ public class UIEvent : MonoBehaviour
                     targetObject.GetComponent<Lock>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
-                    buttonList[2].interactable = true;
+                    buttonList[2].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
                     sliderBox.SetActive(false);
                     break;
             }
@@ -309,6 +309,8 @@ public class UIEvent : MonoBehaviour
         {
             lockUI.SetActive(false);
             menuControl.SetActive(true);
+            Button[] buttonList = topMenu.GetComponentsInChildren<Button>();
+            buttonList[2].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
             category = MenuState.Top;
         }
     }

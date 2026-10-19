@@ -18,7 +18,7 @@ public class PuzzleLogic : MonoBehaviour
     [SerializeField] PuzzleType type;
     [SerializeField] GameObject obstacleRef;
 
-    [SerializeField] bool solved;
+    [SerializeField] public bool solved;
 
     [SerializeField] int objectsInList;
     [SerializeField] bool exists;

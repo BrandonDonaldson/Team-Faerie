@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Lock : Interactable
 {
-    [SerializeField] PuzzleLogic puzzleManager;
+    [SerializeField] public PuzzleLogic puzzleManager;
     [SerializeField] string solutionCode;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
