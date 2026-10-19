@@ -145,5 +145,16 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        Debug.Log("Test");
+        
+    }
+
+    public void IWannaKMS(InputAction.CallbackContext context)
+    {
+        Debug.Log("Test");
+    }
     #endregion
 }

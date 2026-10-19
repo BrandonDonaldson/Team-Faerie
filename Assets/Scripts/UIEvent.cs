@@ -168,6 +168,8 @@ public class UIEvent : MonoBehaviour
                     buttonList[2].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
                     sliderBox.SetActive(false);
                     break;
+                case "Pause":
+                    targetObject.GetComponent<Pause>().ReturnResult(category, choice);
             }
         }
         else
