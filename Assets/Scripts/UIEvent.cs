@@ -25,6 +25,7 @@ public class UIEvent : MonoBehaviour
     [SerializeField] GameObject magicMenu;
     [SerializeField] GameObject actionMenu;
     [SerializeField] GameObject sliderBox;
+    [SerializeField] GameObject pauseMenu;
     [SerializeField] Slider HPSliderRef;
     [SerializeField] Slider MPSliderRef;
 
@@ -39,6 +40,7 @@ public class UIEvent : MonoBehaviour
     {
         category = MenuState.Top;
         lockUI.SetActive(false);
+        pauseMenu.SetActive(false);
         choice = 4;
     }
 

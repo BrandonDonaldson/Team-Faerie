@@ -2946,7 +2946,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1696440078}
     m_Modifications:
     - target: {fileID: 4943755920736338582, guid: 5156242fe2f2cdf48bc8ac50cd376ce5, type: 3}
       propertyPath: m_LocalScale.x
@@ -3005,6 +3005,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5156242fe2f2cdf48bc8ac50cd376ce5, type: 3}
+--- !u!4 &274907367 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4943755920736338582, guid: 5156242fe2f2cdf48bc8ac50cd376ce5, type: 3}
+  m_PrefabInstance: {fileID: 274907366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &278047677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12045,6 +12050,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7e7b1021-edd5-470d-8123-ca0039d05d44
     m_ActionName: 'Player/MoveRight[/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1418070421}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6ed3dffb-9361-4862-bbf5-8119189f26ee
+    m_ActionName: 'Player/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -14893,6 +14914,7 @@ Transform:
   - {fileID: 1007567269}
   - {fileID: 388000644}
   - {fileID: 1184239543}
+  - {fileID: 274907367}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1697433103
@@ -18446,4 +18468,3 @@ SceneRoots:
   - {fileID: 1664803595}
   - {fileID: 1617697817}
   - {fileID: 1070505671}
-  - {fileID: 274907366}
