@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         if (HP <= 0)
         {
-            SceneManager.LoadScene("GameplayScene");
+            SceneManager.LoadScene("Death");
         }
     }
 
