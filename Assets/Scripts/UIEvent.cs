@@ -1,9 +1,11 @@
 using System;
-using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 using Unity.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 public enum MenuState
 {
@@ -25,9 +27,10 @@ public class UIEvent : MonoBehaviour
     [SerializeField] GameObject magicMenu;
     [SerializeField] GameObject actionMenu;
     [SerializeField] GameObject sliderBox;
-    [SerializeField] GameObject pauseMenu;
     [SerializeField] Slider HPSliderRef;
     [SerializeField] Slider MPSliderRef;
+
+    private PlayerState playerStateBfrPause;
 
     // Fields
     public GameObject targetObject;
@@ -40,7 +43,6 @@ public class UIEvent : MonoBehaviour
     {
         category = MenuState.Top;
         lockUI.SetActive(false);
-        pauseMenu.SetActive(false);
         choice = 4;
     }
 
