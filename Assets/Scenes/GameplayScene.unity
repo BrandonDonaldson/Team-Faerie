@@ -18639,7 +18639,9 @@ PrefabInstance:
         weird totem over there seems to make use feel better.|This weird square thing
         is here. I don't know what it wants though.|Different problems call for different
         solutions.|Crazy? I was Crazy once. They locked me in a room, a rubber room,
-        a rubber room filled with rats. Rats. Rats made me Crazy.
+        a rubber room filled with rats. Rats. Rats made me Crazy.|If you would like
+        to see a Map I made that tells you how to light the holy pillars, just let
+        me know
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: initialDialogue
