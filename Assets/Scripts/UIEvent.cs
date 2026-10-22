@@ -1,8 +1,9 @@
 using System;
-using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 using Unity.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public enum MenuState
@@ -33,7 +34,7 @@ public class UIEvent : MonoBehaviour
     public Transform[] buttonTransforms;
     public MenuState category;
     public int choice;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
