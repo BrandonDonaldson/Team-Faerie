@@ -13183,8 +13183,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 8a5be845-622f-4d0d-a7df-04b64f36da04
+    m_ActionId: 6b202918-604c-413d-999c-a7c4ffa6c922
     m_ActionName: 'Player/Pause[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 033d6a2a-7fb0-4179-b6a5-104c15e1ce12
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
