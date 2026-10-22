@@ -12,7 +12,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] string initialDialogue;
     [SerializeField] string fightDialogue;
     [SerializeField] string magicDialogue;
-    [SerializeField] string actionDialogue;
+    [SerializeField] [TextArea] string actionDialogue;
 
     // Fields
     List<string> results = new List<string>();

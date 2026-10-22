@@ -4333,9 +4333,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1175965248}
-  m_Father: {fileID: 1613211587}
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4861,9 +4860,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 599975649}
-  m_Father: {fileID: 1613211587}
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11899,7 +11897,6 @@ MonoBehaviour:
   magicMenu: {fileID: 1009864051}
   actionMenu: {fileID: 231490296}
   sliderBox: {fileID: 164159743}
-  pauseMenu: {fileID: 0}
   HPSliderRef: {fileID: 1189649888}
   MPSliderRef: {fileID: 738794834}
   targetObject: {fileID: 0}
@@ -12411,7 +12408,7 @@ Transform:
   m_GameObject: {fileID: 1418070417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18605,8 +18602,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: actionDialogue
-      value: This is GenericNPC.|.|I don't know what you're trying to do, but it
-        clearly didn't work.
+      value: 'This is GenericNPC.|.|xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+        xx                 
+        ff                     xx
+
+        xx                  ff                    
+        xx
+
+        tt                                           xx
+
+        tt                                          
+        xx
+
+        pp                                         xx
+
+        pp                                        
+        xx
+
+        tt            ww              ll          xx
+
+        tt           
+        ww              ll          xx
+
+        xx                                        
+        xx
+
+        xx                                         xx
+
+        xxxxxxxxxxxxxxxxxxxxxxxxxxx'
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: loopedDialogue
@@ -19077,3 +19101,5 @@ SceneRoots:
   - {fileID: 1070505671}
   - {fileID: 1771234137}
   - {fileID: 211555804}
+  - {fileID: 466839707}
+  - {fileID: 518141104}
