@@ -145,5 +145,10 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        pSt = PlayerState.Paused;
+    }
     #endregion
 }
