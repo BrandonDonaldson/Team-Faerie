@@ -2151,7 +2151,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 182298723}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 211555803}
+        m_TargetAssemblyTypeName: SceneMana, Assembly-CSharp
+        m_MethodName: LoadSceneByName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &182298723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8447,7 +8459,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 879373729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1083135696}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &879373729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8938,7 +8962,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 938574604}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 211555803}
+        m_TargetAssemblyTypeName: SceneMana, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &938574604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13488,8 +13524,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 7e1a8f5a-ca83-4e33-8b78-a3fed11f3030
-    m_ActionName: 'Player/PauseMenu[/Keyboard/tab]'
+    m_ActionId: a751d1b1-6231-4c87-af07-d92ea6bc74d3
+    m_ActionName: 'Player/Paused[/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
