@@ -7,6 +7,7 @@ public class Rat : Enemy
     void Start()
     {
         OnStartUp();
+        damage = 2;
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class Rat : Enemy
         // Checks for Incoming Damage
         if (category == MenuState.Fight || category == MenuState.Magic)
         {
-            int incomingDamage = InterfaceRef.DealDamage(category);
+            int incomingDamage = InterfaceRef.DealDamage("rat", category, action);
             InterfaceRef.ExtendText(" " + incomingDamage + " damage!");
             HP -= incomingDamage;
         }

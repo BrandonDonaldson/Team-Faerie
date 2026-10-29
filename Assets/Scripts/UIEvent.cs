@@ -196,18 +196,27 @@ public class UIEvent : MonoBehaviour
     // Code for back/run (bottom right)
     public void BackButton()
     {
+        choice = 4;
         if (category != MenuState.Top)
         {
             category = MenuState.Top;
-            choice = 4;
             CallForResult();
         }
         else
         {
-            this.gameObject.SetActive(false);
-            PlyrCtrl.pSt = PlayerState.Moving;
-            UpdateText("");
-            choice = 4;
+            if (targetObject.tag == "Enemy" || targetObject.tag == "Rat" || targetObject.tag == "Infected")
+            {
+                if (UnityEngine.Random.Range(0, 2) == 1)
+                {
+                    this.gameObject.SetActive(false);
+                    PlyrCtrl.pSt = PlayerState.Moving;
+                    UpdateText("");
+                }
+                else
+                {
+                    UpdateText("You couldn't get away!");
+                }
+            }
         }
     }
 
@@ -249,14 +258,47 @@ public class UIEvent : MonoBehaviour
 
     #region StatMethods
     // Stat-related Methods
-    public int DealDamage(MenuState category)
+    public int DealDamage(string enemy, MenuState category, int choice)
     {    
-        int rolledDamage = UnityEngine.Random.Range(PlyrCtrl.DMG - PlyrCtrl.DMGVar, PlyrCtrl.DMG + PlyrCtrl.DMGVar + 1);
+        int rolledDamage = UnityEngine.Random.Range(PlyrCtrl.DMG - PlyrCtrl.DMGVar, PlyrCtrl.DMG + PlyrCtrl.DMGVar + 1); // Rolls a random value for damage
 
         if (category == MenuState.Magic)
         {
             if (PlyrCtrl.MP > 0)
             {
+                switch(choice)
+                {
+                    case 1: // Fire
+                        if (enemy == "rat")
+                        {
+                            rolledDamage = (int)(rolledDamage * 3);
+                        }
+                        else
+                        {
+                            rolledDamage = (int)(rolledDamage * 2);
+                        }
+                            
+                        SpendMana(2);
+                        break;
+
+                    case 2: // Wind
+                        rolledDamage = (int)(rolledDamage * 1.5);
+                        SpendMana(1);
+                        break;
+
+                    case 3: // Light
+                        if (enemy == "infected")
+                        {
+                            rolledDamage = (int)(rolledDamage * 3);
+                        }
+                        else
+                        {
+                            rolledDamage = (int)(rolledDamage * 2);
+                        }
+
+                        SpendMana(2);
+                        break;
+                }
                 rolledDamage *= 2;
                 SpendMana(2);
             }
