@@ -204,18 +204,52 @@ public class UIEvent : MonoBehaviour
         }
         else
         {
-            if (targetObject.tag == "Enemy" || targetObject.tag == "Rat" || targetObject.tag == "Infected")
+            switch(targetObject.tag)
             {
-                if (UnityEngine.Random.Range(0, 2) == 1)
-                {
+                case "Enemy":
+                    if (UnityEngine.Random.Range(0, 10) == 0) // 10% Failure to Run
+                    {
+                        UpdateText("You couldn't get away!");
+                    }
+                    else
+                    {
+                        this.gameObject.SetActive(false);
+                        PlyrCtrl.pSt = PlayerState.Moving;
+                        UpdateText("");
+                    }
+                    break;
+
+                case "Rat":
+                    if (UnityEngine.Random.Range(0, 5) == 0) // 20% Failure to Run
+                    {
+                        UpdateText("You couldn't get away!");
+                    }
+                    else
+                    {
+                        this.gameObject.SetActive(false);
+                        PlyrCtrl.pSt = PlayerState.Moving;
+                        UpdateText("");
+                    }
+                    break;
+
+                case "Infected":
+                    if (UnityEngine.Random.Range(0, 3) == 0) // 33% Failure to Run
+                    {
+                        UpdateText("You couldn't get away!");
+                    }
+                    else
+                    {
+                        this.gameObject.SetActive(false);
+                        PlyrCtrl.pSt = PlayerState.Moving;
+                        UpdateText("");
+                    }
+                    break;
+                
+                default:
                     this.gameObject.SetActive(false);
                     PlyrCtrl.pSt = PlayerState.Moving;
                     UpdateText("");
-                }
-                else
-                {
-                    UpdateText("You couldn't get away!");
-                }
+                    break;
             }
         }
     }
