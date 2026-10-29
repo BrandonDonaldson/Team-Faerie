@@ -5376,7 +5376,7 @@ Transform:
   m_GameObject: {fileID: 529305353}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15827,7 +15827,7 @@ Transform:
   m_GameObject: {fileID: 1418070417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19467,7 +19467,7 @@ Transform:
   m_GameObject: {fileID: 1771234135}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22329,7 +22329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: initialDialogue
-      value: Hello there, Player!
+      value: This rat has been harassing me. Can you please get rid of him?
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: randomizedDialogue
@@ -22342,11 +22342,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7192612328541626651, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7192612328541626651, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7192612328541626651, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22617,11 +22617,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8494686661686833352, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8494686661686833352, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8494686661686833352, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22686,7 +22686,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 0
-  initialDialogue: '*squeak squeak*'
+  initialDialogue: Do you know how to get to Long Island?
   fightDialogue: You strike the rat for|You strike the rat for|You strike the rat
     for
   magicDialogue: You blast the rat with [GENERIC MAGIC] for|You blast the rat with
