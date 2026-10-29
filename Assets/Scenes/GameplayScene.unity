@@ -13504,6 +13504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlyrCtrl: {fileID: 1418070421}
+  PlyrMovement: {fileID: 1418070423}
   InterfaceRef: {fileID: 1335813521}
   InterfaceScript: {fileID: 1335813527}
   mask:
