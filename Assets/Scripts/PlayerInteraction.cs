@@ -57,7 +57,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (context.started && DetectInteractable())
+        if (PlyrCtrl.pSt != PlayerState.Paused && context.started && DetectInteractable())
         {
             InterfaceRef.SetActive(true);
             InterfaceScript.targetObject = ReturnInteractable();
