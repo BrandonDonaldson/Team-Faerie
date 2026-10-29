@@ -204,52 +204,61 @@ public class UIEvent : MonoBehaviour
         }
         else
         {
-            switch(targetObject.tag)
+            if (!targetObject)
             {
-                case "Enemy":
-                    if (UnityEngine.Random.Range(0, 10) == 0) // 10% Failure to Run
-                    {
-                        UpdateText("You couldn't get away!");
-                    }
-                    else
-                    {
-                        this.gameObject.SetActive(false);
-                        PlyrCtrl.pSt = PlayerState.Moving;
-                        UpdateText("");
-                    }
-                    break;
+                this.gameObject.SetActive(false);
+                PlyrCtrl.pSt = PlayerState.Moving;
+                UpdateText("");
+            }
+            else
+            {
+                switch (targetObject.tag)
+                {
+                    case "Enemy":
+                        if (UnityEngine.Random.Range(0, 10) == 0) // 10% Failure to Run
+                        {
+                            UpdateText("You couldn't get away!");
+                        }
+                        else
+                        {
+                            this.gameObject.SetActive(false);
+                            PlyrCtrl.pSt = PlayerState.Moving;
+                            UpdateText("");
+                        }
+                        break;
 
-                case "Rat":
-                    if (UnityEngine.Random.Range(0, 5) == 0) // 20% Failure to Run
-                    {
-                        UpdateText("You couldn't get away!");
-                    }
-                    else
-                    {
-                        this.gameObject.SetActive(false);
-                        PlyrCtrl.pSt = PlayerState.Moving;
-                        UpdateText("");
-                    }
-                    break;
+                    case "Rat":
+                        if (UnityEngine.Random.Range(0, 5) == 0) // 20% Failure to Run
+                        {
+                            UpdateText("You couldn't get away!");
+                        }
+                        else
+                        {
+                            this.gameObject.SetActive(false);
+                            PlyrCtrl.pSt = PlayerState.Moving;
+                            UpdateText("");
+                        }
+                        break;
 
-                case "Infected":
-                    if (UnityEngine.Random.Range(0, 3) == 0) // 33% Failure to Run
-                    {
-                        UpdateText("You couldn't get away!");
-                    }
-                    else
-                    {
+                    case "Infected":
+                        if (UnityEngine.Random.Range(0, 3) == 0) // 33% Failure to Run
+                        {
+                            UpdateText("You couldn't get away!");
+                        }
+                        else
+                        {
+                            this.gameObject.SetActive(false);
+                            PlyrCtrl.pSt = PlayerState.Moving;
+                            UpdateText("");
+                        }
+                        break;
+
+                    default:
                         this.gameObject.SetActive(false);
                         PlyrCtrl.pSt = PlayerState.Moving;
                         UpdateText("");
-                    }
-                    break;
-                
-                default:
-                    this.gameObject.SetActive(false);
-                    PlyrCtrl.pSt = PlayerState.Moving;
-                    UpdateText("");
-                    break;
+                        break;
+                }
             }
         }
     }
