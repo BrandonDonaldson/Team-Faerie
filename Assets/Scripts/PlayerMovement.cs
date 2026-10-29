@@ -1,6 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum PlayerDirection
+{
+    Left,
+    Right,
+    Down,
+    Up
+}
 /// <summary>
 /// Player Movement class, handles movement and animation calls
 /// </summary>
@@ -9,10 +16,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float playerMoveSpeed = 4f;
     [SerializeField] LayerMask collisionMask;
     [SerializeField] PlayerController playerController;
+    [SerializeField] Sprite[] playerIdleSpriteSheet;
+    [SerializeField] SpriteRenderer playerSpriteRenderer;
 
     public Transform movePoint;
     private Vector2 inputDirection;
     private Vector2 previousInputDirection;
+    private PlayerDirection playerDirection;
+
+    public PlayerDirection PlayerDirection
+    {
+        get
+        {
+            return playerDirection;
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,11 +45,12 @@ public class PlayerMovement : MonoBehaviour
         // Move the player to the move point
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, playerMoveSpeed * Time.deltaTime);
 
-        // Determine player movement direction
+        // Handle animation changes and movement direction in Move state
         if(playerController.pSt == PlayerState.Moving)
         {
+            #region Determine player movement direction
             // Check to see if player is on the move point before allowing the player to move further
-            if(Vector3.Distance(transform.position, movePoint.position) <= .05f)
+            if (Vector3.Distance(transform.position, movePoint.position) <= .05f)
             {
                 // Check if multiple keys are being pressed
                 if (Mathf.Abs(inputDirection.x) == 1f && Mathf.Abs(inputDirection.y) == 1f)
@@ -50,8 +69,18 @@ public class PlayerMovement : MonoBehaviour
                 // If the keypress is in the horizontal direction
                 if (Mathf.Abs(inputDirection.x) == 1f)
                 {
+                    // Change player direction
+                    if(inputDirection.x > 0)
+                    {
+                        playerDirection = PlayerDirection.Right;
+                    }
+                    else
+                    {
+                        playerDirection = PlayerDirection.Left;
+                    }
+
                     // Check for collision in the horizontal direction
-                    if(!DetectCollison(true))
+                    if (!DetectCollison(true))
                     {
                         // Move the move point horizontally to the next grid square
                         movePoint.position += new Vector3(inputDirection.x, 0f, 0f);
@@ -63,6 +92,16 @@ public class PlayerMovement : MonoBehaviour
                 // If the keypress is in the vertial direction
                 else if(Mathf.Abs(inputDirection.y) == 1f)
                 {
+                    // Change player direction
+                    if (inputDirection.y > 0)
+                    {
+                        playerDirection = PlayerDirection.Up;
+                    }
+                    else
+                    {
+                        playerDirection = PlayerDirection.Down;
+                    }
+
                     // Check for collision in the vertical direction
                     if (!DetectCollison(false))
                     {
@@ -74,7 +113,26 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
+            #endregion
+
+            #region Handle player animations
+            // Determine if the player is moving
+            // TODO: Implement animation once animation script
+            //if (Vector3.Distance(transform.position, movePoint.position) >= .05f) // Moving
+            //{
+            //    // Run movement animation scripts
+            //}
+            //else // Still
+            //{
+            //    
+                // Change player idle state
+            playerSpriteRenderer.sprite = playerIdleSpriteSheet[((int)playerDirection)];
+            //}
+
+
+            #endregion
         }
+
     }
 
     #region helper methods

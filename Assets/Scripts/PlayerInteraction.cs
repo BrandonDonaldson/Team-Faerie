@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     // References
     [SerializeField] PlayerController PlyrCtrl;
+    [SerializeField] PlayerMovement PlyrMovement;
     [SerializeField] GameObject InterfaceRef;
     [SerializeField] UIEvent InterfaceScript;
     [SerializeField] LayerMask mask;
@@ -29,7 +30,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private bool DetectInteractable()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 1.0f, mask);
+        RaycastHit2D hit = DetectHit();
 
         if (hit)
         {
@@ -43,8 +44,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameObject ReturnInteractable()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 1.0f, mask);
-
+        RaycastHit2D hit = DetectHit();
         if (hit)
         {
             return hit.collider.gameObject;
@@ -53,6 +53,30 @@ public class PlayerInteraction : MonoBehaviour
         {
             return null;
         }
+    }
+
+    private RaycastHit2D DetectHit()
+    {
+        // Obtain player direction
+        Vector3 playerDirection = new Vector3();
+        switch(PlyrMovement.PlayerDirection)
+        {
+            case PlayerDirection.Left:
+                playerDirection = transform.right * -1;
+                break;
+            case PlayerDirection.Right:
+                playerDirection = transform.right;
+                break;
+            case PlayerDirection.Down:
+                playerDirection = transform.up * -1;
+                break;
+            case PlayerDirection.Up:
+                playerDirection = transform.up;
+                break;
+        }
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, playerDirection, 1.0f, mask);
+        return hit;
     }
 
     public void OnInteract(InputAction.CallbackContext context)

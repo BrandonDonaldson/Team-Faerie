@@ -27,13 +27,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public int DMGVar;
 
     // Fields
-    public string direction; // Direction
     public PlayerState pSt; // Player state (for the state machine)
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        direction = "up";
         pSt = PlayerState.Moving;
     }
 
@@ -42,40 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         UpdateBars();
         CheckHP();
-
-        if(pSt == PlayerState.Moving)
-        {
-            // Movement
-            CheckRotation(direction);
-        }
     }
-
-    /// <summary>
-    /// Rotates player based on direction
-    /// </summary>
-    /// <param name="d">Direction</param>
-    void CheckRotation(string d)
-    {
-        switch (d)
-        {
-            case "up":
-                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                break;
-
-            case "down":
-                transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-                break;
-
-            case "left":
-                transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-                break;
-
-            case "right":
-                transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-                break;
-        }
-    }
-
     // Updates HP and MP Sliders
     public void UpdateBars()
     {
@@ -99,56 +64,4 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("Death");
         }
     }
-
-    #region Movement Callbacks
-    // Movement Callbacks
-    public void MoveUp(InputAction.CallbackContext context)
-    {
-        if (pSt == PlayerState.Moving)
-        {
-            if (context.started)
-            {
-                direction = "up";
-            }
-        }
-    }
-
-    public void MoveDown(InputAction.CallbackContext context)
-    {
-        if (pSt == PlayerState.Moving)
-        {
-            if (context.started)
-            {
-                direction = "down";
-            }
-        }
-    }
-
-    public void MoveLeft(InputAction.CallbackContext context)
-    {
-        if (pSt == PlayerState.Moving)
-        {
-            if (context.started)
-            {
-                direction = "left";
-            }
-        }
-    }
-
-    public void MoveRight(InputAction.CallbackContext context)
-    {
-        if (pSt == PlayerState.Moving)
-        {
-            if (context.started)
-            {
-                direction = "right";
-            }
-        }
-    }
-
-    public void OnPause(InputAction.CallbackContext context)
-    {
-        pSt = PlayerState.Paused;
-    }
-    #endregion
 }

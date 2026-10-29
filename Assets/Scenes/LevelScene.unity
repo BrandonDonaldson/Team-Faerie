@@ -72030,7 +72030,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1046831575650199978, guid: 0b0bf8720d75139498ace4c2e9a75de9, type: 3}
+  m_Sprite: {fileID: 6272215952258405886, guid: 202490fc70f14fe44bcc187fae89a147, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -72287,7 +72287,6 @@ MonoBehaviour:
   MaxMP: 10
   DMG: 2
   DMGVar: 1
-  direction: 
   pSt: 0
 --- !u!114 &1418070422
 MonoBehaviour:
@@ -72302,6 +72301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlyrCtrl: {fileID: 1418070421}
+  PlyrMovement: {fileID: 1418070423}
   InterfaceRef: {fileID: 1335813521}
   InterfaceScript: {fileID: 1335813527}
   mask:
@@ -72324,6 +72324,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerController: {fileID: 1418070421}
+  playerIdleSpriteSheet:
+  - {fileID: 978942612559604503, guid: 202490fc70f14fe44bcc187fae89a147, type: 3}
+  - {fileID: 3499389992042037492, guid: 202490fc70f14fe44bcc187fae89a147, type: 3}
+  - {fileID: 6272215952258405886, guid: 202490fc70f14fe44bcc187fae89a147, type: 3}
+  - {fileID: 5525604288434156929, guid: 202490fc70f14fe44bcc187fae89a147, type: 3}
+  playerSpriteRenderer: {fileID: 1418070418}
   movePoint: {fileID: 127326667}
 --- !u!50 &1418070424
 Rigidbody2D:
@@ -72390,7 +72396,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.80727273, y: 1.0872728}
+    oldSize: {x: 0.8333334, y: 0.95500004}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

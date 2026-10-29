@@ -4,7 +4,7 @@ using UnityEngine;
 public class MovingBox : Interactable
 {
     // References
-    [SerializeField] PlayerController plyrCtrl;
+    [SerializeField] PlayerMovement plyrCtrl;
     [SerializeField] GameObject targetDestination;
     [SerializeField] public PuzzleLogic puzzleManager;
     [SerializeField] LayerMask collisionMask;
@@ -24,21 +24,21 @@ public class MovingBox : Interactable
     // Update is called once per frame
     void Update()
     {
-        switch (plyrCtrl.direction)
+        switch (plyrCtrl.PlayerDirection)
         {
-            case "up":
+            case PlayerDirection.Up:
                 direction = new Vector2(0.0f, 1.0f);
                 break;
 
-            case "down":
+            case PlayerDirection.Down:
                 direction = new Vector2(0.0f, -1.0f);
                 break;
 
-            case "left":
+            case PlayerDirection.Left:
                 direction = new Vector2(-1.0f, 0.0f);
                 break;
 
-            case "right":
+            case PlayerDirection.Right:
                 direction = new Vector2(1.0f, 0.0f);
                 break;
         }
