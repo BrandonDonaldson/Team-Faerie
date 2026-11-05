@@ -72445,7 +72445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cc8ece5e4db224e9b28f434813fa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 0}
+  InterfaceRef: {fileID: 1487733554}
   ElementRef: {fileID: 0}
   type: 2
   obstacleRef: {fileID: 402962529}
