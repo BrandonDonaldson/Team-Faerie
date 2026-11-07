@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class Enemy : Interactable
 {
-    [SerializeField] public Slider HPSlider;
-    [SerializeField] public Slider MPSlider;
+    [SerializeField] public Image HPImage;
+    [SerializeField] public Image MPImage;
     [SerializeField] public int HP; // Hit Points
     [SerializeField] public int MP; // Magic Points
     [SerializeField] public int MaxHP; // Hit Points
@@ -36,7 +36,11 @@ public class Enemy : Interactable
             MP = 0;
         }
         
-        HPSlider.value = (float)HP / (float)MaxHP;
-        MPSlider.value = (float)MP / (float)MaxMP;
+        float targetHPFillAmount = (float)HP / (float)MaxHP;
+        float targetMPFillAmount = (float)MP / (float)MaxMP;
+
+
+        HPImage.fillAmount = targetHPFillAmount;
+        MPImage.fillAmount = targetMPFillAmount;
     }
 }

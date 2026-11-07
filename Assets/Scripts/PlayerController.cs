@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
 {
     // References
     [SerializeField] PlayerInteraction interactRef;
-    [SerializeField] public UnityEngine.UI.Slider HPSlider;
-    [SerializeField] public UnityEngine.UI.Slider MPSlider;
+    [SerializeField] public UnityEngine.UI.Image HPImage;
+    [SerializeField] public UnityEngine.UI.Image MPImage;
     [SerializeField] LayerMask mask;
     [SerializeField] public int HP; // Player Hit Points
     [SerializeField] public int MP; // Player Magic Points
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         UpdateBars();
         CheckHP();
     }
-    // Updates HP and MP Sliders
+    // Updates HP and MP Image
     public void UpdateBars()
     {
         if (HP < 0)
@@ -54,8 +54,12 @@ public class PlayerController : MonoBehaviour
             MP = 0;
         }
 
-        HPSlider.value = (float)HP / (float)MaxHP;
-        MPSlider.value = (float)MP / (float)MaxMP;
+        float targetHPFillAmount = (float)HP / (float)MaxHP;
+        float targetMPFillAmount = (float)MP / (float)MaxMP;
+
+
+        HPImage.fillAmount = targetHPFillAmount;
+        MPImage.fillAmount = targetMPFillAmount;
     }
     private void CheckHP()
     {

@@ -26,8 +26,10 @@ public class UIEvent : MonoBehaviour
     [SerializeField] GameObject magicMenu;
     [SerializeField] GameObject actionMenu;
     [SerializeField] GameObject sliderBox;
-    [SerializeField] Slider HPSliderRef;
-    [SerializeField] Slider MPSliderRef;
+    //[SerializeField] Slider HPImageRef;
+    //[SerializeField] Slider MPImageRef;
+    [SerializeField] Image HPImageRef;
+    [SerializeField] Image MPImageRef;
 
     // Fields
     public GameObject targetObject;
@@ -120,8 +122,8 @@ public class UIEvent : MonoBehaviour
 
                 case "Enemy":
                     targetObject.GetComponent<Enemy>().ReturnResult(category, choice);
-                    targetObject.GetComponent<Enemy>().HPSlider = HPSliderRef;
-                    targetObject.GetComponent<Enemy>().MPSlider = MPSliderRef;
+                    targetObject.GetComponent<Enemy>().HPImage = HPImageRef;
+                    targetObject.GetComponent<Enemy>().MPImage = MPImageRef;
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
@@ -138,8 +140,8 @@ public class UIEvent : MonoBehaviour
 
                 case "Rat":
                     targetObject.GetComponent<Rat>().ReturnResult(category, choice);
-                    targetObject.GetComponent<Rat>().HPSlider = HPSliderRef;
-                    targetObject.GetComponent<Rat>().MPSlider = MPSliderRef;
+                    targetObject.GetComponent<Rat>().HPImage = HPImageRef;
+                    targetObject.GetComponent<Rat>().MPImage = MPImageRef;
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
