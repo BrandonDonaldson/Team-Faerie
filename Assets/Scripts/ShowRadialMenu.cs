@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ShowRadialMenu : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class ShowRadialMenu : MonoBehaviour
         foreach (RaycastResult result in results)
         {
             ButtonRelease button = result.gameObject.GetComponentInParent<ButtonRelease>();
-            if (button != null)
+            if (button != null && button.gameObject.GetComponentInParent<Button>().IsInteractable())
             {
                 button.Activate();
                 return;
