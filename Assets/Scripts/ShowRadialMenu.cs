@@ -48,7 +48,7 @@ public class ShowRadialMenu : MonoBehaviour
         // Set up pointer data
         pointerData = new PointerEventData(eventSystem);
         pointerData.position = Mouse.current.position.ReadValue();
-
+         
         // Perform UI raycast
         results.Clear();
         eventSystem.RaycastAll(pointerData, results);
@@ -56,9 +56,7 @@ public class ShowRadialMenu : MonoBehaviour
         // Check everything underneath the cursor
         foreach (RaycastResult result in results)
         {
-            ButtonRelease button = result.gameObject
-                .GetComponentInParent<ButtonRelease>();
-
+            ButtonRelease button = result.gameObject.GetComponentInParent<ButtonRelease>();
             if (button != null)
             {
                 button.Activate();
