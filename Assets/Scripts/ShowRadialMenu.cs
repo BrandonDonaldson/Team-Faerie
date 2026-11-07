@@ -24,6 +24,9 @@ public class ShowRadialMenu : MonoBehaviour
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             holdMenu.SetActive(true);
+
+            // Move the menu to the mouse position
+            holdMenu.transform.position = Input.mousePosition;
         }
 
         // Left mouse button released
