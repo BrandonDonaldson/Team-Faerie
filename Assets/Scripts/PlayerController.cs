@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour
         float targetHPFillAmount = (float)HP / (float)MaxHP;
         float targetMPFillAmount = (float)MP / (float)MaxMP;
 
-
         HPImage.fillAmount = targetHPFillAmount;
         MPImage.fillAmount = targetMPFillAmount;
     }
