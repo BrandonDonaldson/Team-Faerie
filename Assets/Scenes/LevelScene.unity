@@ -67562,6 +67562,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 187491902384151832, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 187491902384151832, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 187491902384151832, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 267082443791898602, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Color.a
       value: 0.5882353
@@ -67637,6 +67649,22 @@ PrefabInstance:
     - target: {fileID: 3372073448479245647, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863679984140490880, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863679984140490880, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863679984140490880, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863679984140490880, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3906298877688307517, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -67737,6 +67765,10 @@ PrefabInstance:
     - target: {fileID: 7488531664829013016, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634736782495675489, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -424
       objectReference: {fileID: 0}
     - target: {fileID: 7956724775669806388, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_IsActive
