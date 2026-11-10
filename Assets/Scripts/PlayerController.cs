@@ -29,6 +29,12 @@ public class PlayerController : MonoBehaviour
     // Fields
     public PlayerState pSt; // Player state (for the state machine)
 
+    public PlayerState PSt
+    {
+        get { return pSt; }
+        set { pSt = value; }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

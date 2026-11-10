@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ShowRadialMenu : MonoBehaviour
 {
     [SerializeField] private GameObject holdMenu;
+    [SerializeField] public PlayerController playerController;
 
     private PointerEventData pointerData;
     private List<RaycastResult> results = new List<RaycastResult>();
@@ -24,6 +25,10 @@ public class ShowRadialMenu : MonoBehaviour
         // Left mouse button pressed
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            // Make sure that there is an interactible in front of the player
+            // Switch player mode to interacting
+            playerController.PSt = PlayerState.Interacting;
+
             holdMenu.SetActive(true);
 
             // Move the menu to the mouse position
@@ -35,6 +40,8 @@ public class ShowRadialMenu : MonoBehaviour
         {
             CheckHoveredButton();
             holdMenu.SetActive(false);
+            // Set player mode to moving
+            playerController.PSt = PlayerState.Moving;
         }
     }
 
