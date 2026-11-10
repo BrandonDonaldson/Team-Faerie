@@ -8032,6 +8032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdMenu: {fileID: 9127724117761180041}
+  playerController: {fileID: 1967762073151888900}
 --- !u!1 &7360156405834425647
 GameObject:
   m_ObjectHideFlags: 0
