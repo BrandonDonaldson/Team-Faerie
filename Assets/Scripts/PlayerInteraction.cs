@@ -25,10 +25,10 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ReturnInteractable();
+
     }
 
-    public bool DetectInteractable()
+    private bool DetectInteractable()
     {
         RaycastHit2D hit = DetectHit();
 
@@ -47,7 +47,6 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit2D hit = DetectHit();
         if (hit)
         {
-            InterfaceScript.targetObject = hit.collider.gameObject;
             return hit.collider.gameObject;
         }
         else
