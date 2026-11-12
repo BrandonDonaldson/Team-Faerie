@@ -45,12 +45,12 @@ public class UIEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        SetMenu();
     }
 
     #region MenuButtons
-    // Calls for the results depending on object tab
-    public void CallForResult()
+
+    private void SetMenu()
     {
         Button[] buttonList = radialMenu.GetComponentsInChildren<Button>();
         // Fight, Fire, Wind, Light, Info, Talk, Act(?)
@@ -60,7 +60,6 @@ public class UIEvent : MonoBehaviour
             switch (targetObject.tag)
             {
                 case "Interactable":
-                    targetObject.GetComponent<Interactable>().ReturnResult(category, choice);
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
@@ -72,7 +71,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "NPC":
-                    targetObject.GetComponent<NPC>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
                     buttonList[2].interactable = false;
@@ -84,7 +82,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "Enemy":
-                    targetObject.GetComponent<Enemy>().ReturnResult(category, choice);
                     targetObject.GetComponent<Enemy>().HPImage = HPImageRef;
                     targetObject.GetComponent<Enemy>().MPImage = MPImageRef;
                     buttonList[0].interactable = true;
@@ -98,7 +95,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "Tree":
-                    targetObject.GetComponent<Tree>().ReturnResult(category, choice);
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = false;
                     buttonList[2].interactable = false;
@@ -110,7 +106,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "Rat":
-                    targetObject.GetComponent<Rat>().ReturnResult(category, choice);
                     targetObject.GetComponent<Rat>().HPImage = HPImageRef;
                     targetObject.GetComponent<Rat>().MPImage = MPImageRef;
                     buttonList[0].interactable = true;
@@ -124,7 +119,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "Totem":
-                    targetObject.GetComponent<Totem>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
                     buttonList[2].interactable = false;
@@ -136,7 +130,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "Pillar":
-                    targetObject.GetComponent<Pillar>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
@@ -148,7 +141,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "Lock":
-                    targetObject.GetComponent<Lock>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
                     buttonList[2].interactable = false;
@@ -160,7 +152,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "MovingBox":
-                    targetObject.GetComponent<MovingBox>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = !targetObject.GetComponent<MovingBox>().puzzleManager.solved;
@@ -172,7 +163,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "BoxResetter":
-                    targetObject.GetComponent<BoxResetter>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
                     buttonList[2].interactable = false;
@@ -181,6 +171,63 @@ public class UIEvent : MonoBehaviour
                     buttonList[5].interactable = true;
                     buttonList[6].interactable = !targetObject.GetComponent<BoxResetter>().puzzleManager.solved;
                     sliderBox.SetActive(false);
+                    break;
+            }
+        }
+        else
+        {
+            UpdateText("There's nothing there?");
+        }
+    }
+
+    // Calls for the results depending on object tab
+    public void CallForResult()
+    {
+        Button[] buttonList = radialMenu.GetComponentsInChildren<Button>();
+        // Fight, Fire, Wind, Light, Info, Talk, Act(?)
+
+        if (targetObject)
+        {
+            switch (targetObject.tag)
+            {
+                case "Interactable":
+                    targetObject.GetComponent<Interactable>().ReturnResult(category, choice);
+                    break;
+
+                case "NPC":
+                    targetObject.GetComponent<NPC>().ReturnResult(category, choice);
+                    break;
+
+                case "Enemy":
+                    targetObject.GetComponent<Enemy>().ReturnResult(category, choice);
+                    break;
+
+                case "Tree":
+                    targetObject.GetComponent<Tree>().ReturnResult(category, choice);
+                    break;
+
+                case "Rat":
+                    targetObject.GetComponent<Rat>().ReturnResult(category, choice);
+                    break;
+
+                case "Totem":
+                    targetObject.GetComponent<Totem>().ReturnResult(category, choice);
+                    break;
+
+                case "Pillar":
+                    targetObject.GetComponent<Pillar>().ReturnResult(category, choice);
+                    break;
+
+                case "Lock":
+                    targetObject.GetComponent<Lock>().ReturnResult(category, choice);
+                    break;
+
+                case "MovingBox":
+                    targetObject.GetComponent<MovingBox>().ReturnResult(category, choice);
+                    break;
+
+                case "BoxResetter":
+                    targetObject.GetComponent<BoxResetter>().ReturnResult(category, choice);
                     break;
             }
         }
