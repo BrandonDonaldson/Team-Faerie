@@ -19,6 +19,7 @@ public class UIEvent : MonoBehaviour
     // References
     [SerializeField] PlayerController PlyrCtrl;
     [SerializeField] TextMeshProUGUI textBox;
+    [SerializeField] GameObject textBoxGroup;
     [SerializeField] GameObject menuControl;
     [SerializeField] GameObject lockUI;
     [SerializeField] GameObject sliderBox;
@@ -40,15 +41,17 @@ public class UIEvent : MonoBehaviour
     {
         category = MenuState.Top;
         lockUI.SetActive(false);
+        textBoxGroup.SetActive(false);
         choice = 4;
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (textBoxGroup.active)
+        {
+            textBoxGroup.SetActive(!Input.anyKey);
+        }
     }
 
     #region MenuButtons
@@ -192,8 +195,11 @@ public class UIEvent : MonoBehaviour
 
         if (targetObject)
         {
+            textBoxGroup.SetActive(true);
+
             switch (targetObject.tag)
             {
+                
                 case "Interactable":
                     targetObject.GetComponent<Interactable>().ReturnResult(category, choice);
                     break;

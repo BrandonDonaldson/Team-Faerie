@@ -575,7 +575,6 @@ RectTransform:
   - {fileID: 3675292735659087261}
   - {fileID: 7634736782495675489}
   - {fileID: 6240479109548392465}
-  - {fileID: 5702205927088946922}
   m_Father: {fileID: 2342447767530004578}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1654,13 +1653,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlyrCtrl: {fileID: 1967762073151888900}
   textBox: {fileID: 3863679984140490880}
+  textBoxGroup: {fileID: 0}
   menuControl: {fileID: 7404603276563904440}
   lockUI: {fileID: 8340323525569944573}
-  topMenu: {fileID: 1897182661482728279}
-  fightMenu: {fileID: 1391190110660812660}
-  magicMenu: {fileID: 9182448597071623534}
-  actionMenu: {fileID: 4444102306979142330}
   sliderBox: {fileID: 3704602399678246080}
+  radialMenu: {fileID: 0}
   HPImageRef: {fileID: 7338257560409245676}
   MPImageRef: {fileID: 3685153197227178999}
   targetObject: {fileID: 0}
@@ -7949,6 +7946,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5702205927088946922}
   - {fileID: 6728671788305549263}
   m_Father: {fileID: 7488531664829013016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8034,6 +8032,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdMenu: {fileID: 9127724117761180041}
   playerController: {fileID: 1967762073151888900}
+  playerInteractionControls: {fileID: 0}
+  interfaceUI: {fileID: 0}
 --- !u!1 &7360156405834425647
 GameObject:
   m_ObjectHideFlags: 0
@@ -9199,11 +9199,11 @@ RectTransform:
   m_Children:
   - {fileID: 6802979450609228038}
   - {fileID: 8103869261013857948}
-  m_Father: {fileID: 3266366177776806032}
+  m_Father: {fileID: 5662324218960491245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 25}
+  m_AnchoredPosition: {x: 0, y: 352.45358}
   m_SizeDelta: {x: 700, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &4537541207763224091
