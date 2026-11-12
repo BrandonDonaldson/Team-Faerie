@@ -70518,6 +70518,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2075658547}
     - target: {fileID: 5266426063820424418, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: interfaceUI
+      value: 
+      objectReference: {fileID: 1509131347}
+    - target: {fileID: 5266426063820424418, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: playerInteractionControls
       value: 
       objectReference: {fileID: 1817600370}
