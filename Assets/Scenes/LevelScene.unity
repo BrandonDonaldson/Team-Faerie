@@ -70406,12 +70406,28 @@ PrefabInstance:
       value: 0.40392157
       objectReference: {fileID: 0}
     - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 250
+      value: 197.67001
       objectReference: {fileID: 0}
     - target: {fileID: 5936154215301072471, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Name
@@ -70532,24 +70548,24 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7956724775669806388, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 821078418}
-    - targetCorrespondingSourceObject: {fileID: 1202657202243509120, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2013611274}
-    - targetCorrespondingSourceObject: {fileID: 1612965885649855449, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 733027251}
-    - targetCorrespondingSourceObject: {fileID: 6437756808886472383, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1427098032}
-    - targetCorrespondingSourceObject: {fileID: 1800964666466212124, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 486644924}
-    - targetCorrespondingSourceObject: {fileID: 3172695836816633483, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1052377192}
     - targetCorrespondingSourceObject: {fileID: 405648014687615462, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 343065068}
+    - targetCorrespondingSourceObject: {fileID: 3172695836816633483, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1052377192}
+    - targetCorrespondingSourceObject: {fileID: 1800964666466212124, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 486644924}
+    - targetCorrespondingSourceObject: {fileID: 1612965885649855449, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 733027251}
+    - targetCorrespondingSourceObject: {fileID: 1202657202243509120, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2013611274}
+    - targetCorrespondingSourceObject: {fileID: 6437756808886472383, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1427098032}
   m_SourcePrefab: {fileID: 100100000, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
 --- !u!114 &1487733554 stripped
 MonoBehaviour:
@@ -92981,7 +92997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: actionDialogue
-      value: 'This is GenericNPC.|.|xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      value: 'This is GenericNPC.|.|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
         xx                 
         ff                     xx
@@ -92989,9 +93005,9 @@ PrefabInstance:
         xx                  ff                    
         xx
 
-        tt                                           xx
+        tt                                         xx
 
-        tt                                          
+        tt                                        
         xx
 
         pp                                         xx
@@ -93009,7 +93025,7 @@ PrefabInstance:
 
         xx                                         xx
 
-        xxxxxxxxxxxxxxxxxxxxxxxxxxx'
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: loopedDialogue
