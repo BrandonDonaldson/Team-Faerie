@@ -75,7 +75,11 @@ public class UIEvent : MonoBehaviour
                     targetObject.GetComponent<NPC>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
-                    buttonList[2].interactable = true;
+                    buttonList[2].interactable = false;
+                    buttonList[3].interactable = false;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = true;
                     sliderBox.SetActive(false);
                     break;
 
@@ -86,6 +90,10 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
+                    buttonList[3].interactable = true;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = true;
                     sliderBox.SetActive(true);
                     break;
 
@@ -93,7 +101,11 @@ public class UIEvent : MonoBehaviour
                     targetObject.GetComponent<Tree>().ReturnResult(category, choice);
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = false;
-                    buttonList[2].interactable = true;
+                    buttonList[2].interactable = false;
+                    buttonList[3].interactable = false;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = true;
                     sliderBox.SetActive(false);
                     break;
 
@@ -104,6 +116,10 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
+                    buttonList[3].interactable = true;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = true;
                     sliderBox.SetActive(true);
                     break;
 
@@ -111,7 +127,11 @@ public class UIEvent : MonoBehaviour
                     targetObject.GetComponent<Totem>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
-                    buttonList[2].interactable = true;
+                    buttonList[2].interactable = false;
+                    buttonList[3].interactable = false;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = true;
                     sliderBox.SetActive(false);
                     break;
 
@@ -120,6 +140,10 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
+                    buttonList[3].interactable = true;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = true;
                     sliderBox.SetActive(false);
                     break;
 
@@ -127,15 +151,23 @@ public class UIEvent : MonoBehaviour
                     targetObject.GetComponent<Lock>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
-                    buttonList[2].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
+                    buttonList[2].interactable = false;
+                    buttonList[3].interactable = false;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
                     sliderBox.SetActive(false);
                     break;
 
                 case "MovingBox":
                     targetObject.GetComponent<MovingBox>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
-                    buttonList[1].interactable = !targetObject.GetComponent<MovingBox>().puzzleManager.solved;
-                    buttonList[2].interactable = true;
+                    buttonList[1].interactable = true;
+                    buttonList[2].interactable = !targetObject.GetComponent<MovingBox>().puzzleManager.solved;
+                    buttonList[3].interactable = true;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = true;
                     sliderBox.SetActive(false);
                     break;
 
@@ -143,7 +175,11 @@ public class UIEvent : MonoBehaviour
                     targetObject.GetComponent<BoxResetter>().ReturnResult(category, choice);
                     buttonList[0].interactable = false;
                     buttonList[1].interactable = false;
-                    buttonList[2].interactable = !targetObject.GetComponent<BoxResetter>().puzzleManager.solved;
+                    buttonList[2].interactable = false;
+                    buttonList[3].interactable = false;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = !targetObject.GetComponent<BoxResetter>().puzzleManager.solved;
                     sliderBox.SetActive(false);
                     break;
             }
