@@ -53034,8 +53034,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!4 &1003183101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4608259136516538565, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
@@ -53150,7 +53148,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of f63c413 (Merge branch 'main' of https://github.com/BrandonDonaldson/Team-Faerie)
 --- !u!1001 &1004826257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70502,8 +70499,6 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.47058824
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 4458963022668494214, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.471246
@@ -70516,7 +70511,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
->>>>>>> parent of f63c413 (Merge branch 'main' of https://github.com/BrandonDonaldson/Team-Faerie)
     - target: {fileID: 5266426063820424418, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: holdMenu
       value: 
@@ -71440,8 +71434,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!4 &1509281060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4608259136516538565, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
@@ -71504,7 +71496,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
->>>>>>> parent of f63c413 (Merge branch 'main' of https://github.com/BrandonDonaldson/Team-Faerie)
 --- !u!1001 &1510858516
 PrefabInstance:
   m_ObjectHideFlags: 0
