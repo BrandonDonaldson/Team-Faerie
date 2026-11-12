@@ -8,6 +8,7 @@ public class ShowRadialMenu : MonoBehaviour
 {
     [SerializeField] private GameObject holdMenu;
     [SerializeField] public PlayerController playerController;
+    [SerializeField] PlayerInteraction playerInteractionControls;
 
     private PointerEventData pointerData;
     private List<RaycastResult> results = new List<RaycastResult>();
@@ -22,8 +23,8 @@ public class ShowRadialMenu : MonoBehaviour
         if (Mouse.current == null)
             return;
 
-        // Left mouse button pressed
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        // Left mouse button pressed and if the player can interact with what they're facing
+        if (Mouse.current.leftButton.wasPressedThisFrame && playerInteractionControls.DetectInteractable())
         {
             // Make sure that there is an interactible in front of the player
             // Switch player mode to interacting

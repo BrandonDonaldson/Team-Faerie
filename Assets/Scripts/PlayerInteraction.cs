@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
         ReturnInteractable();
     }
 
-    private bool DetectInteractable()
+    public bool DetectInteractable()
     {
         RaycastHit2D hit = DetectHit();
 
