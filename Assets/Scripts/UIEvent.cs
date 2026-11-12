@@ -187,7 +187,7 @@ public class UIEvent : MonoBehaviour
     // Calls for the results depending on object tab
     public void CallForResult()
     {
-        Button[] buttonList = radialMenu.GetComponentsInChildren<Button>();
+        buttonList = radialMenu.GetComponentsInChildren<Button>();
         // Fight, Fire, Wind, Light, Info, Talk, Act(?)
 
         if (targetObject)
