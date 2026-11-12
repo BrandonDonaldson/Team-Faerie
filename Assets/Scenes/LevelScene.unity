@@ -70406,10 +70406,6 @@ PrefabInstance:
       value: 0.40392157
       objectReference: {fileID: 0}
     - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
@@ -70418,16 +70414,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 197.67001
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5936154215301072471, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Name
@@ -70864,6 +70856,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1032573921797450301, guid: 7d9562d2066e252409edfeec681b1a3d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4075904309749126048, guid: 8c63e736e8008504bbda40e2eb746b53, type: 3}
     - target: {fileID: 2274431511619923514, guid: 7d9562d2066e252409edfeec681b1a3d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -70957,7 +70953,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4771334209431157680, guid: 7d9562d2066e252409edfeec681b1a3d, type: 3}
+    - {fileID: 8336918684701753516, guid: 7d9562d2066e252409edfeec681b1a3d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d9562d2066e252409edfeec681b1a3d, type: 3}
@@ -92891,7 +92889,7 @@ PrefabInstance:
     - target: {fileID: 4102626102967045333, guid: 544a3c86de509da4b9598ab0f0fc1ae3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c011645c1dee57f4b8455fca022e4e1b, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6096465514104172407, guid: 544a3c86de509da4b9598ab0f0fc1ae3, type: 3}
       propertyPath: InterfaceRef
       value: 
@@ -92997,7 +92995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: actionDialogue
-      value: 'This is GenericNPC.|.|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      value: 'This is GenericNPC.|.|xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
         xx                 
         ff                     xx
@@ -93005,9 +93003,9 @@ PrefabInstance:
         xx                  ff                    
         xx
 
-        tt                                         xx
+        tt                                           xx
 
-        tt                                        
+        tt                                          
         xx
 
         pp                                         xx
@@ -93025,7 +93023,7 @@ PrefabInstance:
 
         xx                                         xx
 
-        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+        xxxxxxxxxxxxxxxxxxxxxxxxxxx'
       objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: loopedDialogue
@@ -93153,7 +93151,7 @@ PrefabInstance:
     - target: {fileID: 8033891244443224388, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c011645c1dee57f4b8455fca022e4e1b, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8494686661686833352, guid: b8cd9fe99537d1c469a2fa151ee01716, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
