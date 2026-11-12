@@ -19,6 +19,7 @@ public class UIEvent : MonoBehaviour
     // References
     [SerializeField] PlayerController PlyrCtrl;
     [SerializeField] TextMeshProUGUI textBox;
+    [SerializeField] GameObject textBoxGroup;
     [SerializeField] GameObject menuControl;
     [SerializeField] GameObject lockUI;
     [SerializeField] GameObject sliderBox;
@@ -34,6 +35,7 @@ public class UIEvent : MonoBehaviour
     public MenuState category;
     public int choice;
     private Button[] buttonList;
+    public bool waitingOnText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,14 +43,20 @@ public class UIEvent : MonoBehaviour
         category = MenuState.Top;
         lockUI.SetActive(false);
         choice = 4;
-
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (waitingOnText)
+        {
+            waitingOnText = !Input.anyKey;
+        }
+        else
+        {
+            textBoxGroup.SetActive(false);
+        }
     }
 
     #region MenuButtons
@@ -192,6 +200,9 @@ public class UIEvent : MonoBehaviour
 
         if (targetObject)
         {
+            textBoxGroup.SetActive(true);
+            waitingOnText = true;
+
             switch (targetObject.tag)
             {
                 case "Interactable":

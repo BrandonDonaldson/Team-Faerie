@@ -70,7 +70,7 @@ public class PuzzleLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Button button;
     }
 
     // Puzzle logic is located here. Uses aforementioned puzzle type to determine logic
@@ -92,23 +92,26 @@ public class PuzzleLogic : MonoBehaviour
                 break;
 
             case PuzzleType.Lock:
-                for (int i = 0; i < 3; i++)
+                if (InterfaceRef.targetObject == this.gameObject)
                 {
-                    string expectedDigit = code[i].ToString();
-
-                    string enteredDigit = objectContainers[3*i].GetComponent<TextMeshProUGUI>().text;
-
-                    if (expectedDigit != enteredDigit)
+                    for (int i = 0; i < 3; i++)
                     {
-                        InterfaceRef.ExtendText("\n\nYou hear an empty click, but nothing happens.");
-                        InterfaceRef.ToggleLock();
-                        return;
+                        string expectedDigit = code[i].ToString();
+
+                        string enteredDigit = objectContainers[3 * i].GetComponent<TextMeshProUGUI>().text;
+
+                        if (expectedDigit != enteredDigit)
+                        {
+                            InterfaceRef.ExtendText("\n\nYou hear an empty click, but nothing happens.");
+                            InterfaceRef.ToggleLock();
+                            return;
+                        }
                     }
+                    solved = true;
+                    obstacleRef.SetActive(false);
+                    InterfaceRef.ExtendText("\n\nAn unseen mechanisms whirrs to life and a giant slab slides out of the way.");
+                    InterfaceRef.ToggleLock();
                 }
-                solved = true;
-                obstacleRef.SetActive(false);
-                InterfaceRef.ExtendText("\n\nAn unseen mechanisms whirrs to life and a giant slab slides out of the way.");
-                InterfaceRef.ToggleLock();
                 break;
 
             case PuzzleType.MovingBox:
