@@ -45,7 +45,7 @@ public class UIEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetMenu();
+
     }
 
     #region MenuButtons
@@ -223,41 +223,6 @@ public class UIEvent : MonoBehaviour
             }
         }
     }
-
-    // Sets the menu
-    public void SetMenu()
-    {
-        switch (category)
-        {
-            case MenuState.Top:
-                topMenu.SetActive(true);
-                fightMenu.SetActive(false);
-                magicMenu.SetActive(false);
-                actionMenu.SetActive(false);
-                break;
-
-            case MenuState.Fight:
-                topMenu.SetActive(false);
-                fightMenu.SetActive(true);
-                magicMenu.SetActive(false);
-                actionMenu.SetActive(false);
-                break;
-
-            case MenuState.Magic:
-                topMenu.SetActive(false);
-                fightMenu.SetActive(false);
-                magicMenu.SetActive(true);
-                actionMenu.SetActive(false);
-                break;
-
-            case MenuState.Action:
-                topMenu.SetActive(false);
-                fightMenu.SetActive(false);
-                magicMenu.SetActive(false);
-                actionMenu.SetActive(true);
-                break;
-        }
-    }
 #endregion
 
     #region StatMethods
@@ -372,8 +337,8 @@ public class UIEvent : MonoBehaviour
         {
             lockUI.SetActive(false);
             menuControl.SetActive(true);
-            Button[] buttonList = topMenu.GetComponentsInChildren<Button>();
-            buttonList[2].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
+            Button[] buttonList = radialMenu.GetComponentsInChildren<Button>();
+            buttonList[6].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
             category = MenuState.Top;
         }
     }
