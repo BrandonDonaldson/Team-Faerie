@@ -21,11 +21,8 @@ public class UIEvent : MonoBehaviour
     [SerializeField] TextMeshProUGUI textBox;
     [SerializeField] GameObject menuControl;
     [SerializeField] GameObject lockUI;
-    [SerializeField] GameObject topMenu;
-    [SerializeField] GameObject fightMenu;
-    [SerializeField] GameObject magicMenu;
-    [SerializeField] GameObject actionMenu;
     [SerializeField] GameObject sliderBox;
+    [SerializeField] GameObject radialMenu;
     //[SerializeField] Slider HPImageRef;
     //[SerializeField] Slider MPImageRef;
     [SerializeField] Image HPImageRef;
@@ -52,54 +49,12 @@ public class UIEvent : MonoBehaviour
     }
 
     #region MenuButtons
-    // Code for Button 1 (top left)
-    public void Button1()
-    {
-        if (category != MenuState.Top)
-        {
-            choice = 1;
-            CallForResult();
-        }
-        else
-        {
-            category = MenuState.Fight;
-        }
-    }
-
-    // Code for Button 2 (top right)
-    public void Button2()
-    {
-        if (category != MenuState.Top)
-        {
-            choice = 2;
-            CallForResult();
-        }
-        else
-        {
-            category = MenuState.Magic;
-        }
-    }
-
-    // Code for Button 3 (bottom left)
-    public void Button3()
-    {
-        if (category != MenuState.Top)
-        {
-            choice = 3;
-            CallForResult();
-        }
-        else
-        {
-            category = MenuState.Action;
-        }
-    }
-
     // Calls for the results depending on object tab
     public void CallForResult()
     {
-        Button[] buttonList = topMenu.GetComponentsInChildren<Button>();
-        buttonList[3].interactable = true;
-        
+        Button[] buttonList = radialMenu.GetComponentsInChildren<Button>();
+        // Fight, Fire, Wind, Light, Info, Talk, Act(?)
+
         if (targetObject)
         {
             switch (targetObject.tag)
@@ -109,6 +64,10 @@ public class UIEvent : MonoBehaviour
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
+                    buttonList[3].interactable = true;
+                    buttonList[4].interactable = true;
+                    buttonList[5].interactable = true;
+                    buttonList[6].interactable = true;
                     sliderBox.SetActive(false);
                     break;
 
