@@ -21,8 +21,11 @@ public class UIEvent : MonoBehaviour
     [SerializeField] TextMeshProUGUI textBox;
     [SerializeField] GameObject menuControl;
     [SerializeField] GameObject lockUI;
+    [SerializeField] GameObject topMenu;
+    [SerializeField] GameObject fightMenu;
+    [SerializeField] GameObject magicMenu;
+    [SerializeField] GameObject actionMenu;
     [SerializeField] GameObject sliderBox;
-    [SerializeField] GameObject radialMenu;
     //[SerializeField] Slider HPImageRef;
     //[SerializeField] Slider MPImageRef;
     [SerializeField] Image HPImageRef;
@@ -33,7 +36,6 @@ public class UIEvent : MonoBehaviour
     public Transform[] buttonTransforms;
     public MenuState category;
     public int choice;
-    private Button[] buttonList;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,197 +43,149 @@ public class UIEvent : MonoBehaviour
         category = MenuState.Top;
         lockUI.SetActive(false);
         choice = 4;
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SetMenu();
     }
 
     #region MenuButtons
-
-    public void SetMenu()
+    // Code for Button 1 (top left)
+    public void Button1()
     {
-        buttonList = radialMenu.GetComponentsInChildren<Button>();
-        Debug.Log(buttonList.Length);
-        // Fight, Fire, Wind, Light, Info, Talk, Act(?)
-
-        if (targetObject)
+        if (category != MenuState.Top)
         {
-            switch (targetObject.tag)
-            {
-                case "Interactable":
-                    buttonList[0].interactable = true;
-                    buttonList[1].interactable = true;
-                    buttonList[2].interactable = true;
-                    buttonList[3].interactable = true;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = true;
-                    sliderBox.SetActive(false);
-                    break;
-
-                case "NPC":
-                    buttonList[0].interactable = false;
-                    buttonList[1].interactable = false;
-                    buttonList[2].interactable = false;
-                    buttonList[3].interactable = false;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = true;
-                    sliderBox.SetActive(false);
-                    break;
-
-                case "Enemy":
-                    targetObject.GetComponent<Enemy>().HPImage = HPImageRef;
-                    targetObject.GetComponent<Enemy>().MPImage = MPImageRef;
-                    buttonList[0].interactable = true;
-                    buttonList[1].interactable = true;
-                    buttonList[2].interactable = true;
-                    buttonList[3].interactable = true;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = true;
-                    sliderBox.SetActive(true);
-                    break;
-
-                case "Tree":
-                    buttonList[0].interactable = true;
-                    buttonList[1].interactable = false;
-                    buttonList[2].interactable = false;
-                    buttonList[3].interactable = false;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = true;
-                    sliderBox.SetActive(false);
-                    break;
-
-                case "Rat":
-                    targetObject.GetComponent<Rat>().HPImage = HPImageRef;
-                    targetObject.GetComponent<Rat>().MPImage = MPImageRef;
-                    buttonList[0].interactable = true;
-                    buttonList[1].interactable = true;
-                    buttonList[2].interactable = true;
-                    buttonList[3].interactable = true;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = true;
-                    sliderBox.SetActive(true);
-                    break;
-
-                case "Totem":
-                    buttonList[0].interactable = false;
-                    buttonList[1].interactable = false;
-                    buttonList[2].interactable = false;
-                    buttonList[3].interactable = false;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = true;
-                    sliderBox.SetActive(false);
-                    break;
-
-                case "Pillar":
-                    buttonList[0].interactable = false;
-                    buttonList[1].interactable = true;
-                    buttonList[2].interactable = true;
-                    buttonList[3].interactable = true;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = true;
-                    sliderBox.SetActive(false);
-                    break;
-
-                case "Lock":
-                    buttonList[0].interactable = false;
-                    buttonList[1].interactable = false;
-                    buttonList[2].interactable = false;
-                    buttonList[3].interactable = false;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
-                    sliderBox.SetActive(false);
-                    break;
-
-                case "MovingBox":
-                    buttonList[0].interactable = false;
-                    buttonList[1].interactable = true;
-                    buttonList[2].interactable = !targetObject.GetComponent<MovingBox>().puzzleManager.solved;
-                    buttonList[3].interactable = true;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = true;
-                    sliderBox.SetActive(false);
-                    break;
-
-                case "BoxResetter":
-                    buttonList[0].interactable = false;
-                    buttonList[1].interactable = false;
-                    buttonList[2].interactable = false;
-                    buttonList[3].interactable = false;
-                    buttonList[4].interactable = true;
-                    buttonList[5].interactable = true;
-                    buttonList[6].interactable = !targetObject.GetComponent<BoxResetter>().puzzleManager.solved;
-                    sliderBox.SetActive(false);
-                    break;
-            }
+            choice = 1;
+            CallForResult();
         }
         else
         {
-            UpdateText("There's nothing there?");
+            category = MenuState.Fight;
+        }
+    }
+
+    // Code for Button 2 (top right)
+    public void Button2()
+    {
+        if (category != MenuState.Top)
+        {
+            choice = 2;
+            CallForResult();
+        }
+        else
+        {
+            category = MenuState.Magic;
+        }
+    }
+
+    // Code for Button 3 (bottom left)
+    public void Button3()
+    {
+        if (category != MenuState.Top)
+        {
+            choice = 3;
+            CallForResult();
+        }
+        else
+        {
+            category = MenuState.Action;
         }
     }
 
     // Calls for the results depending on object tab
     public void CallForResult()
     {
-        buttonList = radialMenu.GetComponentsInChildren<Button>();
-        // Fight, Fire, Wind, Light, Info, Talk, Act(?)
-
+        Button[] buttonList = topMenu.GetComponentsInChildren<Button>();
+        buttonList[3].interactable = true;
+        
         if (targetObject)
         {
             switch (targetObject.tag)
             {
                 case "Interactable":
                     targetObject.GetComponent<Interactable>().ReturnResult(category, choice);
+                    buttonList[0].interactable = true;
+                    buttonList[1].interactable = true;
+                    buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "NPC":
                     targetObject.GetComponent<NPC>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "Enemy":
                     targetObject.GetComponent<Enemy>().ReturnResult(category, choice);
+                    targetObject.GetComponent<Enemy>().HPImage = HPImageRef;
+                    targetObject.GetComponent<Enemy>().MPImage = MPImageRef;
+                    buttonList[0].interactable = true;
+                    buttonList[1].interactable = true;
+                    buttonList[2].interactable = true;
+                    sliderBox.SetActive(true);
                     break;
 
                 case "Tree":
                     targetObject.GetComponent<Tree>().ReturnResult(category, choice);
+                    buttonList[0].interactable = true;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "Rat":
                     targetObject.GetComponent<Rat>().ReturnResult(category, choice);
+                    targetObject.GetComponent<Rat>().HPImage = HPImageRef;
+                    targetObject.GetComponent<Rat>().MPImage = MPImageRef;
+                    buttonList[0].interactable = true;
+                    buttonList[1].interactable = true;
+                    buttonList[2].interactable = true;
+                    sliderBox.SetActive(true);
                     break;
 
                 case "Totem":
                     targetObject.GetComponent<Totem>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "Pillar":
                     targetObject.GetComponent<Pillar>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = true;
+                    buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "Lock":
                     targetObject.GetComponent<Lock>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "MovingBox":
                     targetObject.GetComponent<MovingBox>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = !targetObject.GetComponent<MovingBox>().puzzleManager.solved;
+                    buttonList[2].interactable = true;
+                    sliderBox.SetActive(false);
                     break;
 
                 case "BoxResetter":
                     targetObject.GetComponent<BoxResetter>().ReturnResult(category, choice);
+                    buttonList[0].interactable = false;
+                    buttonList[1].interactable = false;
+                    buttonList[2].interactable = !targetObject.GetComponent<BoxResetter>().puzzleManager.solved;
+                    sliderBox.SetActive(false);
                     break;
             }
         }
@@ -242,74 +196,109 @@ public class UIEvent : MonoBehaviour
     }
 
     // Code for back/run (bottom right)
-    //public void BackButton()
-    //{
-    //    choice = 4;
-    //    if (category != MenuState.Top)
-    //    {
-    //        category = MenuState.Top;
-    //        CallForResult();
-    //    }
-    //    else
-    //    {
-    //        if (!targetObject)
-    //        {
-    //            this.gameObject.SetActive(false);
-    //            PlyrCtrl.pSt = PlayerState.Moving;
-    //            UpdateText("");
-    //        }
-    //        else
-    //        {
-    //            switch (targetObject.tag)
-    //            {
-    //                case "Enemy":
-    //                    if (UnityEngine.Random.Range(0, 10) == 0) // 10% Failure to Run
-    //                    {
-    //                        UpdateText("You couldn't get away!");
-    //                    }
-    //                    else
-    //                    {
-    //                        this.gameObject.SetActive(false);
-    //                        PlyrCtrl.pSt = PlayerState.Moving;
-    //                        UpdateText("");
-    //                    }
-    //                    break;
+    public void BackButton()
+    {
+        choice = 4;
+        if (category != MenuState.Top)
+        {
+            category = MenuState.Top;
+            CallForResult();
+        }
+        else
+        {
+            if (!targetObject)
+            {
+                this.gameObject.SetActive(false);
+                PlyrCtrl.pSt = PlayerState.Moving;
+                UpdateText("");
+            }
+            else
+            {
+                switch (targetObject.tag)
+                {
+                    case "Enemy":
+                        if (UnityEngine.Random.Range(0, 10) == 0) // 10% Failure to Run
+                        {
+                            UpdateText("You couldn't get away!");
+                        }
+                        else
+                        {
+                            this.gameObject.SetActive(false);
+                            PlyrCtrl.pSt = PlayerState.Moving;
+                            UpdateText("");
+                        }
+                        break;
 
-    //                case "Rat":
-    //                    if (UnityEngine.Random.Range(0, 5) == 0) // 20% Failure to Run
-    //                    {
-    //                        UpdateText("You couldn't get away!");
-    //                    }
-    //                    else
-    //                    {
-    //                        this.gameObject.SetActive(false);
-    //                        PlyrCtrl.pSt = PlayerState.Moving;
-    //                        UpdateText("");
-    //                    }
-    //                    break;
+                    case "Rat":
+                        if (UnityEngine.Random.Range(0, 5) == 0) // 20% Failure to Run
+                        {
+                            UpdateText("You couldn't get away!");
+                        }
+                        else
+                        {
+                            this.gameObject.SetActive(false);
+                            PlyrCtrl.pSt = PlayerState.Moving;
+                            UpdateText("");
+                        }
+                        break;
 
-    //                case "Infected":
-    //                    if (UnityEngine.Random.Range(0, 3) == 0) // 33% Failure to Run
-    //                    {
-    //                        UpdateText("You couldn't get away!");
-    //                    }
-    //                    else
-    //                    {
-    //                        this.gameObject.SetActive(false);
-    //                        PlyrCtrl.pSt = PlayerState.Moving;
-    //                        UpdateText("");
-    //                    }
-    //                    break;
+                    case "Infected":
+                        if (UnityEngine.Random.Range(0, 3) == 0) // 33% Failure to Run
+                        {
+                            UpdateText("You couldn't get away!");
+                        }
+                        else
+                        {
+                            this.gameObject.SetActive(false);
+                            PlyrCtrl.pSt = PlayerState.Moving;
+                            UpdateText("");
+                        }
+                        break;
 
-    //                default:
-    //                    this.gameObject.SetActive(false);
-    //                    PlyrCtrl.pSt = PlayerState.Moving;
-    //                    UpdateText("");
-    //                    break;
-    //            }
-    //        }
-    //    }
-    //}
+                    default:
+                        this.gameObject.SetActive(false);
+                        PlyrCtrl.pSt = PlayerState.Moving;
+                        UpdateText("");
+                        break;
+                }
+            }
+        }
+    }
+
+    // Sets the menu
+    public void SetMenu()
+    {
+        switch (category)
+        {
+            case MenuState.Top:
+                topMenu.SetActive(true);
+                fightMenu.SetActive(false);
+                magicMenu.SetActive(false);
+                actionMenu.SetActive(false);
+                break;
+
+            case MenuState.Fight:
+                topMenu.SetActive(false);
+                fightMenu.SetActive(true);
+                magicMenu.SetActive(false);
+                actionMenu.SetActive(false);
+                break;
+
+            case MenuState.Magic:
+                topMenu.SetActive(false);
+                fightMenu.SetActive(false);
+                magicMenu.SetActive(true);
+                actionMenu.SetActive(false);
+                break;
+
+            case MenuState.Action:
+                topMenu.SetActive(false);
+                fightMenu.SetActive(false);
+                magicMenu.SetActive(false);
+                actionMenu.SetActive(true);
+                break;
+        }
+    }
 #endregion
 
     #region StatMethods
@@ -424,8 +413,8 @@ public class UIEvent : MonoBehaviour
         {
             lockUI.SetActive(false);
             menuControl.SetActive(true);
-            Button[] buttonList = radialMenu.GetComponentsInChildren<Button>();
-            buttonList[6].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
+            Button[] buttonList = topMenu.GetComponentsInChildren<Button>();
+            buttonList[2].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
             category = MenuState.Top;
         }
     }
