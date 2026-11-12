@@ -70517,6 +70517,10 @@ PrefabInstance:
       propertyPath: holdMenu
       value: 
       objectReference: {fileID: 2075658547}
+    - target: {fileID: 5266426063820424418, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: playerInteractionControls
+      value: 
+      objectReference: {fileID: 1817600370}
     - target: {fileID: 5512749307528870540, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Color.a
       value: 0.5882353
@@ -82851,6 +82855,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f6fc7e12f726840a11af8ba5cc7509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1817600370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3926376546785254941, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+  m_PrefabInstance: {fileID: 1487733553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11dc3aca034e08d4b927fe73bfe95d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1817702125

@@ -9,6 +9,7 @@ public class ShowRadialMenu : MonoBehaviour
     [SerializeField] private GameObject holdMenu;
     [SerializeField] public PlayerController playerController;
     [SerializeField] PlayerInteraction playerInteractionControls;
+    [SerializeField] UIEvent interfaceUI;
 
     private PointerEventData pointerData;
     private List<RaycastResult> results = new List<RaycastResult>();
@@ -34,6 +35,8 @@ public class ShowRadialMenu : MonoBehaviour
 
             // Move the menu to the mouse position
             holdMenu.transform.position = Input.mousePosition;
+
+            interfaceUI.SetMenu();
         }
 
         // Left mouse button released

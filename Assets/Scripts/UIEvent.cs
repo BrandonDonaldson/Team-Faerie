@@ -33,6 +33,7 @@ public class UIEvent : MonoBehaviour
     public Transform[] buttonTransforms;
     public MenuState category;
     public int choice;
+    private Button[] buttonList;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,19 +41,22 @@ public class UIEvent : MonoBehaviour
         category = MenuState.Top;
         lockUI.SetActive(false);
         choice = 4;
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetMenu();
+        
     }
 
     #region MenuButtons
 
-    private void SetMenu()
+    public void SetMenu()
     {
-        Button[] buttonList = radialMenu.GetComponentsInChildren<Button>();
+        buttonList = radialMenu.GetComponentsInChildren<Button>();
+        Debug.Log(buttonList.Length);
         // Fight, Fire, Wind, Light, Info, Talk, Act(?)
 
         if (targetObject)
@@ -238,74 +242,74 @@ public class UIEvent : MonoBehaviour
     }
 
     // Code for back/run (bottom right)
-    public void BackButton()
-    {
-        choice = 4;
-        if (category != MenuState.Top)
-        {
-            category = MenuState.Top;
-            CallForResult();
-        }
-        else
-        {
-            if (!targetObject)
-            {
-                this.gameObject.SetActive(false);
-                PlyrCtrl.pSt = PlayerState.Moving;
-                UpdateText("");
-            }
-            else
-            {
-                switch (targetObject.tag)
-                {
-                    case "Enemy":
-                        if (UnityEngine.Random.Range(0, 10) == 0) // 10% Failure to Run
-                        {
-                            UpdateText("You couldn't get away!");
-                        }
-                        else
-                        {
-                            this.gameObject.SetActive(false);
-                            PlyrCtrl.pSt = PlayerState.Moving;
-                            UpdateText("");
-                        }
-                        break;
+    //public void BackButton()
+    //{
+    //    choice = 4;
+    //    if (category != MenuState.Top)
+    //    {
+    //        category = MenuState.Top;
+    //        CallForResult();
+    //    }
+    //    else
+    //    {
+    //        if (!targetObject)
+    //        {
+    //            this.gameObject.SetActive(false);
+    //            PlyrCtrl.pSt = PlayerState.Moving;
+    //            UpdateText("");
+    //        }
+    //        else
+    //        {
+    //            switch (targetObject.tag)
+    //            {
+    //                case "Enemy":
+    //                    if (UnityEngine.Random.Range(0, 10) == 0) // 10% Failure to Run
+    //                    {
+    //                        UpdateText("You couldn't get away!");
+    //                    }
+    //                    else
+    //                    {
+    //                        this.gameObject.SetActive(false);
+    //                        PlyrCtrl.pSt = PlayerState.Moving;
+    //                        UpdateText("");
+    //                    }
+    //                    break;
 
-                    case "Rat":
-                        if (UnityEngine.Random.Range(0, 5) == 0) // 20% Failure to Run
-                        {
-                            UpdateText("You couldn't get away!");
-                        }
-                        else
-                        {
-                            this.gameObject.SetActive(false);
-                            PlyrCtrl.pSt = PlayerState.Moving;
-                            UpdateText("");
-                        }
-                        break;
+    //                case "Rat":
+    //                    if (UnityEngine.Random.Range(0, 5) == 0) // 20% Failure to Run
+    //                    {
+    //                        UpdateText("You couldn't get away!");
+    //                    }
+    //                    else
+    //                    {
+    //                        this.gameObject.SetActive(false);
+    //                        PlyrCtrl.pSt = PlayerState.Moving;
+    //                        UpdateText("");
+    //                    }
+    //                    break;
 
-                    case "Infected":
-                        if (UnityEngine.Random.Range(0, 3) == 0) // 33% Failure to Run
-                        {
-                            UpdateText("You couldn't get away!");
-                        }
-                        else
-                        {
-                            this.gameObject.SetActive(false);
-                            PlyrCtrl.pSt = PlayerState.Moving;
-                            UpdateText("");
-                        }
-                        break;
+    //                case "Infected":
+    //                    if (UnityEngine.Random.Range(0, 3) == 0) // 33% Failure to Run
+    //                    {
+    //                        UpdateText("You couldn't get away!");
+    //                    }
+    //                    else
+    //                    {
+    //                        this.gameObject.SetActive(false);
+    //                        PlyrCtrl.pSt = PlayerState.Moving;
+    //                        UpdateText("");
+    //                    }
+    //                    break;
 
-                    default:
-                        this.gameObject.SetActive(false);
-                        PlyrCtrl.pSt = PlayerState.Moving;
-                        UpdateText("");
-                        break;
-                }
-            }
-        }
-    }
+    //                default:
+    //                    this.gameObject.SetActive(false);
+    //                    PlyrCtrl.pSt = PlayerState.Moving;
+    //                    UpdateText("");
+    //                    break;
+    //            }
+    //        }
+    //    }
+    //}
 #endregion
 
     #region StatMethods
