@@ -25,6 +25,7 @@ public class Lock : Interactable
         if (category == MenuState.Action && action == 3)
         {
             // Sets UI on Action -> Act
+            Debug.Log("Opening Lock Puzzle");
             InterfaceRef.ToggleLock();
         }
     }
