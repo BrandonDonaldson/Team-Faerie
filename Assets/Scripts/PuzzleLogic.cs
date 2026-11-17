@@ -92,6 +92,19 @@ public class PuzzleLogic : MonoBehaviour
                 break;
 
             case PuzzleType.Lock:
+                // The solution and elements are kept in the locks, not here
+                if (InterfaceRef.targetObject.tag == "Lock")
+                {
+                    ElementRef = InterfaceRef.targetObject;
+                    obstacleRef = ElementRef.GetComponent<Lock>().obstacleRef;
+                    code = ElementRef.GetComponent<Lock>().solutionCode;
+                }
+                else
+                {
+                    Debug.Log("This is not a lock.");
+                    break;
+                }
+                
                 for (int i = 0; i < 3; i++)
                 {
                     string expectedDigit = code[i].ToString();

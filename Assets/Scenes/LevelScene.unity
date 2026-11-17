@@ -900,6 +900,7 @@ MonoBehaviour:
   actionDialogue: The lock seems to have slots for three numbers|Maybe the man over
     there knows how to open it|You check the lock
   puzzleManager: {fileID: 1800679234}
+  obstacleRef: {fileID: 1750194772}
   solutionCode: 716
 --- !u!61 &17380925
 BoxCollider2D:
@@ -5443,7 +5444,7 @@ PrefabInstance:
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: fightDialogue
       value: THIS AREA IS CURRENTLY UNFINISHED|THIS AREA IS CURRENTLY UNFINISHED|THIS
@@ -98885,7 +98886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cc8ece5e4db224e9b28f434813fa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 0}
+  InterfaceRef: {fileID: 1509131347}
   ElementRef: {fileID: 104307663}
   type: 1
   obstacleRef: {fileID: 1750194772}

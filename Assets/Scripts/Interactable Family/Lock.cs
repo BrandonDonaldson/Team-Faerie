@@ -4,13 +4,13 @@ using UnityEngine.InputSystem;
 public class Lock : Interactable
 {
     [SerializeField] public PuzzleLogic puzzleManager;
-    [SerializeField] string solutionCode;
+    [SerializeField] public GameObject obstacleRef;
+    [SerializeField] public string solutionCode;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         OnStartUp();
-        puzzleManager.code = this.solutionCode;
     }
 
     // Update is called once per frame
