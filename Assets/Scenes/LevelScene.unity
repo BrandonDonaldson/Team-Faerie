@@ -889,7 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c834c159808d54e973165c8b134a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 1487733554}
+  InterfaceRef: {fileID: 1509131347}
   collider: {fileID: 0}
   mask:
     serializedVersion: 2
@@ -5314,7 +5314,7 @@ PrefabInstance:
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 0}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: fightDialogue
       value: THIS AREA IS CURRENTLY UNFINISHED|THIS AREA IS CURRENTLY UNFINISHED|THIS
@@ -69163,7 +69163,7 @@ PrefabInstance:
     - target: {fileID: 8940299981731247993, guid: d15f31fee6da5e64cb83a3d466b781f6, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 8940299981731247993, guid: d15f31fee6da5e64cb83a3d466b781f6, type: 3}
       propertyPath: puzzleManager
       value: 
@@ -73792,7 +73792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1bfa1baf07dbd43a7bd2367c8f8e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 1487733554}
+  InterfaceRef: {fileID: 1509131347}
   collider: {fileID: 0}
   mask:
     serializedVersion: 2
@@ -79014,7 +79014,7 @@ PrefabInstance:
     - target: {fileID: 5306996077074834784, guid: 7d9562d2066e252409edfeec681b1a3d, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 5306996077074834784, guid: 7d9562d2066e252409edfeec681b1a3d, type: 3}
       propertyPath: fightDialogue
       value: X|X|X
@@ -85237,7 +85237,7 @@ PrefabInstance:
     - target: {fileID: 8940299981731247993, guid: d15f31fee6da5e64cb83a3d466b781f6, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 8940299981731247993, guid: d15f31fee6da5e64cb83a3d466b781f6, type: 3}
       propertyPath: puzzleManager
       value: 
@@ -86252,7 +86252,8 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7058824
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7769241730083312139, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -86281,17 +86282,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1427098032}
   m_SourcePrefab: {fileID: 100100000, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
---- !u!114 &1487733554 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7769241730083312139, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-  m_PrefabInstance: {fileID: 1487733553}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7df823d152d260d4b9e1c5c859f3d0f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1487981200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4608259136516538565, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
@@ -86641,7 +86631,7 @@ PrefabInstance:
     - target: {fileID: 5306996077074834784, guid: 7d9562d2066e252409edfeec681b1a3d, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 5306996077074834784, guid: 7d9562d2066e252409edfeec681b1a3d, type: 3}
       propertyPath: fightDialogue
       value: .|.|.
@@ -87605,7 +87595,7 @@ PrefabInstance:
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: fightDialogue
       value: I have no intention of fighting with you.|I have no intention of fighting
@@ -88739,7 +88729,7 @@ PrefabInstance:
     - target: {fileID: 3342623247757116552, guid: e4b0a00a198437348919edfb181fc39d, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 8159745440983497738, guid: e4b0a00a198437348919edfb181fc39d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -92759,7 +92749,7 @@ PrefabInstance:
     - target: {fileID: 3342623247757116552, guid: e4b0a00a198437348919edfb181fc39d, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 0}
     - target: {fileID: 8159745440983497738, guid: e4b0a00a198437348919edfb181fc39d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.7
@@ -93227,7 +93217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cc8ece5e4db224e9b28f434813fa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 1487733554}
+  InterfaceRef: {fileID: 0}
   ElementRef: {fileID: 0}
   type: 2
   obstacleRef: {fileID: 402962529}
@@ -98754,7 +98744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cc8ece5e4db224e9b28f434813fa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 1487733554}
+  InterfaceRef: {fileID: 0}
   ElementRef: {fileID: 104307663}
   type: 1
   obstacleRef: {fileID: 1750194772}
@@ -102434,7 +102424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cc8ece5e4db224e9b28f434813fa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 1487733554}
+  InterfaceRef: {fileID: 0}
   ElementRef: {fileID: 0}
   type: 2
   obstacleRef: {fileID: 1640261896}
@@ -105485,7 +105475,7 @@ PrefabInstance:
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: fightDialogue
       value: I have no intention of fighting with you.|I have no intention of fighting
@@ -110621,7 +110611,7 @@ PrefabInstance:
     - target: {fileID: 6096465514104172407, guid: 544a3c86de509da4b9598ab0f0fc1ae3, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 6096465514104172407, guid: 544a3c86de509da4b9598ab0f0fc1ae3, type: 3}
       propertyPath: fightDialogue
       value: GenericInteractable refuses to fight because it's built better.|You
@@ -110711,7 +110701,7 @@ PrefabInstance:
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: InterfaceRef
       value: 
-      objectReference: {fileID: 1487733554}
+      objectReference: {fileID: 1509131347}
     - target: {fileID: 3001233605025705556, guid: 2865540fe3eeb8547b8c27774cf52ea0, type: 3}
       propertyPath: fightDialogue
       value: What are you doing? Violence isn't the answer!|What are you doing? Violence
@@ -110921,7 +110911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c2b64ec621a9c4799cd377df4b9128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 1487733554}
+  InterfaceRef: {fileID: 1509131347}
   collider: {fileID: 0}
   mask:
     serializedVersion: 2
