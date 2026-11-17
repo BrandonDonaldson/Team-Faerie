@@ -2264,7 +2264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40192524}
   - component: {fileID: 40192523}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Numbers_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2312,8 +2312,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1632329135
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1447350595, guid: 98166858f7e9ae947aec7cfae46b2dca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -19430,8 +19430,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1632329135
+  m_SortingLayer: -1
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.009955585, y: 0.009285688, z: 0}
@@ -51545,7 +51545,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000af5d4b61
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -63501,7 +63501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 896943787}
   - component: {fileID: 896943786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Numbers_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63549,8 +63549,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1632329135
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1248448558, guid: 98166858f7e9ae947aec7cfae46b2dca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -72221,7 +72221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1133834157}
   - component: {fileID: 1133834156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Numbers_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72269,8 +72269,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1632329135
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1878039893, guid: 98166858f7e9ae947aec7cfae46b2dca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -86049,6 +86049,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.47058824
       objectReference: {fileID: 0}
+    - target: {fileID: 1316483611729384243, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316483611729384243, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316483611729384243, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585449878976155450, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -88534,7 +88546,7 @@ GameObject:
   - component: {fileID: 1543347607}
   - component: {fileID: 1543347606}
   - component: {fileID: 1543347610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tutorial code
   m_TagString: Untagged
   m_Icon: {fileID: 0}
