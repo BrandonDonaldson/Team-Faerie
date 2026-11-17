@@ -25,7 +25,7 @@ public class ShowRadialMenu : MonoBehaviour
             return;
 
         // Left mouse button pressed and if the player can interact with what they're facing
-        if (Mouse.current.leftButton.wasPressedThisFrame && playerInteractionControls.DetectInteractable())
+        if (Mouse.current.leftButton.wasPressedThisFrame && playerInteractionControls.DetectInteractable() && !interfaceUI.lockUI.active)
         {
             // Make sure that there is an interactible in front of the player
             // Switch player mode to interacting
@@ -40,7 +40,7 @@ public class ShowRadialMenu : MonoBehaviour
         }
 
         // Left mouse button released
-        if (Mouse.current.leftButton.wasReleasedThisFrame)
+        if (Mouse.current.leftButton.wasReleasedThisFrame && !interfaceUI.lockUI.active)
         {
             CheckHoveredButton();
             holdMenu.SetActive(false);

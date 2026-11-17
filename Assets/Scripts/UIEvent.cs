@@ -21,7 +21,7 @@ public class UIEvent : MonoBehaviour
     [SerializeField] TextMeshProUGUI textBox;
     [SerializeField] GameObject textBoxGroup;
     [SerializeField] GameObject menuControl;
-    [SerializeField] GameObject lockUI;
+    [SerializeField] public GameObject lockUI;
     [SerializeField] GameObject sliderBox;
     [SerializeField] GameObject radialMenu;
     //[SerializeField] Slider HPImageRef;
@@ -51,6 +51,29 @@ public class UIEvent : MonoBehaviour
         if (textBoxGroup.active)
         {
             textBoxGroup.SetActive(!Input.anyKey);
+        }
+
+
+        switch (targetObject.tag)
+        {
+            case "Enemy":
+                HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
+                MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
+                targetObject.GetComponent<Enemy>().HPImage = HPImageRef;
+                targetObject.GetComponent<Enemy>().MPImage = MPImageRef;
+                break;
+
+            case "Rat":
+                HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
+                MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
+                targetObject.GetComponent<Rat>().HPImage = HPImageRef;
+                targetObject.GetComponent<Rat>().MPImage = MPImageRef;
+                break;
+
+            default:
+                HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(false);
+                MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(false);
+                break;
         }
     }
 
@@ -89,8 +112,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "Enemy":
-                    targetObject.GetComponent<Enemy>().HPImage = HPImageRef;
-                    targetObject.GetComponent<Enemy>().MPImage = MPImageRef;
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
@@ -113,8 +134,6 @@ public class UIEvent : MonoBehaviour
                     break;
 
                 case "Rat":
-                    targetObject.GetComponent<Rat>().HPImage = HPImageRef;
-                    targetObject.GetComponent<Rat>().MPImage = MPImageRef;
                     buttonList[0].interactable = true;
                     buttonList[1].interactable = true;
                     buttonList[2].interactable = true;
@@ -246,76 +265,6 @@ public class UIEvent : MonoBehaviour
             UpdateText("There's nothing there?");
         }
     }
-
-    // Code for back/run (bottom right)
-    //public void BackButton()
-    //{
-    //    choice = 4;
-    //    if (category != MenuState.Top)
-    //    {
-    //        category = MenuState.Top;
-    //        CallForResult();
-    //    }
-    //    else
-    //    {
-    //        if (!targetObject)
-    //        {
-    //            this.gameObject.SetActive(false);
-    //            PlyrCtrl.pSt = PlayerState.Moving;
-    //            UpdateText("");
-    //        }
-    //        else
-    //        {
-    //            switch (targetObject.tag)
-    //            {
-    //                case "Enemy":
-    //                    if (UnityEngine.Random.Range(0, 10) == 0) // 10% Failure to Run
-    //                    {
-    //                        UpdateText("You couldn't get away!");
-    //                    }
-    //                    else
-    //                    {
-    //                        this.gameObject.SetActive(false);
-    //                        PlyrCtrl.pSt = PlayerState.Moving;
-    //                        UpdateText("");
-    //                    }
-    //                    break;
-
-    //                case "Rat":
-    //                    if (UnityEngine.Random.Range(0, 5) == 0) // 20% Failure to Run
-    //                    {
-    //                        UpdateText("You couldn't get away!");
-    //                    }
-    //                    else
-    //                    {
-    //                        this.gameObject.SetActive(false);
-    //                        PlyrCtrl.pSt = PlayerState.Moving;
-    //                        UpdateText("");
-    //                    }
-    //                    break;
-
-    //                case "Infected":
-    //                    if (UnityEngine.Random.Range(0, 3) == 0) // 33% Failure to Run
-    //                    {
-    //                        UpdateText("You couldn't get away!");
-    //                    }
-    //                    else
-    //                    {
-    //                        this.gameObject.SetActive(false);
-    //                        PlyrCtrl.pSt = PlayerState.Moving;
-    //                        UpdateText("");
-    //                    }
-    //                    break;
-
-    //                default:
-    //                    this.gameObject.SetActive(false);
-    //                    PlyrCtrl.pSt = PlayerState.Moving;
-    //                    UpdateText("");
-    //                    break;
-    //            }
-    //        }
-    //    }
-    //}
 #endregion
 
     #region StatMethods
