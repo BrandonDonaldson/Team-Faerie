@@ -10,7 +10,6 @@ public class ButtonRelease : MonoBehaviour
 
     public void Activate()
     {
-        Debug.Log("Button selected: " + gameObject.name);
         interfaceRef.category = buttonCategory;
         interfaceRef.choice = buttonChoice;
         interfaceRef.CallForResult();

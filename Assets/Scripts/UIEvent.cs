@@ -84,7 +84,6 @@ public class UIEvent : MonoBehaviour
     public void SetMenu()
     {
         buttonList = radialMenu.GetComponentsInChildren<Button>();
-        Debug.Log(buttonList.Length);
         // Fight, Fire, Wind, Light, Info, Talk, Act(?)
 
         if (targetObject)
