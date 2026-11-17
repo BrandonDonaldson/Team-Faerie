@@ -380,8 +380,6 @@ public class UIEvent : MonoBehaviour
         {
             lockUI.SetActive(false);
             menuControl.SetActive(true);
-            Button[] buttonList = radialMenu.GetComponentsInChildren<Button>();
-            buttonList[6].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
             category = MenuState.Top;
         }
     }
