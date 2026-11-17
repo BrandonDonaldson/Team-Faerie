@@ -53,28 +53,30 @@ public class UIEvent : MonoBehaviour
             textBoxGroup.SetActive(!Input.anyKey);
         }
 
+        //if (targetObject)
+        //{
+        //    switch (targetObject.tag)
+        //    {
+        //        case "Enemy":
+        //            HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
+        //            MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
+        //            targetObject.GetComponent<Enemy>().HPImage = HPImageRef;
+        //            targetObject.GetComponent<Enemy>().MPImage = MPImageRef;
+        //            break;
 
-        switch (targetObject.tag)
-        {
-            case "Enemy":
-                HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
-                MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
-                targetObject.GetComponent<Enemy>().HPImage = HPImageRef;
-                targetObject.GetComponent<Enemy>().MPImage = MPImageRef;
-                break;
+        //        case "Rat":
+        //            HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
+        //            MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
+        //            targetObject.GetComponent<Rat>().HPImage = HPImageRef;
+        //            targetObject.GetComponent<Rat>().MPImage = MPImageRef;
+        //            break;
 
-            case "Rat":
-                HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
-                MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
-                targetObject.GetComponent<Rat>().HPImage = HPImageRef;
-                targetObject.GetComponent<Rat>().MPImage = MPImageRef;
-                break;
-
-            default:
-                HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(false);
-                MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(false);
-                break;
-        }
+        //        default:
+        //            HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(false);
+        //            MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(false);
+        //            break;
+        //    }
+        //}
     }
 
     #region MenuButtons
