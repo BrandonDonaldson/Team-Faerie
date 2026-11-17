@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -13,6 +15,8 @@ public class ShowRadialMenu : MonoBehaviour
 
     private PointerEventData pointerData;
     private List<RaycastResult> results = new List<RaycastResult>();
+
+    [SerializeField] private AudioClip openMenuClip;
 
     void Start()
     {
@@ -32,6 +36,12 @@ public class ShowRadialMenu : MonoBehaviour
             playerController.PSt = PlayerState.Interacting;
 
             holdMenu.SetActive(true);
+
+            // Play the sound effect whenever the menu opens
+            if (openMenuClip != null && SFXManager.Instance != null)
+            {
+                SFXManager.Instance.PlaySFX(openMenuClip);
+            }
 
             // Move the menu to the mouse position
             holdMenu.transform.position = Input.mousePosition;

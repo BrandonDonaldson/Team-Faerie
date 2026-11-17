@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 previousInputDirection;
     private PlayerDirection playerDirection;
 
+    [SerializeField] AudioClip footstepClip;
+    [SerializeField] float footstepCooldown = 0.45f;
+    private float nextFootstepTime = 0f;
+
     public PlayerDirection PlayerDirection
     {
         get
@@ -87,6 +91,8 @@ public class PlayerMovement : MonoBehaviour
 
                         // Set the previous Input Direction
                         previousInputDirection = new Vector2(inputDirection.x, 0f);
+
+                        PlayFootstep();
                     }
                 }
                 // If the keypress is in the vertial direction
@@ -110,6 +116,8 @@ public class PlayerMovement : MonoBehaviour
 
                         // Set the previous Input Direction
                         previousInputDirection = new Vector2(0f, inputDirection.y);
+
+                        PlayFootstep();
                     }
                 }
             }
@@ -160,5 +168,14 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         inputDirection = context.ReadValue<Vector2>();
+    }
+
+    private void PlayFootstep()
+    {
+        if (footstepClip != null && SFXManager.Instance != null && Time.time >= nextFootstepTime)
+        {
+            SFXManager.Instance.PlaySFX(footstepClip, .45f);
+            nextFootstepTime = Time.time + footstepCooldown;
+        }
     }
 }
