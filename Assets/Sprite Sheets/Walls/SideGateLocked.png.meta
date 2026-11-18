@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 06b999b2ac42bb14b835cbe7a1d9cf2e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9189148850113014354
+    second: SideGateLocked_0
+  - first:
+      213: 2898693738244960063
+    second: SideGateLocked_1
+  - first:
+      213: -8627382695636040496
+    second: SideGateLocked_2
+  - first:
+      213: 6978787946544353645
+    second: SideGateLocked_3
+  - first:
+      213: 5089633103056343409
+    second: SideGateLocked_4
+  - first:
+      213: 9077680722062272867
+    second: SideGateLocked_5
+  - first:
+      213: -6445919573679362864
+    second: SideGateLocked_6
+  - first:
+      213: 9002116681814050790
+    second: SideGateLocked_7
+  - first:
+      213: 3133468351883608270
+    second: SideGateLocked_8
+  - first:
+      213: 3327126145924699284
+    second: SideGateLocked_9
+  - first:
+      213: -3915642178406438942
+    second: SideGateLocked_10
+  - first:
+      213: -5572444308660867499
+    second: SideGateLocked_11
+  - first:
+      213: -7431800935500865710
+    second: SideGateLocked_12
+  - first:
+      213: 9055982915206221845
+    second: SideGateLocked_13
+  - first:
+      213: -6829486017766269905
+    second: SideGateLocked_14
+  - first:
+      213: -262771715968326352
+    second: SideGateLocked_15
+  - first:
+      213: -3772254097913128714
+    second: SideGateLocked_16
+  - first:
+      213: -4293715801301403364
+    second: SideGateLocked_17
+  - first:
+      213: 8300013733046711937
+    second: SideGateLocked_18
+  - first:
+      213: -6259172439640521544
+    second: SideGateLocked_19
+  - first:
+      213: 4599456763171783436
+    second: SideGateLocked_20
+  - first:
+      213: -8866990565466505801
+    second: SideGateLocked_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2048
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SideGateLocked_0
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 2528
+        width: 412
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25aec27613a668f70800000000000000
+      internalID: 9189148850113014354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_1
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 2636
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f6db4d89a3a3820800000000000000
+      internalID: 2898693738244960063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_2
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 2632
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4034de521654880800000000000000
+      internalID: -8627382695636040496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_3
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 2408
+        height: 3000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61dd8489a2a9d060800000000000000
+      internalID: 6978787946544353645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_4
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 2614
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1711eb8575202a640800000000000000
+      internalID: 5089633103056343409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_5
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 2608
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 369eee665866afd70800000000000000
+      internalID: 9077680722062272867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_6
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 2563
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dcaa18bc4e7b86a0800000000000000
+      internalID: -6445919573679362864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_7
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 2555
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e705264d61fdec70800000000000000
+      internalID: 9002116681814050790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_8
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 2081
+        width: 384
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec083fc3dd05c7b20800000000000000
+      internalID: 3133468351883608270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_9
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2184
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49491c21a935c2e20800000000000000
+      internalID: 3327126145924699284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_10
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 2093
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e72c884f28d8a9c0800000000000000
+      internalID: -3915642178406438942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_11
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1934
+        width: 104
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e2f93ec63baa2b0800000000000000
+      internalID: -5572444308660867499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_12
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 205
+        width: 548
+        height: 1710
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f1e0eac60fcd890800000000000000
+      internalID: -7431800935500865710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_13
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 0
+        width: 398
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5109fd01b705dad70800000000000000
+      internalID: 9055982915206221845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_14
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 141
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2c5b88a6aac831a0800000000000000
+      internalID: -6829486017766269905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_15
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 139
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03520bc34827a5cf0800000000000000
+      internalID: -262771715968326352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_16
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 0
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f8506b52e246abc0800000000000000
+      internalID: -3772254097913128714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_17
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 5
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c19b2f05a38a964c0800000000000000
+      internalID: -4293715801301403364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_18
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 0
+        width: 39
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 186fc1dc3829f2370800000000000000
+      internalID: 8300013733046711937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_19
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4cf4324d3f229a0800000000000000
+      internalID: -6259172439640521544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_20
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 0
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c034f90ae8d84df30800000000000000
+      internalID: 4599456763171783436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideGateLocked_21
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 0
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bdf0ae5f0f12f480800000000000000
+      internalID: -8866990565466505801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SideGateLocked_0: 9189148850113014354
+      SideGateLocked_1: 2898693738244960063
+      SideGateLocked_10: -3915642178406438942
+      SideGateLocked_11: -5572444308660867499
+      SideGateLocked_12: -7431800935500865710
+      SideGateLocked_13: 9055982915206221845
+      SideGateLocked_14: -6829486017766269905
+      SideGateLocked_15: -262771715968326352
+      SideGateLocked_16: -3772254097913128714
+      SideGateLocked_17: -4293715801301403364
+      SideGateLocked_18: 8300013733046711937
+      SideGateLocked_19: -6259172439640521544
+      SideGateLocked_2: -8627382695636040496
+      SideGateLocked_20: 4599456763171783436
+      SideGateLocked_21: -8866990565466505801
+      SideGateLocked_3: 6978787946544353645
+      SideGateLocked_4: 5089633103056343409
+      SideGateLocked_5: 9077680722062272867
+      SideGateLocked_6: -6445919573679362864
+      SideGateLocked_7: 9002116681814050790
+      SideGateLocked_8: 3133468351883608270
+      SideGateLocked_9: 3327126145924699284
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
