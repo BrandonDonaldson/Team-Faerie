@@ -62,7 +62,7 @@ public class UIEvent : MonoBehaviour
             targetEnemy = targetObject.tag == "Enemy" || targetObject.tag == "Rat" || targetObject.tag == "Infected";
         }
 
-        sliderBox.SetActive(inCombat && targetEnemy);
+        sliderBox.SetActive(inCombat && targetEnemy && targetObject != null);
 
         if (targetObject != null && targetEnemy)
         {
