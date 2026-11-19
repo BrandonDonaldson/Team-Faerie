@@ -24,7 +24,6 @@ public class Rat : Enemy
         if (category == MenuState.Fight || category == MenuState.Magic)
         {
             int incomingDamage = InterfaceRef.DealDamage("rat", category, action);
-            InterfaceRef.PlayChoiceSFX(category, action);
             InterfaceRef.ExtendText(" " + incomingDamage + " damage!");
             HP -= incomingDamage;
         }
