@@ -902,6 +902,7 @@ MonoBehaviour:
   puzzleManager: {fileID: 1800679234}
   obstacleRef: {fileID: 496725212}
   solutionCode: 716
+  lockSolved: 0
 --- !u!61 &17380925
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54649,6 +54650,7 @@ MonoBehaviour:
   puzzleManager: {fileID: 1800679234}
   obstacleRef: {fileID: 472231429}
   solutionCode: 888
+  lockSolved: 0
 --- !u!61 &697777755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -103063,7 +103065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cc8ece5e4db224e9b28f434813fa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InterfaceRef: {fileID: 0}
+  InterfaceRef: {fileID: 1509131347}
   ElementRef: {fileID: 0}
   type: 2
   obstacleRef: {fileID: 1640261896}
