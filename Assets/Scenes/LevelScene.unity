@@ -86508,6 +86508,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 157765092129184235, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 187491902384151832, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -86552,6 +86556,10 @@ PrefabInstance:
       propertyPath: buttonCategory
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 372002862311049281, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 389011227239788467, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Color.a
       value: 0.5882353
@@ -86567,6 +86575,10 @@ PrefabInstance:
     - target: {fileID: 389011227239788467, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Color.r
       value: 0.40392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 435817186224072188, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 829211822487534896, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: buttonChoice
@@ -86652,6 +86664,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1660000297997938478, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1748155968482174735, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: buttonChoice
       value: 1
@@ -86664,13 +86680,29 @@ PrefabInstance:
       propertyPath: buttonCategory
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1967762073151888900, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: e3ed0167c592df84080bd561e394f24d, type: 3}
+    - target: {fileID: 2244303769395598286, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2463187063856767254, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Transition
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2607204731391487288, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2665051407735101775, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Transition
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755956082092748948, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2798174385757751384, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -86680,9 +86712,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3224508603369163071, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3372073448479245647, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451467045182446501, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3595062323737735266, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: buttonChoice
@@ -86760,6 +86800,14 @@ PrefabInstance:
       propertyPath: buttonCategory
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5187613309703095809, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5225792280894702297, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5266426063820424418, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: holdMenu
       value: 
@@ -86776,6 +86824,10 @@ PrefabInstance:
       propertyPath: playerInteractionControls
       value: 
       objectReference: {fileID: 1817600370}
+    - target: {fileID: 5269641579852011373, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5512749307528870540, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Color.a
       value: 0.5882353
@@ -86791,6 +86843,14 @@ PrefabInstance:
     - target: {fileID: 5512749307528870540, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_Color.r
       value: 0.40392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579308156106818529, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585885944641793012, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5702205927088946922, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -86932,6 +86992,10 @@ PrefabInstance:
       propertyPath: m_NotificationBehavior
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8243337048096475140, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8325012942819879901, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: buttonChoice
       value: 1
@@ -86951,6 +87015,10 @@ PrefabInstance:
     - target: {fileID: 8401760048351476855, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442328748751345589, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8598371244669318402, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -87843,6 +87911,13 @@ MonoBehaviour:
   choice: 0
   inCombat: 0
   targetEnemy: 0
+  fightSFX: {fileID: 8300000, guid: aba62dd200970b64a99e9735edd4212f, type: 3}
+  fireSFX: {fileID: 8300000, guid: 24d8f318b62ecc248a128981c10b1303, type: 3}
+  windSFX: {fileID: 8300000, guid: 273cc6e229f36b04bb51374ff5f83813, type: 3}
+  lightSFX: {fileID: 8300000, guid: 26f2e45c18b8a5c438ec217399ecdb13, type: 3}
+  infoSFX: {fileID: 8300000, guid: aef40f6848bb7bb469976d39a5543353, type: 3}
+  talkSFX: {fileID: 8300000, guid: abfdd950762822548913b36414d9c195, type: 3}
+  actSFX: {fileID: 8300000, guid: 7f3fa635a59ee5d48a1b4a210e262b07, type: 3}
 --- !u!1001 &1510858516
 PrefabInstance:
   m_ObjectHideFlags: 0
