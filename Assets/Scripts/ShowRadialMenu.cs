@@ -46,6 +46,28 @@ public class ShowRadialMenu : MonoBehaviour
             // Move the menu to the mouse position
             holdMenu.transform.position = Input.mousePosition;
 
+            // Check if menu is off screen 
+            Debug.Log(Screen.width);
+            Debug.Log(Input.mousePosition.x);
+
+            if (Input.mousePosition.x > (Screen.width - (Screen.width * 0.2)))
+            {
+                holdMenu.transform.position = new Vector2((float)(Screen.width - (Screen.width * 0.2)), holdMenu.transform.position.y);
+            }
+            else if (Input.mousePosition.x < (Screen.width * 0.2))
+            {
+                holdMenu.transform.position = new Vector2((float)(Screen.width * 0.2), holdMenu.transform.position.y);
+            }
+
+            if (Input.mousePosition.y > (Screen.height - (Screen.height * 0.35)))
+            {
+                holdMenu.transform.position = new Vector2(holdMenu.transform.position.x, (float)(Screen.height - (Screen.height * 0.35)));
+            }
+            else if (Input.mousePosition.y < (Screen.height * 0.35))
+            {
+                holdMenu.transform.position = new Vector2(holdMenu.transform.position.x, (float)(Screen.height * 0.35));
+            }
+
             interfaceUI.SetMenu();
         }
 
