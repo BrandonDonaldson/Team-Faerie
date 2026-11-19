@@ -20,6 +20,7 @@ public class BoxResetter : Interactable
 
     public override void ReturnResult(MenuState category, int action)
     {
+        InterfaceRef.PlayChoiceSFX(category, action);
         base.ReturnResult(category, action);
         if (category == MenuState.Action && action == 3)
         {

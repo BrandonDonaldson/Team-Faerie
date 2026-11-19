@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public int MaxMP; // Magic Points
     [SerializeField] public int DMG;
     [SerializeField] public int DMGVar;
+    [SerializeField] AudioClip hitSFX;
 
     // Fields
     public PlayerState pSt; // Player state (for the state machine)
@@ -72,5 +73,15 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("Death");
         }
+    }
+
+    public void TakeDamageSFX(int damage)
+    {
+        HP -= damage;
+
+        // Play hit sound effect
+        SFXManager.Instance.PlaySFX(hitSFX);
+
+        UpdateBars();
     }
 }

@@ -38,6 +38,17 @@ public class UIEvent : MonoBehaviour
     public bool targetEnemy;
     private Button[] buttonList;
 
+    // Menu SFX
+    [SerializeField] AudioClip fightSFX;
+    [SerializeField] AudioClip fireSFX;
+    [SerializeField] AudioClip windSFX;
+    [SerializeField] AudioClip lightSFX;
+
+    // Other menu choices
+    [SerializeField] AudioClip infoSFX;
+    [SerializeField] AudioClip talkSFX;
+    [SerializeField] AudioClip actSFX;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -298,12 +309,16 @@ public class UIEvent : MonoBehaviour
                         {
                             rolledDamage = (int)(rolledDamage * 1.5);
                         }
-                            
+
+                        //SFXManager.Instance.PlaySFX(fireSFX);
+                        Debug.Log("working");
                         SpendMana(2);
                         break;
 
                     case 2: // Wind
                         rolledDamage = (int)(rolledDamage * 1.5);
+                       // SFXManager.Instance.PlaySFX(windSFX);
+                        Debug.Log("working");
                         SpendMana(1);
                         break;
 
@@ -317,6 +332,8 @@ public class UIEvent : MonoBehaviour
                             rolledDamage = (int)(rolledDamage * 1.5);
                         }
 
+                       // SFXManager.Instance.PlaySFX(lightSFX);
+                        Debug.Log("working");
                         SpendMana(2);
                         break;
                 }
@@ -335,10 +352,65 @@ public class UIEvent : MonoBehaviour
             return rolledDamage;
     }
 
-    
+    public void PlayChoiceSFX(MenuState category, int choice)
+    {
+        switch (category)
+        {
+            case MenuState.Fight:
+                Debug.Log("working");
+                SFXManager.Instance.PlaySFX(fightSFX);
+                break;
+
+            case MenuState.Magic:
+                if (PlyrCtrl.MP <= 0)
+                {
+                    return;
+                }
+
+                switch (choice)
+                {
+                    case 1: // Fire
+                        SFXManager.Instance.PlaySFX(fireSFX);
+                        Debug.Log("working");
+                        break;
+
+                    case 2: // Wind
+                        SFXManager.Instance.PlaySFX(windSFX);
+                        Debug.Log("working");
+                        break;
+
+                    case 3: // Light
+                        SFXManager.Instance.PlaySFX(lightSFX);
+                        Debug.Log("working");
+                        break;
+                }
+                break;
+
+            case MenuState.Action:
+                switch (choice)
+                {
+                    case 1:
+                        SFXManager.Instance.PlaySFX(infoSFX);
+                        Debug.Log("working");
+                        break;
+
+                    case 2:
+                        SFXManager.Instance.PlaySFX(talkSFX);
+                        Debug.Log("working");
+                        break;
+
+                    case 3:
+                        SFXManager.Instance.PlaySFX(actSFX);
+                        Debug.Log("working");
+                        break;
+                }
+                break;
+        }
+    }
+
     public void TakeDamage(int damage)
     {
-        PlyrCtrl.HP -= damage;
+        PlyrCtrl.TakeDamageSFX(damage);
     }
 
     public void SpendMana(int mana)
