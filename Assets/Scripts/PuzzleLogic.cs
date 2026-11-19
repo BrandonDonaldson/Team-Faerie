@@ -118,7 +118,7 @@ public class PuzzleLogic : MonoBehaviour
                         return;
                     }
                 }
-                solved = true;
+                ElementRef.GetComponent<Lock>().lockSolved = true;
                 obstacleRef.SetActive(false);
                 InterfaceRef.ExtendText("\n\nAn unseen mechanisms whirrs to life and a giant slab slides out of the way.");
                 InterfaceRef.ToggleLock();

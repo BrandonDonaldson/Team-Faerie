@@ -34,6 +34,8 @@ public class UIEvent : MonoBehaviour
     public Transform[] buttonTransforms;
     public MenuState category;
     public int choice;
+    public bool inCombat;
+    public bool targetEnemy;
     private Button[] buttonList;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,6 +45,8 @@ public class UIEvent : MonoBehaviour
         lockUI.SetActive(false);
         textBoxGroup.SetActive(false);
         choice = 4;
+        inCombat = false;
+        targetEnemy = false;
     }
 
     // Update is called once per frame
@@ -53,30 +57,35 @@ public class UIEvent : MonoBehaviour
             textBoxGroup.SetActive(!Input.anyKey);
         }
 
-        //if (targetObject)
-        //{
-        //    switch (targetObject.tag)
-        //    {
-        //        case "Enemy":
-        //            HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
-        //            MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
-        //            targetObject.GetComponent<Enemy>().HPImage = HPImageRef;
-        //            targetObject.GetComponent<Enemy>().MPImage = MPImageRef;
-        //            break;
+        if (targetObject != null)
+        {
+            targetEnemy = targetObject.tag == "Enemy" || targetObject.tag == "Rat" || targetObject.tag == "Infected";
+        }
 
-        //        case "Rat":
-        //            HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
-        //            MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(true);
-        //            targetObject.GetComponent<Rat>().HPImage = HPImageRef;
-        //            targetObject.GetComponent<Rat>().MPImage = MPImageRef;
-        //            break;
+        sliderBox.SetActive(inCombat && targetEnemy);
 
-        //        default:
-        //            HPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(false);
-        //            MPImageRef.GetComponentInParent<Transform>().gameObject.SetActive(false);
-        //            break;
-        //    }
-        //}
+        if (targetObject != null && targetEnemy)
+        {
+            switch(targetObject.tag)
+            {
+                case "Rat":
+                    targetObject.GetComponent<Rat>().HPImage = HPImageRef;
+                    targetObject.GetComponent<Rat>().MPImage = MPImageRef;
+                    break;
+
+                case "Infected":
+                    targetObject.GetComponent<Infected>().HPImage = HPImageRef;
+                    targetObject.GetComponent<Infected>().MPImage = MPImageRef;
+                    break;
+
+                default:
+                    break;
+            }
+
+            inCombat = (Vector3.Distance(
+                PlyrCtrl.gameObject.GetComponent<Transform>().position, 
+                targetObject.GetComponent<Transform>().position) <= 1.5f); // inCombat is true if the distance between the player and target is 1.0f unit
+        }
     }
 
     #region MenuButtons
@@ -174,7 +183,7 @@ public class UIEvent : MonoBehaviour
                     buttonList[3].interactable = false;
                     buttonList[4].interactable = true;
                     buttonList[5].interactable = true;
-                    buttonList[6].interactable = !targetObject.GetComponent<Lock>().puzzleManager.solved;
+                    buttonList[6].interactable = !targetObject.GetComponent<Lock>().lockSolved;
                     sliderBox.SetActive(false);
                     break;
 
@@ -283,11 +292,11 @@ public class UIEvent : MonoBehaviour
                     case 1: // Fire
                         if (enemy == "rat")
                         {
-                            rolledDamage = (int)(rolledDamage * 3);
+                            rolledDamage = (int)(rolledDamage * 2);
                         }
                         else
                         {
-                            rolledDamage = (int)(rolledDamage * 2);
+                            rolledDamage = (int)(rolledDamage * 1.5);
                         }
                             
                         SpendMana(2);
@@ -301,11 +310,11 @@ public class UIEvent : MonoBehaviour
                     case 3: // Light
                         if (enemy == "infected")
                         {
-                            rolledDamage = (int)(rolledDamage * 3);
+                            rolledDamage = (int)(rolledDamage * 2);
                         }
                         else
                         {
-                            rolledDamage = (int)(rolledDamage * 2);
+                            rolledDamage = (int)(rolledDamage * 1.5);
                         }
 
                         SpendMana(2);

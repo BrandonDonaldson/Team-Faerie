@@ -6,6 +6,7 @@ public class Lock : Interactable
     [SerializeField] public PuzzleLogic puzzleManager;
     [SerializeField] public GameObject obstacleRef;
     [SerializeField] public string solutionCode;
+    [SerializeField] public bool lockSolved;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

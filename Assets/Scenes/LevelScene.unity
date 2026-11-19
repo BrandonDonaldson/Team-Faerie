@@ -87839,6 +87839,8 @@ MonoBehaviour:
   buttonTransforms: []
   category: 0
   choice: 0
+  inCombat: 0
+  targetEnemy: 0
 --- !u!1001 &1510858516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93642,17 +93644,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4608259136516538565, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
   m_PrefabInstance: {fileID: 1143472163}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1654301004 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2004321792649027730, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-  m_PrefabInstance: {fileID: 1487733553}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1654408704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4608259136516538565, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
@@ -110474,17 +110465,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4608259136516538565, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
   m_PrefabInstance: {fileID: 1487301877}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2126952843 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1788712958012571558, guid: 52ee6887f43f33d4ebcb63047075df7b, type: 3}
-  m_PrefabInstance: {fileID: 1487733553}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2128108239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4608259136516538565, guid: c66709159f1467d45b9fc0d27bedb80a, type: 3}
@@ -111624,8 +111604,8 @@ MonoBehaviour:
   actionDialogue: This is a rat (that may or may not be infected with the bubonic
     plague).|*squeak squeak*|I don't know what you're trying to do, but it clearly
     didn't work.
-  HPImage: {fileID: 1654301004}
-  MPImage: {fileID: 2126952843}
+  HPImage: {fileID: 1002348504}
+  MPImage: {fileID: 451300422}
   HP: 10
   MP: 0
   MaxHP: 10
