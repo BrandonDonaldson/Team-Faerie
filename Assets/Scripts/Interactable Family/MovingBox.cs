@@ -47,7 +47,6 @@ public class MovingBox : Interactable
     public override void ReturnResult(MenuState category, int action)
     {
         base.ReturnResult(category, action);
-        InterfaceRef.PlayChoiceSFX(category, action);
         if (category == MenuState.Magic && action == 2)
         {
             MoveUntilStop();
